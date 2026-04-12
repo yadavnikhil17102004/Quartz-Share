@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Q1</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<!-- <dl> <dt> title </dt> <dd> this is description </dd>  <dl> -->
+	<form>
+		<label for="name" > Enter your name: </label>
+		<input id="name" type="text"  required >   </input>
+		
+		<hr> <label for="adrs" > Enter your address please: </label>
+		<input id="adrs" type="text" min="5" > </input>
+		
+		<hr> <label for="mo_num" > Enter your contact number: </label>
+		<input id="mo_num" type="num" > </input>
+		
+		<hr> <label for="source_station" > Enter your source station </label> 
+		<select id="source_station" name="Source" >
+			<option vlaue=" "> None </option>
+			<option value="badhaipur">  Badhaipur </option>
+			<option value="chaturpur"> Chaturpur  </option>
+			<option value="dhaniyapur"> Dhaniyapur  </option>
+		</select>
+
+		<hr>  <button type="Submit"> Submit </button> 
+	</form>
+</body>
+
+</html>

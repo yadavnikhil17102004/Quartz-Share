@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Author" content="Jai Girawale">
+  <meta name="CreationTime" content="2025-09-19T06:14:00Z">
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 12.0px 'Times New Roman'; color: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 12.0px 'Times New Roman'}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Times New Roman'}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; min-height: 14.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: justify; font: 12.0px Times}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: justify; font: 12.0px Times; min-height: 14.0px}
+    li.li3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Times New Roman'}
+    span.Apple-tab-span {white-space:pre}
+    ul.ul1 {list-style-type: disc}
+  </style>
+</head>
+<body>
+<p class="p1"><b>MAEER’s MIT Arts Commerce &amp; Science College Alandi (D)</b></p>
+<p class="p2"><b>Academic Year 2025-26 Semester-V</b></p>
+<p class="p2"><b>Practical Examination November / December 2025.</b></p>
+<p class="p2"><b>TY BSc. Cyber and Digital Science<span class="Apple-converted-space"> </span></b></p>
+<p class="p2"><b>Course Code: CDS-358A</b></p>
+<p class="p2"><b>Course Name: Lab Course on Mobile Forensics</b></p>
+<p class="p3"><b>[Duration: 2 Hours] <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>[Maximum Marks: 30]</b></p>
+<p class="p4"><br></p>
+<p class="p3"><b>Each slip will have 4 parts:</b><b></b></p>
+<ul class="ul1">
+  <li class="li3"><b>Q1 (15 marks):</b> Major practical task</li>
+  <li class="li3"><b>Q2 (10 marks):</b> Minor practical task</li>
+  <li class="li3"><b>Q3 (5 marks):</b> Viva questions</li>
+  <li class="li3"><b>Q4 (5 marks):</b> Practical task documentation</li>
+</ul>
+<p class="p5"><b>Slip 1</b></p>
+<p class="p5"><b>Q.1)</b> Identify two implications that might affect mobile forensic in the future due to <b>5G technology</b>. [15]<br>
+<b>Q.2)</b> Explain one <b>real-world challenge law enforcement faced</b> due to 5G-enabled devices. [10]<br>
+<b>Q.3)</b> Viva – How does <b>5G low latency</b> impact forensic investigations? [5]<br>
+<b>Q.4)</b> Lab Book – Document your analysis of 5G’s implications in mobile forensics. <span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 2</b></p>
+<p class="p5"><b>Q.1)</b> Explain<b> SIM cards in non-technical terms</b>. [15]<br>
+<b>Q.2)</b> Compare SIM vs <b>eSIM</b> in terms of forensic challenges. [10]<br>
+<b>Q.3)</b> Viva – What is <b>IMSI</b> and why is it important? [5]<br>
+<b>Q.4)</b> Lab Book – Write the script/steps you followed for explaining SIM cards. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 3</b></p>
+<p class="p5"><b>Q.1)</b> Compare <b>Manual, Logical, and Physical Acquisition methods</b> in terms of data recovered. [15]<br>
+<b>Q.2)</b> Mention one tool that supports each acquisition method. [10]<br>
+<b>Q.3)</b> Viva – Which acquisition method is <b>most comprehensive</b> and why? [5]<br>
+<b>Q.4)</b> Lab Book – Write a comparison table of acquisition methods. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 4</b></p>
+<p class="p5"><b>Q.1)</b> Use <b>FTK Imager</b> to extract and preserve data from a logical drive. [15]<br>
+<b>Q.2)</b> Explain why <b>hash values (MD5/SHA1)</b> are used in evidence preservation. [10]<br>
+<b>Q.3)</b> Viva – What is the difference between <b>bitstream image</b> and <b>logical copy</b>? [5]<br>
+<b>Q.4)</b> Lab Book – Document the steps followed in FTK Imager. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 5</b></p>
+<p class="p5"><b>Q.1)</b> Perform <b>data extraction using EaseUS Data Recovery Wizard</b>. [15]<br>
+<b>Q.2)</b> Compare EaseUS with any <b>other free recovery tool</b>. [10]<br>
+<b>Q.3)</b> Viva – Can deleted files always be recovered? Why/why not? [5]<br>
+<b>Q.4)</b> Lab Book – Write down the recovery process used. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 6</b></p>
+<p class="p5"><b>Q.1)</b> Analyze a <b>RAM dump using Volatility 3</b> and extract running processes. [15]<br>
+<b>Q.2)</b> What is the difference between <b>Volatility 2 and Volatility 3</b>? [10]<br>
+<b>Q.3)</b> Viva – Which plugin is used for listing network connections? [5]<br>
+<b>Q.4)</b> Lab Book – Document the Volatility commands executed. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 7</b></p>
+<p class="p5"><b>Q.1)</b> Use <b>ADB (Android Debug Bridge)</b> to create a logical image of a mobile device. [15]<br>
+<b>Q.2)</b> Explain the significance of enabling <b>USB Debugging</b> for ADB. [10]<br>
+<b>Q.3)</b> Viva – What is the difference between <b>adb pull</b> and <b>adb shell</b>? [5]<br>
+<b>Q.4)</b> Lab Book – Record the commands used in ADB extraction. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 8</b></p>
+<p class="p5"><b>Q.1)</b> Identify <b>two new security risks</b> introduced by 5G forensics. [15]<br>
+<b>Q.2)</b> Explain how <b>network slicing in 5G</b> complicates investigations. [10]<br>
+<b>Q.3)</b> Viva – What is the role of <b>edge computing in 5G</b>? [5]<br>
+<b>Q.4)</b> Lab Book – Document your observations on 5G’s forensic challenges.<span class="Apple-converted-space">  <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 9</b></p>
+<p class="p5"><b>Q.1)</b> Demonstrate how to <b>analyze SMS &amp; call logs</b> from a SIM. [15]<br>
+<b>Q.2)</b> Explain the role of <b>SIM/USIM file system</b> in mobile forensics. [10]<br>
+<b>Q.3)</b> Viva – Difference between <b>ICCID and IMSI</b>? [5]<br>
+<b>Q.4)</b> Lab Book – Document the extraction process from SIM. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 10</b></p>
+<p class="p5"><b>Q.1)</b> Compare <b>File-System Acquisition</b> vs <b>Physical Acquisition</b> with examples. [15]<br>
+<b>Q.2)</b> Explain one <b>forensic tool</b> that supports File-System acquisition. [10]<br>
+<b>Q.3)</b> Viva – What is the role of <b>JTAG</b> in acquisition? [5]<br>
+<b>Q.4)</b> Lab Book – Write your comparison summary. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 11</b></p>
+<p class="p5"><b>Q.1)</b> Use <b>FTK Imager</b> to generate hash values of an acquired image. [15]<br>
+<b>Q.2)</b> Explain why maintaining <b>integrity of evidence</b> is critical in mobile forensics. [10]<br>
+<b>Q.3)</b> Viva – Define <b>chain of custody</b>. [5]<br>
+<b>Q.4)</b> Lab Book – Record your FTK hash generation steps. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 12</b></p>
+<p class="p5"><b>Q.1)</b> Perform a <b>deleted file recovery using EaseUS</b>. [15]<br>
+<b>Q.2)</b> Explain the difference between <b>logical deletion</b> and <b>physical deletion</b>. [10]<br>
+<b>Q.3)</b> Viva – Why are SSD recoveries more difficult than HDD? [5]<br>
+<b>Q.4)</b> Lab Book – Document the files recovered. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 13</b></p>
+<p class="p5"><b>Q.1)</b> Analyze volatile memory with Volatility using <b>windows.pslist</b> plugin. [15]<br>
+<b>Q.2)</b> Explain how volatile memory forensics helps in <b>malware investigations</b>. [10]<br>
+<b>Q.3)</b> Viva – Which plugin shows process tree? [5]<br>
+<b>Q.4)</b> Lab Book – Note your Volatility outputs. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 14</b></p>
+<p class="p5"><b>Q.1)</b> Use <b>ADB</b> to list installed applications on an Android phone. [15]<br>
+<b>Q.2)</b> Explain how forensic investigators use <b>application data</b> for evidence. [10]<br>
+<b>Q.3)</b> Viva – What is the purpose of the <b>Android manifest file</b>? [5]<br>
+<b>Q.4)</b> Lab Book – Document the list of extracted apps. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 15</b></p>
+<p class="p5"><b>Q.1)</b> Research and explain how <b>5G will impact mobile cloud forensics</b>. [15]<br>
+<b>Q.2)</b> Identify one <b>emerging tool</b> for cloud-based mobile forensic analysis. [10]<br>
+<b>Q.3)</b> Viva – What is <b>IoT forensics</b>? [5]<br>
+<b>Q.4)</b> Lab Book – Document your findings. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 16</b></p>
+<p class="p5"><b>Q.1)</b> Perform logical drive imaging using <b>FTK Imager</b> and save as E01 format. [15]<br>
+<b>Q.2)</b> Explain why <b>E01 format</b> is preferred over raw images in some cases. [10]<br>
+<b>Q.3)</b> Viva – What is the difference between <b>dd and E01 image</b>? [5]<br>
+<b>Q.4)</b> Lab Book – Write down the process. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 17</b></p>
+<p class="p5"><b>Q.1)</b> Recover documents using <b>EaseUS Data Recovery Wizard</b>. [15]<br>
+<b>Q.2)</b> Explain the role of <b>file signatures</b> in recovery. [10]<br>
+<b>Q.3)</b> Viva – What is file carving? [5]<br>
+<b>Q.4)</b> Lab Book – Note the recovered documents. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 18</b></p>
+<p class="p5"><b>Q.1)</b> Perform <b>Volatility analysis</b> using <b>windows.netscan</b>. [15]<br>
+<b>Q.2)</b> Explain how network connections in memory dumps help forensic cases. [10]<br>
+<b>Q.3)</b> Viva – Which plugin retrieves DLLs loaded by a process? [5]<br>
+<b>Q.4)</b> Lab Book – Record your command output. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 19</b></p>
+<p class="p5"><b>Q.1)</b> Use <b>ADB</b> to extract SMS database from Android. [15]<br>
+<b>Q.2)</b> Explain where SMS artefacts are stored in Android. [10]<br>
+<b>Q.3)</b> Viva – Which SQLite database contains SMS data? [5]<br>
+<b>Q.4)</b> Lab Book – Document your extraction.<span class="Apple-converted-space">  <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 20</b></p>
+<p class="p5"><b>Q.1)</b> Research two <b>challenges in chip-off acquisition</b>. [15]<br>
+<b>Q.2)</b> Compare JTAG vs Chip-off. [10]<br>
+<b>Q.3)</b> Viva – Why is chip-off a last resort? [5]<br>
+<b>Q.4)</b> Lab Book – Summarize your findings. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 21</b></p>
+<p class="p5"><b>Q.1)</b> Demonstrate <b>hash verification</b> of a forensic image in FTK. [15]<br>
+<b>Q.2)</b> Explain what happens if hash values <b>don’t match</b>. [10]<br>
+<b>Q.3)</b> Viva – Name two hashing algorithms. [5]<br>
+<b>Q.4)</b> Lab Book – Note your hash results. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 22</b></p>
+<p class="p5"><b>Q.1)</b> Use EaseUS to recover <b>multimedia files</b>. [15]<br>
+<b>Q.2)</b> Explain what EXIF data can be extracted from recovered images. [10]<br>
+<b>Q.3)</b> Viva – Which metadata shows GPS info? [5]<br>
+<b>Q.4)</b> Lab Book – Document EXIF details. <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span>[5]</p>
+<p class="p6"><br></p>
+<p class="p5"><b>Slip 23</b></p>
+<p class="p5"><b>Q.1)</b> Identify <b>two emerging techniques</b> in mobile forensics. [15]<br>
+<b>Q.2)</b> Explain how AI/ML could assist in mobile evidence analysis. [10]<br>
+<b>Q.3)</b> Viva – What is differential forensics? [5]<br>
+<b>Q.4)</b> Lab Book – Record your research findings.<span class="Apple-converted-space">  <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>  </span>[5]</p>
+</body>
+</html>

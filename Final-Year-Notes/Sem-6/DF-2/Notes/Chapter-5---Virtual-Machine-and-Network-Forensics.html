@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Chapter 5 - Virtual Machine and Network Forensics</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 4"/><meta property="og:title" content="Chapter 5 - Virtual Machine and Network Forensics"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Chapter 5 - Virtual Machine and Network Forensics"/><meta name="twitter:description" content="Chapter 5: Virtual Machine and Network Forensics Subject: Digital Forensics-2 (CDS-361) Semester: Sem 6 Tags: forensics virtualization network ram-capture 5.1 Virtual Machine Forensics Virtualization allows multiple Operating Systems (Guests) to run on a single Host."/><meta property="og:description" content="Chapter 5: Virtual Machine and Network Forensics Subject: Digital Forensics-2 (CDS-361) Semester: Sem 6 Tags: forensics virtualization network ram-capture 5.1 Virtual Machine Forensics Virtualization allows multiple Operating Systems (Guests) to run on a single Host."/><meta property="og:image:alt" content="Chapter 5: Virtual Machine and Network Forensics Subject: Digital Forensics-2 (CDS-361) Semester: Sem 6 Tags: forensics virtualization network ram-capture 5.1 Virtual Machine Forensics Virtualization allows multiple Operating Systems (Guests) to run on a single Host."/><meta property="twitter:domain" content="yadavnikhil17102004.github.io/Quartz-Share"/><meta property="og:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-6/DF-2/Notes/Chapter-5---Virtual-Machine-and-Network-Forensics"/><meta property="twitter:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-6/DF-2/Notes/Chapter-5---Virtual-Machine-and-Network-Forensics"/><link rel="icon" href="../../../../static/icon.png"/><meta name="description" content="Chapter 5: Virtual Machine and Network Forensics Subject: Digital Forensics-2 (CDS-361) Semester: Sem 6 Tags: forensics virtualization network ram-capture 5.1 Virtual Machine Forensics Virtualization allows multiple Operating Systems (Guests) to run on a single Host."/><meta name="generator" content="Quartz"/><link href="../../../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL1VzZXJzL25pa2hpbHlhZGF2L0Rlc2t0b3AvUXVhcnR6LUJ1aWxkZXIvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://yadavnikhil17102004.github.io/Quartz-Share/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-6/DF-2/Notes/Chapter-5---Virtual-Machine-and-Network-Forensics-og-image.webp"/><meta property="og:image:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-6/DF-2/Notes/Chapter-5---Virtual-Machine-and-Network-Forensics-og-image.webp"/><meta name="twitter:image" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-6/DF-2/Notes/Chapter-5---Virtual-Machine-and-Network-Forensics-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Final-Year-Notes/Sem-6/DF-2/Notes/Chapter-5---Virtual-Machine-and-Network-Forensics"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../../..">Quartz 4</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-248"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-248" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/">Final Year Notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-6/">Sem 6</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-6/DF-2/">DF 2</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-6/DF-2/Notes/">Notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Chapter 5   Virtual Machine and Network Forensics</a></div></nav><h1 class="article-title">Chapter 5 - Virtual Machine and Network Forensics</h1><p show-comma="true" class="content-meta"><time datetime="2026-04-12T15:03:49.028Z">Apr 12, 2026</time><span>7 min read</span></p><ul class="tags"><li><a href="../../../../tags/forensics" class="internal tag-link">forensics</a></li><li><a href="../../../../tags/virtualization" class="internal tag-link">virtualization</a></li><li><a href="../../../../tags/network" class="internal tag-link">network</a></li><li><a href="../../../../tags/ram-capture" class="internal tag-link">ram-capture</a></li></ul></div></div><article class="popover-hint"><h1 id="chapter-5-virtual-machine-and-network-forensics">Chapter 5: Virtual Machine and Network Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#chapter-5-virtual-machine-and-network-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><strong>Subject</strong>: <a href="../../../../Digital-Forensics-2" class="internal alias" data-slug="Digital-Forensics-2">Digital Forensics-2</a> (CDS-361)
+<strong>Semester</strong>: <a href="../../../../Sem-6" class="internal alias" data-slug="Sem-6">Sem 6</a>
+<strong>Tags</strong>: <a href="../../../.././../../../tags/forensics" class="tag-link internal alias" data-slug="tags/forensics">forensics</a> <a href="../../../.././../../../tags/virtualization" class="tag-link internal alias" data-slug="tags/virtualization">virtualization</a> <a href="../../../.././../../../tags/network" class="tag-link internal alias" data-slug="tags/network">network</a> <a href="../../../.././../../../tags/ram-capture" class="tag-link internal alias" data-slug="tags/ram-capture">ram-capture</a></p>
+<hr/>
+<h2 id="51-virtual-machine-forensics">5.1 Virtual Machine Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#51-virtual-machine-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Virtualization allows multiple Operating Systems (Guests) to run on a single Host.</p>
+<h3 id="511-hypervisor-types">5.1.1 Hypervisor Types<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#511-hypervisor-types" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Type 1 (Bare-Metal)</strong>:
+<ul>
+<li>Runs directly on hardware (e.g., <strong>VMware ESXi</strong>, <strong>Microsoft Hyper-V</strong>).</li>
+<li><em>Investigation</em>: Difficult. Requires accessing the hypervisor logs or management console (vSphere) to snapshot VMs.</li>
+</ul>
+</li>
+<li><strong>Type 2 (Hosted)</strong>:
+<ul>
+<li>Runs as an app on an OS (e.g., <strong>VirtualBox</strong>, <strong>VMware Workstation</strong>).</li>
+<li><em>Investigation</em>: Easier. The VM is just a file on the Host OS (e.g., <code>.vmdk</code> or <code>.vdi</code> files in <code>C:\Users\Documents\</code>).</li>
+</ul>
+</li>
+</ul>
+<h3 id="512-examination">5.1.2 Examination<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#512-examination" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Snapshots</strong>: Preserve the state of a VM at a specific time. Extremely valuable for seeing “history”.</li>
+<li><strong>Mounting Images</strong>: Forensic tools can mount <code>.vmdk</code> files as if they were physical disks.</li>
+</ul>
+<hr/>
+<h2 id="52-live-acquisition-ram-capture">5.2 Live Acquisition (RAM Capture)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#52-live-acquisition-ram-capture" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Capturing volatile memory (RAM) from a running system before pulling the plug.
+<strong>Why?</strong> RAM contains:</p>
+<ul>
+<li>Decrypted passwords/keys.</li>
+<li>Running processes (Malware often lives only in RAM).</li>
+<li>Unsaved documents.</li>
+</ul>
+<h3 id="process">Process<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#process" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>Preparation</strong>: Use a sanitized USB drive containing the forensic tools (Evidence Collection). Do <strong>NOT</strong> install tools on the suspect machine.</li>
+<li><strong>Capture</strong>: Run the tool with Admin privileges.</li>
+<li><strong>Output</strong>: Saves a <code>.mem</code> or <code>.raw</code> file to the USB drive.</li>
+</ol>
+<h3 id="tools-2024">Tools (2024)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#tools-2024" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong><a href="../../../../FTK-Imager" class="internal alias" data-slug="FTK-Imager">FTK Imager</a></strong>: Can capture RAM (“Capture Memory”) to a raw file.</li>
+<li><strong><a href="../../../../DumpIt" class="internal" data-slug="DumpIt">DumpIt</a></strong>: Simple command-line tool. Fast.</li>
+<li><strong><a href="../../../../Magnet-RAM-Capture" class="internal alias" data-slug="Magnet-RAM-Capture">Magnet RAM Capture</a></strong>: Free tool by Magnet Forensics.</li>
+</ul>
+<hr/>
+<h2 id="53-network-forensics">5.3 Network Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#53-network-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>The monitoring and analysis of computer network traffic for the purposes of information gathering, legal evidence, or intrusion detection.</p>
+<h3 id="531-network-traffic-acquisition">5.3.1 Network Traffic Acquisition<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#531-network-traffic-acquisition" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Full Packet Capture (PCAP)</strong>: Recording every packet. Resource intensive but provides the best evidence.</li>
+<li><strong>Log Analysis</strong>: Analyzing Firewall, IDS, or Router logs (NetFlow).</li>
+</ul>
+<h3 id="532-tools">5.3.2 Tools<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#532-tools" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong><a href="../../../../Wireshark" class="internal" data-slug="Wireshark">Wireshark</a></strong>: The industry standard for analyzing <strong>.pcap</strong> files. Allows deep inspection of packet headers (TCP/IP handshake) and payloads.</li>
+<li><strong><a href="../../../../Tcpdump" class="internal" data-slug="Tcpdump">Tcpdump</a></strong>: CLI packet analyzer.</li>
+<li><strong><a href="../../../../Network-Miner" class="internal alias" data-slug="Network-Miner">Network Miner</a></strong>: Passive network sniffer that extracts files (images, certs) from traffic.</li>
+</ul>
+<h3 id="533-honeynets">5.3.3 Honeynets<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#533-honeynets" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>A network set up with intentional vulnerabilities (<strong>Honeypots</strong>) to invite attacks.</p>
+<ul>
+<li><strong>Purpose</strong>: To study attacker behavior, tools, and Zero-day exploits in a controlled environment.</li>
+<li><strong>Forensic Value</strong>: Any traffic found on a Honeynet is suspicious by definition.</li>
+</ul>
+<hr/>
+<h2 id="slip-questions--answers">Slip Questions &amp; Answers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#slip-questions--answers" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="q-wireshark--top-10-websites-visited--accessed-from-vm">Q: Wireshark — top 10 websites visited / accessed from VM<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-wireshark--top-10-websites-visited--accessed-from-vm" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Open Wireshark → capture on relevant interface (or load <code>.pcap</code>)</li>
+<li><strong>Statistics → Endpoints → IPv4</strong> tab → sort by Packets (descending)</li>
+<li>Or: <strong>Statistics → Protocol Hierarchy</strong> → drill into HTTP/DNS</li>
+<li>For DNS-based resolution: <strong>Statistics → DNS</strong> → sort by queries</li>
+<li>Filter display: <code>dns</code> to see all domain lookups → export as CSV</li>
+</ol>
+<h3 id="q-indicators-of-data-exfiltration-unauthorized-access-malware-comms">Q: Indicators of data exfiltration, unauthorized access, malware comms<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-indicators-of-data-exfiltration-unauthorized-access-malware-comms" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Exfiltration</strong>: Large outbound transfers to unknown IPs; unusual protocols (DNS tunneling on port 53, ICMP payload)</li>
+<li><strong>Unauthorized access</strong>: SSH/RDP from unexpected source IPs; failed auth bursts (brute force)</li>
+<li><strong>Malware C2</strong>: Periodic beaconing at fixed intervals; connections to uncommon ports (4444, 1337); JA3 fingerprint mismatches</li>
+<li>Wireshark filter: <code>ip.dst != [known_internal_range]</code> to isolate suspicious outbound</li>
+</ul>
+<h3 id="q-how-to-use-tcpdump-to-examine--capture-network-traffic">Q: How to use tcpdump to examine / capture network traffic<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-how-to-use-tcpdump-to-examine--capture-network-traffic" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Basic capture</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">tcpdump</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> eth0</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Save to file</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">tcpdump</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> eth0</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -w</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> capture.pcap</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Read saved file</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">tcpdump</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -r</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> capture.pcap</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Filter by port (SMTP)</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">tcpdump</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> eth0</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> port</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 25</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Filter by host</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">tcpdump</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> eth0</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> host</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 192.168.1.100</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Verbose + no DNS resolution (faster)</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">tcpdump</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> eth0</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -nn</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -vv</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Detect SYN scans</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">tcpdump</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> eth0</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> 'tcp[tcpflags] &amp; tcp-syn != 0'</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Suspicious reverse shell port</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">tcpdump</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> eth0</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> port</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 4444</span></span></code></pre></figure>
+<h3 id="q-filter-packets-to-find-suspicious-activity-in-vm">Q: Filter packets to find suspicious activity in VM<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-filter-packets-to-find-suspicious-activity-in-vm" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Outbound to non-RFC1918 IPs only</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">tcpdump</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> eth0</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> 'not (dst net 192.168.0.0/16 or dst net 10.0.0.0/8)'</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Large packets (potential exfil)</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">tcpdump</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> eth0</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> 'len > 1400'</span></span></code></pre></figure>
+<p>In Wireshark:</p>
+<pre><code>ip.dst != 192.168.0.0/16 &amp;&amp; ip.dst != 10.0.0.0/8   # external only
+tcp.flags.syn == 1 &amp;&amp; tcp.flags.ack == 0             # SYN scan
+http.request.method == &quot;POST&quot;                         # data submission
+</code></pre>
+<h3 id="q-investigate-email-logs-on-mail-server-using-forensic-tools">Q: Investigate email logs on mail server using forensic tools<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-investigate-email-logs-on-mail-server-using-forensic-tools" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Linux</strong>: <code>/var/log/maillog</code> or <code>/var/log/mail.log</code> (Postfix/Sendmail)</li>
+<li><strong>Exchange</strong>: <code>C:\Program Files\Microsoft\Exchange Server\V15\TransportRoles\Logs\</code></li>
+<li>Look for: <code>MAIL FROM</code>, <code>RCPT TO</code>, <code>HELO/EHLO</code>, delivery status codes (250=OK, 550=rejected)</li>
+<li>Tools: <code>grep</code>, <code>awk</code>, Splunk, or import into Wireshark if SMTP over network</li>
+</ul>
+<h3 id="q-wireshark--capture-and-analyze-smtp-traffic">Q: Wireshark — capture and analyze SMTP traffic<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-wireshark--capture-and-analyze-smtp-traffic" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>Filter: tcp.port == 25  (or port 587 for submission)
+</code></pre>
+<p>Right-click packet → <strong>Follow TCP Stream</strong> → see full SMTP conversation:</p>
+<ul>
+<li><code>EHLO</code> = client greeting</li>
+<li><code>MAIL FROM:</code> = sender</li>
+<li><code>RCPT TO:</code> = recipient</li>
+<li><code>DATA</code> = email content (headers + body)</li>
+<li><code>250 OK</code> = accepted</li>
+</ul>
+<h3 id="q-extract-and-decode-mime-encoded-email-messages">Q: Extract and decode MIME-encoded email messages<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-extract-and-decode-mime-encoded-email-messages" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>In Wireshark: Follow TCP Stream of SMTP session → copy DATA section</li>
+<li>Identify <code>Content-Transfer-Encoding: base64</code> sections</li>
+<li>Decode: <code>echo &quot;base64string&quot; | base64 -d > attachment.pdf</code></li>
+<li>MIME boundary separates parts — look for <code>--boundary_string</code></li>
+</ol>
+<h3 id="q-ids-snort-to-monitor-traffic-from-vm">Q: IDS (Snort) to monitor traffic from VM<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-ids-snort-to-monitor-traffic-from-vm" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Run Snort on VM's NIC</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">snort</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> eth0</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -c</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> /etc/snort/snort.conf</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -A</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> console</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Alert mode — log to file</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">snort</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> eth0</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -c</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> /etc/snort/snort.conf</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -l</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> /var/log/snort/</span></span></code></pre></figure>
+<p>Rules fire on signatures (port scans, known exploits, C2 beacons).
+Logs: <code>/var/log/snort/alert</code></p>
+<h3 id="q-encrypted-network-traffic-analysis-in-virtualized-environment">Q: Encrypted network traffic analysis in virtualized environment<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-encrypted-network-traffic-analysis-in-virtualized-environment" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Cannot decrypt without keys, but can analyze:</p>
+<ul>
+<li><strong>TLS SNI field</strong> (Server Name Indication) — reveals destination hostname even in encrypted traffic</li>
+<li><strong>Certificate metadata</strong> — issuer, validity, self-signed flag</li>
+<li><strong>Packet size + timing patterns</strong> — identify protocol fingerprints (JA3 hash)</li>
+<li><strong>Volume anomalies</strong> — sudden large encrypted transfers</li>
+<li>For VMs: capture traffic at <strong>virtual switch level</strong> on host (pre-encryption if TLS terminated at load balancer)</li>
+</ul>
+<h3 id="q-what-info-from-vm-log-files-in-crime-investigation">Q: What info from VM log files in crime investigation?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-what-info-from-vm-log-files-in-crime-investigation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>VM logs reveal:</p>
+<ul>
+<li>Power-on / power-off timestamps → places suspect at keyboard</li>
+<li>Snapshot creation times → “frozen state” at time of incident</li>
+<li>Network adapter changes → evidence of network isolation/pivot</li>
+<li>USB device connections (via host logs)</li>
+<li>Guest OS crashes or forced shutdowns</li>
+</ul>
+<p>VMware <code>.log</code> example entries:</p>
+<pre><code>2025-01-15T10:23:01.456Z| vmx| Powering on VM
+2025-01-15T14:45:22.123Z| vmx| Snapshot taken: 'Before_Attack'
+2025-01-15T18:10:05.789Z| vmx| Powering off VM
+</code></pre>
+<h3 id="q-investigate-hypervisor-logs-for-unauthorized-access--vm-timestamps">Q: Investigate hypervisor logs for unauthorized access / VM timestamps<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-investigate-hypervisor-logs-for-unauthorized-access--vm-timestamps" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>VMware Workstation</strong>: <code>vmware.log</code> in VM folder — power events, snapshot history</li>
+<li><strong>VirtualBox</strong>: <code>VBox.log</code> per-VM</li>
+<li><strong>Hyper-V</strong>: Windows Event Viewer → <code>Microsoft-Windows-Hyper-V-Worker</code> and <code>Hyper-V-VMMS</code></li>
+<li>Look for: unexpected power-on times, snapshot creation, config changes</li>
+</ul>
+<h3 id="q-extract-vm-log-files-config-files-snapshots-for-forensic-analysis">Q: Extract VM log files, config files, snapshots for forensic analysis<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-extract-vm-log-files-config-files-snapshots-for-forensic-analysis" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Config</strong>: <code>.vmx</code> (VMware) or <code>.vbox</code> (VirtualBox) — contains MAC, RAM, OS, shared folders</li>
+<li><strong>Disk image</strong>: <code>.vmdk</code> / <code>.vdi</code> — mount with FTK Imager or Autopsy as physical disk</li>
+<li><strong>Snapshots</strong>: <code>.vmsd</code> (snapshot tree metadata) + <code>.vmsn</code> (snapshot state)</li>
+<li><strong>Process</strong>: Copy entire VM folder to forensic workstation → hash everything first</li>
+</ul>
+<h3 id="q-forensic-artifacts-in-vm-vs-physical-machine">Q: Forensic artifacts in VM vs physical machine<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-forensic-artifacts-in-vm-vs-physical-machine" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>VM-Specific</th><th>Physical Only</th></tr></thead><tbody><tr><td>Snapshot files (time-travel)</td><td>SMART data (disk health/wear)</td></tr><tr><td><code>.vmdk</code> / <code>.vdi</code> as host files</td><td>Physical port connections</td></tr><tr><td>Virtual NIC (host can capture all traffic)</td><td>Hardware serial numbers</td></tr><tr><td>Host/Guest shared folder artifacts</td><td>RAM soldered to board (harder to capture)</td></tr><tr><td>Hypervisor management logs</td><td></td></tr></tbody></table></div>
+<h3 id="q-acquire-forensic-image-of-host-running-multiple-vms">Q: Acquire forensic image of host running multiple VMs<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-acquire-forensic-image-of-host-running-multiple-vms" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>Do NOT shutdown</strong> — capture RAM first (FTK Imager “Capture Memory”)</li>
+<li>Image the <strong>host disk</strong> with FTK Imager / <code>dd</code> → captures all VM files (<code>.vmdk</code>, <code>.log</code>, <code>.vmx</code>)</li>
+<li>Each <code>.vmdk</code> file = one VM disk — load individually in Autopsy</li>
+<li>Preserve snapshot files — they contain historical states</li>
+<li>Hash everything: <code>md5sum host_image.dd</code></li>
+</ol>
+<h3 id="q-network-logs-to-trace-hostvm-activity--vm-creationdeletion-via-system-logs">Q: Network logs to trace host↔VM activity + VM creation/deletion via system logs<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-network-logs-to-trace-hostvm-activity--vm-creationdeletion-via-system-logs" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Log types</strong>:</p>
+<ul>
+<li><strong>Firewall logs</strong>: traffic between host and VMs (NAT/bridge)</li>
+<li><strong>IDS/IPS logs</strong>: alerts triggered by VM traffic</li>
+<li><strong>Hypervisor event logs</strong>: VM lifecycle events</li>
+<li><strong>OS System logs</strong>: <code>Event ID 13002</code> (Hyper-V VM start), <code>13003</code> (stop)</li>
+</ul>
+<p><strong>Determine VM created/modified/deleted</strong>:</p>
+<ul>
+<li>Windows: Event Viewer → System → filter by Hyper-V source</li>
+<li>VMware: <code>vmware.log</code> timestamp of first entry = creation; config <code>.vmx</code> <code>createDate</code> field</li>
+<li>VirtualBox: <code>VirtualBox.xml</code> in <code>~/.VirtualBox/</code> tracks all registered VMs with creation time</li>
+</ul></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-53" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#chapter-5-virtual-machine-and-network-forensics" data-for="chapter-5-virtual-machine-and-network-forensics">Chapter 5: Virtual Machine and Network Forensics</a></li><li class="depth-1"><a href="#51-virtual-machine-forensics" data-for="51-virtual-machine-forensics">5.1 Virtual Machine Forensics</a></li><li class="depth-2"><a href="#511-hypervisor-types" data-for="511-hypervisor-types">5.1.1 Hypervisor Types</a></li><li class="depth-2"><a href="#512-examination" data-for="512-examination">5.1.2 Examination</a></li><li class="depth-1"><a href="#52-live-acquisition-ram-capture" data-for="52-live-acquisition-ram-capture">5.2 Live Acquisition (RAM Capture)</a></li><li class="depth-2"><a href="#process" data-for="process">Process</a></li><li class="depth-2"><a href="#tools-2024" data-for="tools-2024">Tools (2024)</a></li><li class="depth-1"><a href="#53-network-forensics" data-for="53-network-forensics">5.3 Network Forensics</a></li><li class="depth-2"><a href="#531-network-traffic-acquisition" data-for="531-network-traffic-acquisition">5.3.1 Network Traffic Acquisition</a></li><li class="depth-2"><a href="#532-tools" data-for="532-tools">5.3.2 Tools</a></li><li class="depth-2"><a href="#533-honeynets" data-for="533-honeynets">5.3.3 Honeynets</a></li><li class="depth-1"><a href="#slip-questions--answers" data-for="slip-questions--answers">Slip Questions &amp; Answers</a></li><li class="depth-2"><a href="#q-wireshark--top-10-websites-visited--accessed-from-vm" data-for="q-wireshark--top-10-websites-visited--accessed-from-vm">Q: Wireshark — top 10 websites visited / accessed from VM</a></li><li class="depth-2"><a href="#q-indicators-of-data-exfiltration-unauthorized-access-malware-comms" data-for="q-indicators-of-data-exfiltration-unauthorized-access-malware-comms">Q: Indicators of data exfiltration, unauthorized access, malware comms</a></li><li class="depth-2"><a href="#q-how-to-use-tcpdump-to-examine--capture-network-traffic" data-for="q-how-to-use-tcpdump-to-examine--capture-network-traffic">Q: How to use tcpdump to examine / capture network traffic</a></li><li class="depth-2"><a href="#q-filter-packets-to-find-suspicious-activity-in-vm" data-for="q-filter-packets-to-find-suspicious-activity-in-vm">Q: Filter packets to find suspicious activity in VM</a></li><li class="depth-2"><a href="#q-investigate-email-logs-on-mail-server-using-forensic-tools" data-for="q-investigate-email-logs-on-mail-server-using-forensic-tools">Q: Investigate email logs on mail server using forensic tools</a></li><li class="depth-2"><a href="#q-wireshark--capture-and-analyze-smtp-traffic" data-for="q-wireshark--capture-and-analyze-smtp-traffic">Q: Wireshark — capture and analyze SMTP traffic</a></li><li class="depth-2"><a href="#q-extract-and-decode-mime-encoded-email-messages" data-for="q-extract-and-decode-mime-encoded-email-messages">Q: Extract and decode MIME-encoded email messages</a></li><li class="depth-2"><a href="#q-ids-snort-to-monitor-traffic-from-vm" data-for="q-ids-snort-to-monitor-traffic-from-vm">Q: IDS (Snort) to monitor traffic from VM</a></li><li class="depth-2"><a href="#q-encrypted-network-traffic-analysis-in-virtualized-environment" data-for="q-encrypted-network-traffic-analysis-in-virtualized-environment">Q: Encrypted network traffic analysis in virtualized environment</a></li><li class="depth-2"><a href="#q-what-info-from-vm-log-files-in-crime-investigation" data-for="q-what-info-from-vm-log-files-in-crime-investigation">Q: What info from VM log files in crime investigation?</a></li><li class="depth-2"><a href="#q-investigate-hypervisor-logs-for-unauthorized-access--vm-timestamps" data-for="q-investigate-hypervisor-logs-for-unauthorized-access--vm-timestamps">Q: Investigate hypervisor logs for unauthorized access / VM timestamps</a></li><li class="depth-2"><a href="#q-extract-vm-log-files-config-files-snapshots-for-forensic-analysis" data-for="q-extract-vm-log-files-config-files-snapshots-for-forensic-analysis">Q: Extract VM log files, config files, snapshots for forensic analysis</a></li><li class="depth-2"><a href="#q-forensic-artifacts-in-vm-vs-physical-machine" data-for="q-forensic-artifacts-in-vm-vs-physical-machine">Q: Forensic artifacts in VM vs physical machine</a></li><li class="depth-2"><a href="#q-acquire-forensic-image-of-host-running-multiple-vms" data-for="q-acquire-forensic-image-of-host-running-multiple-vms">Q: Acquire forensic image of host running multiple VMs</a></li><li class="depth-2"><a href="#q-network-logs-to-trace-hostvm-activity--vm-creationdeletion-via-system-logs" data-for="q-network-logs-to-trace-hostvm-activity--vm-creationdeletion-via-system-logs">Q: Network logs to trace host↔VM activity + VM creation/deletion via system logs</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>Backlinks</h3><ul id="list-2" class="overflow"><li><a href="../../../../Final-Year-Notes/Sem-6/DF-2/Slip-Revision-Master" class="internal">Slip Revision Master</a></li><li><a href="../../../../Final-Year-Notes/Sem-6/DF-2/Slips/Slip-03---Wireshark-Top-10-Sites-+-File-Metadata" class="internal">Slip 03 - Wireshark Top 10 Sites + File Metadata</a></li><li><a href="../../../../Final-Year-Notes/Sem-6/DF-2/Slips/Slip-06---tcpdump-+-Forensic-Report" class="internal">Slip 06 - tcpdump + Forensic Report</a></li><li><a href="../../../../Final-Year-Notes/Sem-6/DF-2/Slips/Slip-07---VM-Logs-+-SPF-DKIM" class="internal">Slip 07 - VM Logs + SPF DKIM</a></li><li><a href="../../../../Final-Year-Notes/Sem-6/DF-2/Slips/Slip-09---tcpdump-Filter-+-SMTP-Analysis" class="internal">Slip 09 - tcpdump Filter + SMTP Analysis</a></li><li><a href="../../../../Final-Year-Notes/Sem-6/DF-2/Slips/Slip-12---Social-Media-Script-+-Wireshark-Credentials" class="internal">Slip 12 - Social Media Script + Wireshark Credentials</a></li><li><a href="../../../../Final-Year-Notes/Sem-6/DF-2/Slips/Slip-13---IDS-Snort-VM-+-Android-Image-Creation" class="internal">Slip 13 - IDS Snort VM + Android Image Creation</a></li><li><a href="../../../../Final-Year-Notes/Sem-6/DF-2/Slips/Slip-14---MXToolbox-+-Multiple-VMs-Image" class="internal">Slip 14 - MXToolbox + Multiple VMs Image</a></li><li><a href="../../../../Final-Year-Notes/Sem-6/DF-2/Slips/Slip-15---VM-Configs-+-Google-Drive-Access-Count" class="internal">Slip 15 - VM Configs + Google Drive Access Count</a></li><li><a href="../../../../Final-Year-Notes/Sem-6/DF-2/Slips/Slip-16---VM-Logs-Detect-+-WinHex-Cloud-Timestamp" class="internal">Slip 16 - VM Logs Detect + WinHex Cloud Timestamp</a></li><li><a href="../../../../Final-Year-Notes/Sem-6/DF-2/Slips/Slip-18---FTK-Imager-VM-+-WinHex-Google-Drive-Registry" class="internal">Slip 18 - FTK Imager VM + WinHex Google Drive Registry</a></li><li><a href="../../../../Final-Year-Notes/Sem-6/DF-2/Slips/Slip-19---VM-Snapshots-Recover-+-Email-Header-Spoofing" class="internal">Slip 19 - VM Snapshots Recover + Email Header Spoofing</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../../../postscript.js" type="module" data-persist="true"></script></html>

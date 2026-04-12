@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Quartz 4</title>
+      <link>https://yadavnikhil17102004.github.io/Quartz-Share</link>
+      <description>Last 10 notes on Quartz 4</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Exam_Master_Index</title>
+    <link>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Exam_Master_Index</link>
+    <guid>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Exam_Master_Index</guid>
+    <description><![CDATA[ Exam Master Index 🛡️ Cyber Threat Intelligence (CTI) CTI_Chapter 1: Introduction to Threat Intelligence CTI_Chapter 2: Cyber Kill Chain &amp; Diamond Model CTI_Chapter 3: Monitoring, Logging &amp; Analysis CTI_Chapter 4: Information Sharing (STIX/TAXII) CTI_Chapter 5: Attribution &amp; Reporting TY... ]]></description>
+    <pubDate>Sun, 12 Apr 2026 15:03:49 GMT</pubDate>
+  </item><item>
+    <title>Information_Security_Policy_and_Audit</title>
+    <link>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Information_Security_Policy_and_Audit</link>
+    <guid>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Information_Security_Policy_and_Audit</guid>
+    <description><![CDATA[ Information Security Policy and Audit (ISPA) Notes NOTE Source Information: Unit 1 &amp; 2: Generated based on standard Information Security curriculum topics (Security Policy, CIA Triad, Risk Management) as the specific source files were unreadable. ]]></description>
+    <pubDate>Sun, 12 Apr 2026 15:03:49 GMT</pubDate>
+  </item><item>
+    <title>Cyber_Threat_Intelligence</title>
+    <link>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Cyber_Threat_Intelligence</link>
+    <guid>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Cyber_Threat_Intelligence</guid>
+    <description><![CDATA[ Cyber Threat Intelligence (CTI) Notes Chapter 1: Introduction to Threat Intelligence What is Threat Intelligence? Threat Intelligence is threat information that has been aggregated, transformed, analyzed, interpreted, or enriched to provide the necessary context for decision-making processes. ]]></description>
+    <pubDate>Sun, 12 Apr 2026 15:03:49 GMT</pubDate>
+  </item><item>
+    <title>APCERT</title>
+    <link>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Glossary/APCERT</link>
+    <guid>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Glossary/APCERT</guid>
+    <description><![CDATA[ APCERT APCERT (Asia Pacific Computer Emergency Response Team) is a coalition of CSIRTs from the Asia Pacific region. ]]></description>
+    <pubDate>Sun, 12 Apr 2026 15:03:49 GMT</pubDate>
+  </item><item>
+    <title>NetFlow</title>
+    <link>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Glossary/NetFlow</link>
+    <guid>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Glossary/NetFlow</guid>
+    <description><![CDATA[ NetFlow NetFlow is a network protocol developed by Cisco for collecting IP traffic information and monitoring network traffic. ]]></description>
+    <pubDate>Sun, 12 Apr 2026 15:03:49 GMT</pubDate>
+  </item><item>
+    <title>Threat Intelligence Cycle</title>
+    <link>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Glossary/Threat-Intelligence-Cycle</link>
+    <guid>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Glossary/Threat-Intelligence-Cycle</guid>
+    <description><![CDATA[ Threat Intelligence Cycle The Threat Intelligence Cycle is the process of transforming raw data into actionable intelligence. ]]></description>
+    <pubDate>Sun, 12 Apr 2026 15:03:49 GMT</pubDate>
+  </item><item>
+    <title>GDPR</title>
+    <link>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Glossary/GDPR</link>
+    <guid>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Glossary/GDPR</guid>
+    <description><![CDATA[ GDPR The GDPR (General Data Protection Regulation) is a regulation in EU law on data protection and privacy in the European Union and the European Economic Area. ]]></description>
+    <pubDate>Sun, 12 Apr 2026 15:03:49 GMT</pubDate>
+  </item><item>
+    <title>IoA</title>
+    <link>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Glossary/IoA</link>
+    <guid>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Glossary/IoA</guid>
+    <description><![CDATA[ IoA IoA (Indicator of Attack) focuses on detecting the intent of an attacker and the steps they are taking, often before the compromise is complete. ]]></description>
+    <pubDate>Sun, 12 Apr 2026 15:03:49 GMT</pubDate>
+  </item><item>
+    <title>OpenIOC</title>
+    <link>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Glossary/OpenIOC</link>
+    <guid>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Glossary/OpenIOC</guid>
+    <description><![CDATA[ OpenIOC OpenIOC is an open framework for sharing threat intelligence, specifically Indicators of Compromise. ]]></description>
+    <pubDate>Sun, 12 Apr 2026 15:03:49 GMT</pubDate>
+  </item><item>
+    <title>Cryptocurrency</title>
+    <link>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Glossary/Cryptocurrency</link>
+    <guid>https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Glossary/Cryptocurrency</guid>
+    <description><![CDATA[ Cryptocurrency A Cryptocurrency is a digital currency in which transactions are verified and records maintained by a decentralized system using cryptography, rather than by a centralized authority. ]]></description>
+    <pubDate>Sun, 12 Apr 2026 15:03:49 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>

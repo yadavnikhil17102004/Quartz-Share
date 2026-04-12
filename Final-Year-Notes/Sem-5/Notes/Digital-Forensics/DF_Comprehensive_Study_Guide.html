@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>DF_Comprehensive_Study_Guide</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 4"/><meta property="og:title" content="DF_Comprehensive_Study_Guide"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="DF_Comprehensive_Study_Guide"/><meta name="twitter:description" content="Digital Forensics - Comprehensive Exam Study Guide NOTE This comprehensive guide integrates all essential topics from the Digital Forensics Exam Study Guide, covering foundational principles through advanced forensic techniques."/><meta property="og:description" content="Digital Forensics - Comprehensive Exam Study Guide NOTE This comprehensive guide integrates all essential topics from the Digital Forensics Exam Study Guide, covering foundational principles through advanced forensic techniques."/><meta property="og:image:alt" content="Digital Forensics - Comprehensive Exam Study Guide NOTE This comprehensive guide integrates all essential topics from the Digital Forensics Exam Study Guide, covering foundational principles through advanced forensic techniques."/><meta property="twitter:domain" content="yadavnikhil17102004.github.io/Quartz-Share"/><meta property="og:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Digital-Forensics/DF_Comprehensive_Study_Guide"/><meta property="twitter:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Digital-Forensics/DF_Comprehensive_Study_Guide"/><link rel="icon" href="../../../../static/icon.png"/><meta name="description" content="Digital Forensics - Comprehensive Exam Study Guide NOTE This comprehensive guide integrates all essential topics from the Digital Forensics Exam Study Guide, covering foundational principles through advanced forensic techniques."/><meta name="generator" content="Quartz"/><link href="../../../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL1VzZXJzL25pa2hpbHlhZGF2L0Rlc2t0b3AvUXVhcnR6LUJ1aWxkZXIvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://yadavnikhil17102004.github.io/Quartz-Share/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Digital-Forensics/DF_Comprehensive_Study_Guide-og-image.webp"/><meta property="og:image:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Digital-Forensics/DF_Comprehensive_Study_Guide-og-image.webp"/><meta name="twitter:image" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Digital-Forensics/DF_Comprehensive_Study_Guide-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Final-Year-Notes/Sem-5/Notes/Digital-Forensics/DF_Comprehensive_Study_Guide"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../../..">Quartz 4</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-63"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-63" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/">Final Year Notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-5/">Sem 5</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-5/Notes/">Notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-5/Notes/Digital-Forensics/">Digital Forensics</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>DF_Comprehensive_Study_Guide</a></div></nav><h1 class="article-title">DF_Comprehensive_Study_Guide</h1><p show-comma="true" class="content-meta"><time datetime="2026-04-12T15:03:49.531Z">Apr 12, 2026</time><span>8 min read</span></p></div></div><article class="popover-hint"><h1 id="digital-forensics---comprehensive-exam-study-guide">Digital Forensics - Comprehensive Exam Study Guide<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#digital-forensics---comprehensive-exam-study-guide" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>NOTE</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>This comprehensive guide integrates all essential topics from the Digital Forensics Exam Study Guide, covering foundational principles through advanced forensic techniques.</p>
+</div>
+</blockquote>
+<h2 id="table-of-contents">Table of Contents<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#table-of-contents" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><a href="#1-introduction" class="internal alias">Introduction to Digital Forensics</a></li>
+<li><a href="#2-cybercrime-landscape" class="internal alias">The Cybercrime Landscape</a></li>
+<li><a href="#3-technical-concepts" class="internal alias">Essential Technical Concepts</a></li>
+<li><a href="#4-investigation-process" class="internal alias">Digital Forensic Investigation Process</a></li>
+<li><a href="#5-mobile-forensics" class="internal alias">Mobile Device Forensics</a></li>
+<li><a href="#6-tools-laboratories" class="internal alias">Tools and Laboratories</a></li>
+<li><a href="#7-network-forensics" class="internal alias">Network Forensics and Threat Intelligence</a></li>
+<li><a href="#8-legal-challenges" class="internal alias">Legal Challenges and Future Directions</a></li>
+</ol>
+<hr/>
+<h2 id="1-introduction-to-digital-forensics">1. Introduction to Digital Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-introduction-to-digital-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="11-defining-the-discipline">1.1 Defining the Discipline<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#11-defining-the-discipline" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Digital forensics</strong> is the specialized application of computer science and investigative procedures for a legal purpose involving the analysis of digital evidence. Key requirements include:</p>
+<ul>
+<li>Proper search authority</li>
+<li>Chain of custody</li>
+<li>Validation with mathematics (hashing)</li>
+<li>Use of validated tools</li>
+<li>Repeatability</li>
+<li>Reporting</li>
+<li>Possible expert presentation</li>
+</ul>
+<h3 id="12-core-objectives-of-forensic-investigation">1.2 Core Objectives of Forensic Investigation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#12-core-objectives-of-forensic-investigation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>Identification and Recognition</strong>: Identify potential evidence (hard drives, RAM, cloud logs)</li>
+<li><strong>Preservation of Evidence Integrity</strong>: Non-destructive collection (use write-blockers)</li>
+<li><strong>Extraction and Recovery</strong>: Recover active, deleted, hidden, and encrypted data</li>
+<li><strong>Analysis and Reconstruction</strong>: Correlate data points to establish timelines</li>
+<li><strong>Presentation and Reporting</strong>: Translate technical findings for non-technical audiences</li>
+</ol>
+<h3 id="13-evolution-of-forensic-science">1.3 Evolution of Forensic Science<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#13-evolution-of-forensic-science" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Ad-hoc Phase (1980s-90s)</strong>: Lack of specialized tools, analysis on original evidence</li>
+<li><strong>Structured Phase</strong>: Introduction of standardized software and write-blockers</li>
+<li><strong>Enterprise Phase (Current)</strong>: Massive datasets, pervasive encryption, remote investigations</li>
+</ul>
+<p><strong>Locard’s Exchange Principle</strong>: “Every contact leaves a trace” - every user interaction leaves a digital footprint.</p>
+<hr/>
+<h2 id="2-the-cybercrime-landscape">2. The Cybercrime Landscape<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-the-cybercrime-landscape" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="21-computers-role-in-crime">2.1 Computer’s Role in Crime<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#21-computers-role-in-crime" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="computer-as-the-target">Computer as the Target<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#computer-as-the-target" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Nature</strong>: DoS attacks, malware, ransomware, network intrusions</li>
+<li><strong>Forensic Focus</strong>: System evidence - firewall logs, unauthorized accounts, malicious executables</li>
+<li><strong>Current Threats</strong>: LockBit 5.0, Qilin ransomware with double extortion</li>
+</ul>
+<h4 id="computer-as-the-instrument-tool">Computer as the Instrument (Tool)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#computer-as-the-instrument-tool" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Nature</strong>: Fraud, identity theft, cyberstalking, phishing</li>
+<li><strong>Forensic Focus</strong>: User-generated content - emails, chat logs, browser history</li>
+<li><strong>Example</strong>: “Jingle Thief” gift card fraud campaigns</li>
+</ul>
+<h4 id="computer-as-an-accessory-incidental">Computer as an Accessory (Incidental)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#computer-as-an-accessory-incidental" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Nature</strong>: Device as evidence repository for physical crimes</li>
+<li><strong>Forensic Focus</strong>: Comprehensive data parsing, GPS location data</li>
+</ul>
+<h3 id="22-advanced-threat-actors">2.2 Advanced Threat Actors<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#22-advanced-threat-actors" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Nation-State Actors</strong>: Lazarus (North Korea), Tick (China)</li>
+<li><strong>Tactics</strong>: Living off the Land (LotL) using PowerShell, WMI</li>
+<li><strong>Steganography</strong>: Caminho Loader using LSB steganography in images</li>
+<li><strong>Supply Chain Attacks</strong>: 150,000+ malicious npm packages</li>
+</ul>
+<hr/>
+<h2 id="3-essential-technical-concepts">3. Essential Technical Concepts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-essential-technical-concepts" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="31-data-representation">3.1 Data Representation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#31-data-representation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>System</th><th>Base</th><th>Usage</th><th>Forensic Relevance</th></tr></thead><tbody><tr><td><strong>Binary</strong></td><td>2</td><td>Computer fundamental</td><td>Bit-stream copies</td></tr><tr><td><strong>Decimal</strong></td><td>10</td><td>Human-readable</td><td>File sizes, timestamps</td></tr><tr><td><strong>Hexadecimal</strong></td><td>16</td><td>Forensic analysis</td><td>File signatures, hex editors</td></tr></tbody></table></div>
+<h4 id="file-signatures-magic-numbers">File Signatures (Magic Numbers)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#file-signatures-magic-numbers" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>JPEG</strong>: <code>FF D8 FF</code></li>
+<li><strong>PDF</strong>: Starts with <code>%PDF</code></li>
+<li><strong>ZIP</strong>: <code>50 4B</code> (PK)</li>
+</ul>
+<h3 id="32-storage-hierarchies-and-volatility">3.2 Storage Hierarchies and Volatility<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#32-storage-hierarchies-and-volatility" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph TD\n    A[\&quot;⚡ MOST VOLATILE&lt;br/>(Nanoseconds)\&quot;] --> B[\&quot;CPU Cache &amp; Registers\&quot;]\n    B --> C[\&quot;Routing Tables, ARP Cache,&lt;br/>Process Tables\&quot;]\n    C --> D[\&quot;💾 RAM&lt;br/>(Encryption keys, passwords,&lt;br/>active connections)\&quot;]\n    D --> E[\&quot;Temporary File Systems&lt;br/>Swap Space\&quot;]\n    E --> F[\&quot;💿 Disk Storage&lt;br/>(Persistent Data)\&quot;]\n    F --> G[\&quot;☁️ Remote Logging&lt;br/>Archival Media\&quot;]\n    G --> H[\&quot;🔒 LEAST VOLATILE\&quot;]\n    \n    style A fill:#ff6b6b\n    style B fill:#ffa36b\n    style C fill:#ffd93d\n    style D fill:#6bcf7f\n    style E fill:#4d96ff\n    style F fill:#9b59b6\n    style G fill:#95a5a6\n    style H fill:#2c3e50,color:#fff&quot;">graph TD
+    A[&quot;⚡ MOST VOLATILE&lt;br/>(Nanoseconds)&quot;] --> B[&quot;CPU Cache &amp; Registers&quot;]
+    B --> C[&quot;Routing Tables, ARP Cache,&lt;br/>Process Tables&quot;]
+    C --> D[&quot;💾 RAM&lt;br/>(Encryption keys, passwords,&lt;br/>active connections)&quot;]
+    D --> E[&quot;Temporary File Systems&lt;br/>Swap Space&quot;]
+    E --> F[&quot;💿 Disk Storage&lt;br/>(Persistent Data)&quot;]
+    F --> G[&quot;☁️ Remote Logging&lt;br/>Archival Media&quot;]
+    G --> H[&quot;🔒 LEAST VOLATILE&quot;]
+    
+    style A fill:#ff6b6b
+    style B fill:#ffa36b
+    style C fill:#ffd93d
+    style D fill:#6bcf7f
+    style E fill:#4d96ff
+    style F fill:#9b59b6
+    style G fill:#95a5a6
+    style H fill:#2c3e50,color:#fff
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<p><strong>Order of Volatility</strong> (most to least volatile):</p>
+<ol>
+<li>CPU Cache and Registers (nanoseconds)</li>
+<li>Routing tables, ARP cache, process tables</li>
+<li><strong>RAM</strong> - encryption keys, passwords, active connections</li>
+<li>Temporary file systems / Swap space</li>
+<li><strong>Disk</strong> - persistent storage</li>
+<li>Remote logging and monitoring data</li>
+</ol>
+<h3 id="33-file-systems">3.3 File Systems<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#33-file-systems" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>File System</th><th>OS</th><th>Key Features</th></tr></thead><tbody><tr><td><strong>FAT/exFAT</strong></td><td>USB drives, SD cards</td><td>Simple, no journaling</td></tr><tr><td><strong>NTFS</strong></td><td>Windows</td><td>Master File Table (MFT), ACLs, journaling</td></tr><tr><td><strong>HFS+/APFS</strong></td><td>macOS/iOS</td><td>APFS optimized for flash, strong encryption</td></tr><tr><td><strong>EXT4</strong></td><td>Linux/Android</td><td>Journaling file system</td></tr></tbody></table></div>
+<p><strong>File Carving</strong>: Recovering deleted files from unallocated space by searching for file signatures.</p>
+<hr/>
+<h2 id="4-digital-forensic-investigation-process">4. Digital Forensic Investigation Process<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-digital-forensic-investigation-process" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="investigation-process-overview">Investigation Process Overview<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#investigation-process-overview" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph LR\n    A[\&quot;1\\. Identification&lt;br/>&amp; Seizure\&quot;] --> B[\&quot;2\\. Preservation&lt;br/>&amp; Chain of Custody\&quot;]\n    B --> C[\&quot;3\\. Acquisition&lt;br/>(Create Forensic Copy)\&quot;]\n    C --> D[\&quot;4\\. Analysis&lt;br/>(Examine Evidence)\&quot;]\n    D --> E[\&quot;5\\. Reporting&lt;br/>(Document Findings)\&quot;]\n    \n    style A fill:#e1f5ff\n    style B fill:#fff3cd\n    style C fill:#d4edda\n    style D fill:#f8d7da\n    style E fill:#d1ecf1&quot;">graph LR
+    A[&quot;1\. Identification&lt;br/>&amp; Seizure&quot;] --> B[&quot;2\. Preservation&lt;br/>&amp; Chain of Custody&quot;]
+    B --> C[&quot;3\. Acquisition&lt;br/>(Create Forensic Copy)&quot;]
+    C --> D[&quot;4\. Analysis&lt;br/>(Examine Evidence)&quot;]
+    D --> E[&quot;5\. Reporting&lt;br/>(Document Findings)&quot;]
+    
+    style A fill:#e1f5ff
+    style B fill:#fff3cd
+    style C fill:#d4edda
+    style D fill:#f8d7da
+    style E fill:#d1ecf1
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<h3 id="41-phase-1-identification-and-seizure">4.1 Phase 1: Identification and Seizure<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#41-phase-1-identification-and-seizure" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Evidence Sources</strong>:</p>
+<ul>
+<li>Mobile phones, tablets</li>
+<li>External drives, IoT devices</li>
+<li>Cloud accounts</li>
+<li>Network routers</li>
+</ul>
+<p><strong>Legal Authority</strong>:</p>
+<ul>
+<li><strong>Search Warrant</strong>: Judicial order with probable cause</li>
+<li><strong>Consent</strong>: Voluntary permission (can be withdrawn)</li>
+<li><strong>Subpoena</strong>: Demand for records from third parties</li>
+</ul>
+<h3 id="42-phase-2-preservation-and-chain-of-custody">4.2 Phase 2: Preservation and Chain of Custody<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#42-phase-2-preservation-and-chain-of-custody" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Chain of Custody</strong>: Chronological paper trail documenting:</p>
+<ul>
+<li>Who collected evidence</li>
+<li>When and where</li>
+<li>Every transfer with signatures</li>
+</ul>
+<blockquote class="callout warning" data-callout="warning">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>WARNING</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>A broken chain of custody can make evidence inadmissible in court.</p>
+</div>
+</blockquote>
+<p><strong>Mobile Device Protection</strong>:</p>
+<ul>
+<li><strong>Faraday Bags</strong>: Block cellular/Wi-Fi/Bluetooth to prevent remote wipe</li>
+<li>Follow <strong>Order of Volatility</strong> for collection</li>
+</ul>
+<h3 id="43-phase-3-acquisition">4.3 Phase 3: Acquisition<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#43-phase-3-acquisition" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Acquisition Type</th><th>Description</th><th>Pros</th><th>Cons</th></tr></thead><tbody><tr><td><strong>Physical (Bit-Stream)</strong></td><td>Complete copy including unallocated space</td><td>Most complete, captures deleted data</td><td>Time-consuming, difficult on encrypted devices</td></tr><tr><td><strong>Logical</strong></td><td>Copy of visible files only</td><td>Fast, easy to interpret</td><td>Misses deleted data and system artifacts</td></tr><tr><td><strong>File System</strong></td><td>Extract file structure and system files</td><td>More comprehensive than logical</td><td>May require root/jailbreak</td></tr><tr><td><strong>Live</strong></td><td>Capture from running system</td><td>Preserves volatile data (RAM)</td><td>Alters system state</td></tr></tbody></table></div>
+<p><strong>Write Blocking</strong>: Hardware/software device preventing write commands to source drive.</p>
+<p><strong>Cryptographic Hashing</strong>: Mathematical validation using MD5, SHA-1, or SHA-256 to prove bit-for-bit copy integrity.</p>
+<h3 id="44-phase-4-analysis">4.4 Phase 4: Analysis<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#44-phase-4-analysis" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Timeline Analysis</strong>: Chronological view of file activity</li>
+<li><strong>Keyword Searching</strong>: Search for specific terms, IP addresses</li>
+<li><strong>Link Analysis</strong>: Visualize connections between data points</li>
+</ul>
+<h3 id="45-phase-5-reporting">4.5 Phase 5: Reporting<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#45-phase-5-reporting" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Must be:</p>
+<ul>
+<li>Objective and factual</li>
+<li>Clear for non-technical audiences</li>
+<li>Document methodology and tools used</li>
+</ul>
+<hr/>
+<h2 id="5-mobile-device-forensics">5. Mobile Device Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-mobile-device-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="mobile-forensics-decision-tree">Mobile Forensics Decision Tree<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mobile-forensics-decision-tree" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph TD\n    A[\&quot;Mobile Device Seized\&quot;] --> B{\&quot;Device&lt;br/>Powered On?\&quot;}\n    \n    B -->|Yes| C[\&quot;Keep ON &amp; Charged&lt;br/>(Maintain AFU state)\&quot;]\n    B -->|No| D[\&quot;Keep OFF&lt;br/>(Prevent boot auth)\&quot;]\n    \n    C --> E[\&quot;Place in Faraday Bag&lt;br/>(Prevent remote wipe)\&quot;]\n    D --> E\n    \n    E --> F{\&quot;Device&lt;br/>Encrypted?\&quot;}\n    \n    F -->|No| G[\&quot;Physical Acquisition&lt;br/>(Bit-stream copy)\&quot;]\n    F -->|Yes| H{\&quot;Passcode&lt;br/>Known?\&quot;}\n    \n    H -->|Yes| I[\&quot;Logical/File System&lt;br/>Acquisition\&quot;]\n    H -->|No| J{\&quot;Exploit&lt;br/>Available?\&quot;}\n    \n    J -->|Yes| K[\&quot;Advanced Extraction&lt;br/>(checkm8, EDL mode)\&quot;]\n    J -->|No| L[\&quot;Hardware Methods&lt;br/>(JTAG/ISP/Chip-off)\&quot;]\n    \n    G --> M[\&quot;File Carving&lt;br/>Deleted Data Recovery\&quot;]\n    I --> N[\&quot;SQLite Database&lt;br/>Analysis\&quot;]\n    K --> N\n    L --> O[\&quot;Limited Success&lt;br/>(Encryption barrier)\&quot;]\n    \n    style A fill:#3498db,color:#fff\n    style C fill:#2ecc71,color:#fff\n    style D fill:#e74c3c,color:#fff\n    style E fill:#f39c12\n    style G fill:#9b59b6,color:#fff\n    style I fill:#1abc9c,color:#fff\n    style K fill:#e67e22,color:#fff\n    style L fill:#c0392b,color:#fff\n    style M fill:#16a085,color:#fff\n    style N fill:#27ae60,color:#fff\n    style O fill:#7f8c8d,color:#fff&quot;">graph TD
+    A[&quot;Mobile Device Seized&quot;] --> B{&quot;Device&lt;br/>Powered On?&quot;}
+    
+    B -->|Yes| C[&quot;Keep ON &amp; Charged&lt;br/>(Maintain AFU state)&quot;]
+    B -->|No| D[&quot;Keep OFF&lt;br/>(Prevent boot auth)&quot;]
+    
+    C --> E[&quot;Place in Faraday Bag&lt;br/>(Prevent remote wipe)&quot;]
+    D --> E
+    
+    E --> F{&quot;Device&lt;br/>Encrypted?&quot;}
+    
+    F -->|No| G[&quot;Physical Acquisition&lt;br/>(Bit-stream copy)&quot;]
+    F -->|Yes| H{&quot;Passcode&lt;br/>Known?&quot;}
+    
+    H -->|Yes| I[&quot;Logical/File System&lt;br/>Acquisition&quot;]
+    H -->|No| J{&quot;Exploit&lt;br/>Available?&quot;}
+    
+    J -->|Yes| K[&quot;Advanced Extraction&lt;br/>(checkm8, EDL mode)&quot;]
+    J -->|No| L[&quot;Hardware Methods&lt;br/>(JTAG/ISP/Chip-off)&quot;]
+    
+    G --> M[&quot;File Carving&lt;br/>Deleted Data Recovery&quot;]
+    I --> N[&quot;SQLite Database&lt;br/>Analysis&quot;]
+    K --> N
+    L --> O[&quot;Limited Success&lt;br/>(Encryption barrier)&quot;]
+    
+    style A fill:#3498db,color:#fff
+    style C fill:#2ecc71,color:#fff
+    style D fill:#e74c3c,color:#fff
+    style E fill:#f39c12
+    style G fill:#9b59b6,color:#fff
+    style I fill:#1abc9c,color:#fff
+    style K fill:#e67e22,color:#fff
+    style L fill:#c0392b,color:#fff
+    style M fill:#16a085,color:#fff
+    style N fill:#27ae60,color:#fff
+    style O fill:#7f8c8d,color:#fff
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<h3 id="51-android-forensics">5.1 Android Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#51-android-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Architecture</strong>:</p>
+<ul>
+<li>Built on Linux Kernel</li>
+<li>File Systems: ext4 or f2fs</li>
+<li>Data Storage: <code>/data/data/&lt;package_name></code> in SQLite databases</li>
+</ul>
+<p><strong>Security</strong>:</p>
+<ul>
+<li>App Sandboxing (each app has unique UID)</li>
+<li>Full-Disk Encryption (FDE) or File-Based Encryption (FBE)</li>
+<li>Verified Boot, SELinux</li>
+</ul>
+<p><strong>Challenges</strong>: Device fragmentation, requires rooting for physical access</p>
+<h3 id="52-ios-forensics">5.2 iOS Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#52-ios-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Architecture</strong>:</p>
+<ul>
+<li>Based on Darwin Kernel (Unix-like)</li>
+<li>File System: APFS (optimized for flash, encryption-first)</li>
+</ul>
+<p><strong>Security</strong>:</p>
+<ul>
+<li><strong>Secure Enclave</strong>: Hardware coprocessor for cryptographic operations</li>
+<li>Hardware encryption makes physical acquisition difficult</li>
+<li>Passcode attempts limited by hardware delays</li>
+</ul>
+<p><strong>Acquisition Methods</strong>:</p>
+<ul>
+<li>Logical extractions (iTunes backups)</li>
+<li>Exploits like checkm8 (A5-A11 chips vulnerability)</li>
+</ul>
+<h3 id="53-cellular-network-architecture">5.3 Cellular Network Architecture<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#53-cellular-network-architecture" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Key Components</strong>:</p>
+<ul>
+<li><strong>BTS</strong> (Base Transceiver Station): Cell tower</li>
+<li><strong>BSC</strong> (Base Station Controller): Manages multiple BTSs</li>
+<li><strong>MSC</strong> (Mobile Switching Center): Routes calls/messages</li>
+<li><strong>HLR</strong> (Home Location Register): Subscriber database</li>
+<li><strong>VLR</strong> (Visitor Location Register): Temporary roaming data</li>
+</ul>
+<p><strong>Forensic Value</strong>: Cell Site Analysis for location tracking</p>
+<h3 id="54-sim-card-forensics">5.4 SIM Card Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#54-sim-card-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>File System Hierarchy</strong>:</p>
+<ul>
+<li><strong>MF</strong> (Master File): Root directory (3F00)</li>
+<li><strong>DF</strong> (Dedicated Files): Sub-directories</li>
+<li><strong>EF</strong> (Elementary Files): Actual data</li>
+</ul>
+<p><strong>Key Elementary Files</strong>:</p>
+<ul>
+<li><strong>EF_SMS</strong> (6F3C): Text messages (deleted messages often recoverable)</li>
+<li><strong>EF_ADN</strong> (6F3A): Contacts</li>
+<li><strong>EF_LOCI</strong> (6F7E): Location information</li>
+<li><strong>EF_IMSI</strong> (6F07): Subscriber identity</li>
+</ul>
+<p><strong>Security</strong>: PIN protection, A3/A5/A8 algorithms</p>
+<h3 id="55-key-mobile-artifacts">5.5 Key Mobile Artifacts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#55-key-mobile-artifacts" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>SMS/MMS</strong>: <code>mmssms.db</code> (Android), <code>sms.db</code> (iOS)</li>
+<li><strong>Call Logs</strong>: Call history databases</li>
+<li><strong>Location</strong>: GPS logs, Wi-Fi history, cell tower triangulation</li>
+<li><strong>App Data</strong>: WhatsApp (<code>msgstore.db</code>), Facebook, Uber in SQLite databases</li>
+<li><strong>EXIF Data</strong>: Geotagged photos with location/time metadata</li>
+</ul>
+<hr/>
+<h2 id="6-tools-and-laboratories">6. Tools and Laboratories<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-tools-and-laboratories" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="61-commercial-tools">6.1 Commercial Tools<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#61-commercial-tools" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Tool</th><th>Capabilities</th><th>Target Audience</th></tr></thead><tbody><tr><td><strong>Cellebrite UFED</strong></td><td>Physical extraction, screen lock bypass</td><td>Law Enforcement</td></tr><tr><td><strong>Oxygen Forensic Detective</strong></td><td>Cloud extraction, social graph analysis</td><td>Enterprise</td></tr><tr><td><strong>Magnet AXIOM</strong></td><td>Artifact-first approach, internet history</td><td>Law Enforcement</td></tr><tr><td><strong>Paraben iRecovery Stick</strong></td><td>iOS logical recovery</td><td>Consumer/Private Investigator</td></tr></tbody></table></div>
+<h3 id="62-open-source-tools">6.2 Open Source Tools<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#62-open-source-tools" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Autopsy</strong>: Disk forensics platform with Android modules</li>
+<li><strong>ADB</strong> (Android Debug Bridge): Logical acquisition of Android devices</li>
+<li><strong>Wireshark</strong>: Network protocol analysis</li>
+<li><strong>Volatility</strong>: Memory (RAM) forensics framework</li>
+</ul>
+<h3 id="63-laboratory-standards">6.3 Laboratory Standards<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#63-laboratory-standards" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>ASCLD/LAB</strong>: Accreditation for forensic labs</li>
+<li><strong>NIST CFTT</strong>: Computer Forensic Tool Testing project</li>
+<li><strong>SOPs</strong>: Standard Operating Procedures for repeatability</li>
+</ul>
+<hr/>
+<h2 id="7-network-forensics-and-threat-intelligence">7. Network Forensics and Threat Intelligence<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#7-network-forensics-and-threat-intelligence" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="71-network-forensics-principles">7.1 Network Forensics Principles<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#71-network-forensics-principles" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Evidence Sources</strong>:</p>
+<ul>
+<li><strong>Packet Captures (PCAP)</strong>: Full recording of network traffic (Wireshark)</li>
+<li><strong>Flow Data (NetFlow)</strong>: Summary metadata (who, what, when, how much)</li>
+<li><strong>Logs</strong>: Firewall, IDS/IPS, Web Proxy logs</li>
+</ul>
+<h3 id="72-integration-with-threat-intelligence">7.2 Integration with Threat Intelligence<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#72-integration-with-threat-intelligence" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Indicators of Compromise (IOCs)</strong>:</p>
+<ul>
+<li>Known malicious IPs, file hashes, email subject lines</li>
+<li>Used to search evidence for known threat actors</li>
+</ul>
+<p><strong>MITRE ATT&amp;CK Framework</strong>: Map forensic artifacts to known adversary tactics</p>
+<p><strong>Example</strong>: Lazarus Group uses fake job offers (Operation Dream Job) - search for LinkedIn phishing emails</p>
+<hr/>
+<h2 id="8-legal-challenges-and-future-directions">8. Legal Challenges and Future Directions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#8-legal-challenges-and-future-directions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="81-going-dark---encryption-challenge">8.1 “Going Dark” - Encryption Challenge<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#81-going-dark---encryption-challenge" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Modern devices encrypt by default (iOS, Android, BitLocker, FileVault)</li>
+<li>Without user password, physical acquisition yields encrypted noise</li>
+<li>Forces reliance on:
+<ul>
+<li>Live acquisition (while user logged in)</li>
+<li>Cloud backups</li>
+<li>Exploits</li>
+</ul>
+</li>
+</ul>
+<h3 id="82-cloud-forensics">8.2 Cloud Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#82-cloud-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Challenges</strong>:</p>
+<ul>
+<li><strong>Jurisdiction</strong>: Data in different countries</li>
+<li><strong>Collection</strong>: Cannot seize physical servers, must use APIs</li>
+<li>Requires tools to authenticate and extract cloud data forensically</li>
+</ul>
+<h3 id="83-anti-forensics">8.3 Anti-Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#83-anti-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Suspect Techniques</strong>:</p>
+<ul>
+<li><strong>Data Wiping</strong>: Multiple overwrites to prevent recovery</li>
+<li><strong>Steganography</strong>: Hiding data within other files</li>
+<li><strong>Obfuscation</strong>: Packers to prevent malware analysis</li>
+</ul>
+<p><strong>Counter-measures</strong>: Dynamic analysis in sandboxes</p>
+<hr/>
+<h2 id="recommendations-for-exam-preparation">Recommendations for Exam Preparation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#recommendations-for-exam-preparation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>Memorize</strong> the 5-phase forensic process</li>
+<li><strong>Understand</strong> why hashing works and file system structures</li>
+<li><strong>Distinguish</strong> Android vs. iOS security models and acquisition challenges</li>
+<li><strong>Stay current</strong> with threat intelligence (ransomware trends)</li>
+<li><strong>Practice</strong> with both open-source (Autopsy, Wireshark) and commercial tool concepts</li>
+</ol>
+<hr/>
+<h2 id="key-takeaways">Key Takeaways<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#key-takeaways" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>IMPORTANT</p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li>Digital forensics requires legal defensibility - every action must be documented</li>
+<li>Chain of Custody is paramount - any break renders evidence inadmissible</li>
+<li>Mobile forensics is distinct from computer forensics due to encryption and device diversity</li>
+<li>Network forensics captures data in motion; disk forensics captures data at rest</li>
+<li>The future involves cloud forensics, AI analysis, and countering default encryption</li>
+</ul>
+</div>
+</blockquote>
+<hr/>
+<p><em>Study Guide compiled from Digital Forensics Exam Study Guide - CDS-351</em></p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-21" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#digital-forensics---comprehensive-exam-study-guide" data-for="digital-forensics---comprehensive-exam-study-guide">Digital Forensics - Comprehensive Exam Study Guide</a></li><li class="depth-1"><a href="#table-of-contents" data-for="table-of-contents">Table of Contents</a></li><li class="depth-1"><a href="#1-introduction-to-digital-forensics" data-for="1-introduction-to-digital-forensics">1. Introduction to Digital Forensics</a></li><li class="depth-2"><a href="#11-defining-the-discipline" data-for="11-defining-the-discipline">1.1 Defining the Discipline</a></li><li class="depth-2"><a href="#12-core-objectives-of-forensic-investigation" data-for="12-core-objectives-of-forensic-investigation">1.2 Core Objectives of Forensic Investigation</a></li><li class="depth-2"><a href="#13-evolution-of-forensic-science" data-for="13-evolution-of-forensic-science">1.3 Evolution of Forensic Science</a></li><li class="depth-1"><a href="#2-the-cybercrime-landscape" data-for="2-the-cybercrime-landscape">2. The Cybercrime Landscape</a></li><li class="depth-2"><a href="#21-computers-role-in-crime" data-for="21-computers-role-in-crime">2.1 Computer’s Role in Crime</a></li><li class="depth-2"><a href="#22-advanced-threat-actors" data-for="22-advanced-threat-actors">2.2 Advanced Threat Actors</a></li><li class="depth-1"><a href="#3-essential-technical-concepts" data-for="3-essential-technical-concepts">3. Essential Technical Concepts</a></li><li class="depth-2"><a href="#31-data-representation" data-for="31-data-representation">3.1 Data Representation</a></li><li class="depth-2"><a href="#32-storage-hierarchies-and-volatility" data-for="32-storage-hierarchies-and-volatility">3.2 Storage Hierarchies and Volatility</a></li><li class="depth-2"><a href="#33-file-systems" data-for="33-file-systems">3.3 File Systems</a></li><li class="depth-1"><a href="#4-digital-forensic-investigation-process" data-for="4-digital-forensic-investigation-process">4. Digital Forensic Investigation Process</a></li><li class="depth-2"><a href="#investigation-process-overview" data-for="investigation-process-overview">Investigation Process Overview</a></li><li class="depth-2"><a href="#41-phase-1-identification-and-seizure" data-for="41-phase-1-identification-and-seizure">4.1 Phase 1: Identification and Seizure</a></li><li class="depth-2"><a href="#42-phase-2-preservation-and-chain-of-custody" data-for="42-phase-2-preservation-and-chain-of-custody">4.2 Phase 2: Preservation and Chain of Custody</a></li><li class="depth-2"><a href="#43-phase-3-acquisition" data-for="43-phase-3-acquisition">4.3 Phase 3: Acquisition</a></li><li class="depth-2"><a href="#44-phase-4-analysis" data-for="44-phase-4-analysis">4.4 Phase 4: Analysis</a></li><li class="depth-2"><a href="#45-phase-5-reporting" data-for="45-phase-5-reporting">4.5 Phase 5: Reporting</a></li><li class="depth-1"><a href="#5-mobile-device-forensics" data-for="5-mobile-device-forensics">5. Mobile Device Forensics</a></li><li class="depth-2"><a href="#mobile-forensics-decision-tree" data-for="mobile-forensics-decision-tree">Mobile Forensics Decision Tree</a></li><li class="depth-2"><a href="#51-android-forensics" data-for="51-android-forensics">5.1 Android Forensics</a></li><li class="depth-2"><a href="#52-ios-forensics" data-for="52-ios-forensics">5.2 iOS Forensics</a></li><li class="depth-2"><a href="#53-cellular-network-architecture" data-for="53-cellular-network-architecture">5.3 Cellular Network Architecture</a></li><li class="depth-2"><a href="#54-sim-card-forensics" data-for="54-sim-card-forensics">5.4 SIM Card Forensics</a></li><li class="depth-2"><a href="#55-key-mobile-artifacts" data-for="55-key-mobile-artifacts">5.5 Key Mobile Artifacts</a></li><li class="depth-1"><a href="#6-tools-and-laboratories" data-for="6-tools-and-laboratories">6. Tools and Laboratories</a></li><li class="depth-2"><a href="#61-commercial-tools" data-for="61-commercial-tools">6.1 Commercial Tools</a></li><li class="depth-2"><a href="#62-open-source-tools" data-for="62-open-source-tools">6.2 Open Source Tools</a></li><li class="depth-2"><a href="#63-laboratory-standards" data-for="63-laboratory-standards">6.3 Laboratory Standards</a></li><li class="depth-1"><a href="#7-network-forensics-and-threat-intelligence" data-for="7-network-forensics-and-threat-intelligence">7. Network Forensics and Threat Intelligence</a></li><li class="depth-2"><a href="#71-network-forensics-principles" data-for="71-network-forensics-principles">7.1 Network Forensics Principles</a></li><li class="depth-2"><a href="#72-integration-with-threat-intelligence" data-for="72-integration-with-threat-intelligence">7.2 Integration with Threat Intelligence</a></li><li class="depth-1"><a href="#8-legal-challenges-and-future-directions" data-for="8-legal-challenges-and-future-directions">8. Legal Challenges and Future Directions</a></li><li class="depth-2"><a href="#81-going-dark---encryption-challenge" data-for="81-going-dark---encryption-challenge">8.1 “Going Dark” - Encryption Challenge</a></li><li class="depth-2"><a href="#82-cloud-forensics" data-for="82-cloud-forensics">8.2 Cloud Forensics</a></li><li class="depth-2"><a href="#83-anti-forensics" data-for="83-anti-forensics">8.3 Anti-Forensics</a></li><li class="depth-1"><a href="#recommendations-for-exam-preparation" data-for="recommendations-for-exam-preparation">Recommendations for Exam Preparation</a></li><li class="depth-1"><a href="#key-takeaways" data-for="key-takeaways">Key Takeaways</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../../../postscript.js" type="module" data-persist="true"></script></html>

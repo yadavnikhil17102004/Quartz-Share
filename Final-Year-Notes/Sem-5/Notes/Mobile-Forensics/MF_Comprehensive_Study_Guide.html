@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>MF_Comprehensive_Study_Guide</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 4"/><meta property="og:title" content="MF_Comprehensive_Study_Guide"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="MF_Comprehensive_Study_Guide"/><meta name="twitter:description" content="Mobile Forensics - Advanced Comprehensive Study Guide NOTE Complete reference covering mobile forensics architectures, methodologies, and future horizons for advanced examination preparation."/><meta property="og:description" content="Mobile Forensics - Advanced Comprehensive Study Guide NOTE Complete reference covering mobile forensics architectures, methodologies, and future horizons for advanced examination preparation."/><meta property="og:image:alt" content="Mobile Forensics - Advanced Comprehensive Study Guide NOTE Complete reference covering mobile forensics architectures, methodologies, and future horizons for advanced examination preparation."/><meta property="twitter:domain" content="yadavnikhil17102004.github.io/Quartz-Share"/><meta property="og:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Mobile-Forensics/MF_Comprehensive_Study_Guide"/><meta property="twitter:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Mobile-Forensics/MF_Comprehensive_Study_Guide"/><link rel="icon" href="../../../../static/icon.png"/><meta name="description" content="Mobile Forensics - Advanced Comprehensive Study Guide NOTE Complete reference covering mobile forensics architectures, methodologies, and future horizons for advanced examination preparation."/><meta name="generator" content="Quartz"/><link href="../../../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL1VzZXJzL25pa2hpbHlhZGF2L0Rlc2t0b3AvUXVhcnR6LUJ1aWxkZXIvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://yadavnikhil17102004.github.io/Quartz-Share/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Mobile-Forensics/MF_Comprehensive_Study_Guide-og-image.webp"/><meta property="og:image:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Mobile-Forensics/MF_Comprehensive_Study_Guide-og-image.webp"/><meta name="twitter:image" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Mobile-Forensics/MF_Comprehensive_Study_Guide-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Final-Year-Notes/Sem-5/Notes/Mobile-Forensics/MF_Comprehensive_Study_Guide"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../../..">Quartz 4</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-214"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-214" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/">Final Year Notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-5/">Sem 5</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-5/Notes/">Notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-5/Notes/Mobile-Forensics/">Mobile Forensics</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>MF_Comprehensive_Study_Guide</a></div></nav><h1 class="article-title">MF_Comprehensive_Study_Guide</h1><p show-comma="true" class="content-meta"><time datetime="2026-04-12T15:03:49.511Z">Apr 12, 2026</time><span>12 min read</span></p></div></div><article class="popover-hint"><h1 id="mobile-forensics---advanced-comprehensive-study-guide">Mobile Forensics - Advanced Comprehensive Study Guide<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mobile-forensics---advanced-comprehensive-study-guide" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>NOTE</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Complete reference covering mobile forensics architectures, methodologies, and future horizons for advanced examination preparation.</p>
+</div>
+</blockquote>
+<h2 id="table-of-contents">Table of Contents<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#table-of-contents" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><a href="#1-evolution-framework" class="internal alias">Evolution and Theoretical Framework</a></li>
+<li><a href="#2-cellular-infrastructure" class="internal alias">Cellular Network Infrastructure</a></li>
+<li><a href="#3-hardware-architecture" class="internal alias">Mobile Device Hardware Architecture</a></li>
+</ol>
+<h2 id="4-mobile-operating-systems-architecture-and-forensic-implications">4. Mobile Operating Systems: Architecture and Forensic Implications<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-mobile-operating-systems-architecture-and-forensic-implications" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="platform-comparison-overview">Platform Comparison Overview<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#platform-comparison-overview" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph TB\n    subgraph \&quot;Android Ecosystem\&quot;\n        A1[\&quot;🐧 Linux Kernel\&quot;] --> A2[\&quot;HAL\&quot;]\n        A2 --> A3[\&quot;Android Runtime (ART)\&quot;]\n        A3 --> A4[\&quot;Application Framework\&quot;]\n        A4 --> A5[\&quot;System Apps\&quot;]\n        \n        A_SEC[\&quot;Security:&lt;br/>- App Sandboxing (UID)&lt;br/>- FDE/FBE&lt;br/>- SELinux&lt;br/>- ext4/F2FS\&quot;]\n        A_CHAL[\&quot;Challenges:&lt;br/>- Device fragmentation&lt;br/>- Requires rooting&lt;br/>- GC destroys data\&quot;]\n    end\n    \n    subgraph \&quot;iOS Ecosystem\&quot;\n        I1[\&quot;🍎 Darwin Kernel (XNU)\&quot;] --> I2[\&quot;Core Services\&quot;]\n        I2 --> I3[\&quot;Media Layer\&quot;]\n        I3 --> I4[\&quot;Cocoa Touch\&quot;]\n        \n        I_SEC[\&quot;Security:&lt;br/>- Secure Enclave&lt;br/>- Hardware encryption&lt;br/>- APFS (CoW)&lt;br/>- BFU/AFU states\&quot;]\n        I_CHAL[\&quot;Challenges:&lt;br/>- Secure Enclave barrier&lt;br/>- Physical acquisition difficult&lt;br/>- Passcode hardware delays\&quot;]\n    end\n    \n    FORENSIC[\&quot;Forensic Impact:&lt;br/>Android: More accessible but fragmented&lt;br/>iOS: Unified but highly secure\&quot;]\n    \n    style A1 fill:#3ddc84,color:#000\n    style I1 fill:#555,color:#fff\n    style A_SEC fill:#2ecc71,color:#fff\n    style I_SEC fill:#3498db,color:#fff\n    style A_CHAL fill:#e74c3c,color:#fff\n    style I_CHAL fill:#e74c3c,color:#fff\n    style FORENSIC fill:#f39c12&quot;">graph TB
+    subgraph &quot;Android Ecosystem&quot;
+        A1[&quot;🐧 Linux Kernel&quot;] --> A2[&quot;HAL&quot;]
+        A2 --> A3[&quot;Android Runtime (ART)&quot;]
+        A3 --> A4[&quot;Application Framework&quot;]
+        A4 --> A5[&quot;System Apps&quot;]
+        
+        A_SEC[&quot;Security:&lt;br/>- App Sandboxing (UID)&lt;br/>- FDE/FBE&lt;br/>- SELinux&lt;br/>- ext4/F2FS&quot;]
+        A_CHAL[&quot;Challenges:&lt;br/>- Device fragmentation&lt;br/>- Requires rooting&lt;br/>- GC destroys data&quot;]
+    end
+    
+    subgraph &quot;iOS Ecosystem&quot;
+        I1[&quot;🍎 Darwin Kernel (XNU)&quot;] --> I2[&quot;Core Services&quot;]
+        I2 --> I3[&quot;Media Layer&quot;]
+        I3 --> I4[&quot;Cocoa Touch&quot;]
+        
+        I_SEC[&quot;Security:&lt;br/>- Secure Enclave&lt;br/>- Hardware encryption&lt;br/>- APFS (CoW)&lt;br/>- BFU/AFU states&quot;]
+        I_CHAL[&quot;Challenges:&lt;br/>- Secure Enclave barrier&lt;br/>- Physical acquisition difficult&lt;br/>- Passcode hardware delays&quot;]
+    end
+    
+    FORENSIC[&quot;Forensic Impact:&lt;br/>Android: More accessible but fragmented&lt;br/>iOS: Unified but highly secure&quot;]
+    
+    style A1 fill:#3ddc84,color:#000
+    style I1 fill:#555,color:#fff
+    style A_SEC fill:#2ecc71,color:#fff
+    style I_SEC fill:#3498db,color:#fff
+    style A_CHAL fill:#e74c3c,color:#fff
+    style I_CHAL fill:#e74c3c,color:#fff
+    style FORENSIC fill:#f39c12
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<p>The forensic methodology applied to a device is fundamentally dictated by its operating system. The mobile landscape is a duopoly of Android and iOS, each presenting distinct architectural challenges.
+5. <a href="#5-forensics-process" class="internal alias">Mobile Forensics Process</a>
+6. <a href="#6-tools-technologies" class="internal alias">Forensic Tools and Technologies</a>
+7. <a href="#7-future-directions" class="internal alias">Future Directions and Emerging Trends</a></p>
+<hr/>
+<h2 id="1-evolution-and-theoretical-framework">1. Evolution and Theoretical Framework<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-evolution-and-theoretical-framework" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="11-defining-the-discipline">1.1 Defining the Discipline<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#11-defining-the-discipline" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Mobile Forensics</strong>: The rigorous process of recovering digital evidence from a mobile device under forensically sound conditions, ensuring:</p>
+<ul>
+<li>Preservation</li>
+<li>Identification</li>
+<li>Extraction</li>
+<li>Documentation</li>
+<li>Interpretation of digital data</li>
+</ul>
+<p><strong>Scope</strong>:</p>
+<ul>
+<li>Internal device memory</li>
+<li>SIM/USIM cards</li>
+<li>External memory cards (SD/MMC)</li>
+<li>Cloud-based backups</li>
+</ul>
+<h3 id="12-unique-challenges">1.2 Unique Challenges<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#12-unique-challenges" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Challenge</th><th>Impact</th></tr></thead><tbody><tr><td><strong>Hardware/OS Fragmentation</strong></td><td>Thousands of device models, customized Android versions</td></tr><tr><td><strong>Data Volatility</strong></td><td>Always-on, always-connected, continuous background processes</td></tr><tr><td><strong>Security &amp; Encryption</strong></td><td>Secure Enclave (iOS), TEE (Android), hardware-backed encryption</td></tr><tr><td><strong>Flash Memory</strong></td><td>Garbage Collection actively destroys deleted data</td></tr></tbody></table></div>
+<blockquote class="callout warning" data-callout="warning">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>WARNING</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Traditional “chip-off” extraction is ineffective on modern encrypted devices (Android 6.0+, iPhone 4S+) because keys remain in CPU/Secure Enclave.</p>
+</div>
+</blockquote>
+<hr/>
+<h2 id="2-cellular-network-infrastructure">2. Cellular Network Infrastructure<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-cellular-network-infrastructure" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="21-generational-evolution">2.1 Generational Evolution<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#21-generational-evolution" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Generation</th><th>Technology</th><th>Key Features</th><th>Forensic Relevance</th></tr></thead><tbody><tr><td><strong>1G</strong></td><td>Analog (AMPS, NMT)</td><td>Basic voice, FDMA</td><td>Minimal - no encryption, no data storage</td></tr><tr><td><strong>2G</strong></td><td>Digital (GSM, CDMA)</td><td>SIM cards, SMS, A5/1 encryption</td><td>High - Established IMSI, SMS/call logs</td></tr><tr><td><strong>2.5G/2.75G</strong></td><td>Packet (GPRS, EDGE)</td><td>Rudimentary internet, always-on</td><td>Moderate - Email, basic web artifacts</td></tr><tr><td><strong>3G</strong></td><td>Broadband (UMTS, HSPA)</td><td>Video calling, 2Mbps+</td><td>Significant - Smartphones, apps, multimedia</td></tr><tr><td><strong>4G (LTE)</strong></td><td>All-IP Network</td><td>HD streaming, VolTE, cloud sync</td><td>Critical - Cloud storage, voice as data</td></tr><tr><td><strong>5G</strong></td><td>Hyper-Connectivity</td><td>MM-wave, IoT, Gigabit</td><td>Emerging - Edge cloud, IoT/vehicle telemetry</td></tr></tbody></table></div>
+<h4 id="1g-to-2g-the-digital-transformation">1G to 2G: The Digital Transformation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1g-to-2g-the-digital-transformation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>1G</strong>: Analog, FDMA, insecure</li>
+<li><strong>2G (GSM)</strong>: Digital signaling, TDMA, introduced <strong>SIM</strong> (decoupled identity from hardware)</li>
+<li>Created two forensic targets: SIM card (subscriber data) + Handset (hardware data)</li>
+</ul>
+<h4 id="3g-to-4g-smartphone-era">3G to 4G: Smartphone Era<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3g-to-4g-smartphone-era" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>4G: Entirely packet-switched (IP-based)</li>
+<li>Voice calls = data (VoLTE)</li>
+<li>High bandwidth → apps, social media, cloud sync</li>
+<li>Exponential increase in evidence volume/variety</li>
+</ul>
+<h3 id="22-gsm-network-architecture-and-forensic-artifacts">2.2 GSM Network Architecture and Forensic Artifacts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#22-gsm-network-architecture-and-forensic-artifacts" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph TB\n    subgraph \&quot;Network Switching Subsystem (NSS)\&quot;\n        MSC[\&quot;MSC&lt;br/>(Mobile Switching Center)&lt;br/>Routes calls, SMS&lt;br/>Generates CDRs\&quot;]\n        HLR[\&quot;HLR&lt;br/>(Home Location Register)&lt;br/>Master subscriber DB&lt;br/>IMSI, Service Profile\&quot;]\n        VLR[\&quot;VLR&lt;br/>(Visitor Location Register)&lt;br/>Temporary roaming DB&lt;br/>Proves geographic presence\&quot;]\n        AuC[\&quot;AuC&lt;br/>(Authentication Center)&lt;br/>Stores secret key Ki&lt;br/>Generates security triplets\&quot;]\n        EIR[\&quot;EIR&lt;br/>(Equipment Identity Register)&lt;br/>Tracks IMEI&lt;br/>White/Gray/Black list\&quot;]\n    end\n    \n    subgraph \&quot;Base Station Subsystem (BSS)\&quot;\n        BTS[\&quot;BTS&lt;br/>(Base Transceiver Station)&lt;br/>Physical tower&lt;br/>Defines cell\&quot;]\n        BSC[\&quot;BSC&lt;br/>(Base Station Controller)&lt;br/>Manages radio resources&lt;br/>Multiple BTSs\&quot;]\n    end\n    \n    subgraph \&quot;Mobile Station\&quot;\n        MS[\&quot;📱 Mobile Device&lt;br/>+ SIM Card\&quot;]\n    end\n    \n    MS &lt;-->|\&quot;Radio Interface\&quot;| BTS\n    BTS &lt;--> BSC\n    BSC &lt;--> MSC\n    MSC &lt;--> HLR\n    MSC &lt;--> VLR\n    MSC &lt;--> AuC\n    MSC &lt;--> EIR\n    \n    FORENSIC[\&quot;🔍 Forensic Evidence:&lt;br/>- CDRs from MSC&lt;br/>- Cell Site Analysis from BTS/BSC&lt;br/>- Location data from HLR/VLR&lt;br/>- Device validation from EIR\&quot;]\n    \n    style MSC fill:#3498db,color:#fff\n    style HLR fill:#e74c3c,color:#fff\n    style VLR fill:#f39c12\n    style AuC fill:#9b59b6,color:#fff\n    style EIR fill:#1abc9c,color:#fff\n    style BTS fill:#2ecc71,color:#fff\n    style BSC fill:#27ae60,color:#fff\n    style MS fill:#34495e,color:#fff\n    style FORENSIC fill:#e67e22,color:#fff&quot;">graph TB
+    subgraph &quot;Network Switching Subsystem (NSS)&quot;
+        MSC[&quot;MSC&lt;br/>(Mobile Switching Center)&lt;br/>Routes calls, SMS&lt;br/>Generates CDRs&quot;]
+        HLR[&quot;HLR&lt;br/>(Home Location Register)&lt;br/>Master subscriber DB&lt;br/>IMSI, Service Profile&quot;]
+        VLR[&quot;VLR&lt;br/>(Visitor Location Register)&lt;br/>Temporary roaming DB&lt;br/>Proves geographic presence&quot;]
+        AuC[&quot;AuC&lt;br/>(Authentication Center)&lt;br/>Stores secret key Ki&lt;br/>Generates security triplets&quot;]
+        EIR[&quot;EIR&lt;br/>(Equipment Identity Register)&lt;br/>Tracks IMEI&lt;br/>White/Gray/Black list&quot;]
+    end
+    
+    subgraph &quot;Base Station Subsystem (BSS)&quot;
+        BTS[&quot;BTS&lt;br/>(Base Transceiver Station)&lt;br/>Physical tower&lt;br/>Defines cell&quot;]
+        BSC[&quot;BSC&lt;br/>(Base Station Controller)&lt;br/>Manages radio resources&lt;br/>Multiple BTSs&quot;]
+    end
+    
+    subgraph &quot;Mobile Station&quot;
+        MS[&quot;📱 Mobile Device&lt;br/>+ SIM Card&quot;]
+    end
+    
+    MS &lt;-->|&quot;Radio Interface&quot;| BTS
+    BTS &lt;--> BSC
+    BSC &lt;--> MSC
+    MSC &lt;--> HLR
+    MSC &lt;--> VLR
+    MSC &lt;--> AuC
+    MSC &lt;--> EIR
+    
+    FORENSIC[&quot;🔍 Forensic Evidence:&lt;br/>- CDRs from MSC&lt;br/>- Cell Site Analysis from BTS/BSC&lt;br/>- Location data from HLR/VLR&lt;br/>- Device validation from EIR&quot;]
+    
+    style MSC fill:#3498db,color:#fff
+    style HLR fill:#e74c3c,color:#fff
+    style VLR fill:#f39c12
+    style AuC fill:#9b59b6,color:#fff
+    style EIR fill:#1abc9c,color:#fff
+    style BTS fill:#2ecc71,color:#fff
+    style BSC fill:#27ae60,color:#fff
+    style MS fill:#34495e,color:#fff
+    style FORENSIC fill:#e67e22,color:#fff
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<p>The GSM network architecture remains the reference model for understanding cellular communications. It is composed of three primary subsystems, each generating specific data points valuable to investigators.</p>
+<h4 id="gsm-security-algorithms">GSM Security Algorithms<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#gsm-security-algorithms" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;sequenceDiagram\n    participant Network\n    participant SIM\n    participant Device\n    \n    Note over Network,Device: Authentication Process\n    \n    Network->>SIM: RAND (128-bit random)\n    \n    Note over SIM: A3 Algorithm\n    SIM->>SIM: A3(RAND, Ki) → SRES\n    \n    Note over SIM: A8 Algorithm\n    SIM->>SIM: A8(RAND, Ki) → Kc\n    \n    SIM->>Network: SRES (32-bit response)\n    \n    Note over Network: Validates SRES match\n    \n    Network->>Device: Authentication Success\n    \n    Note over Device: A5 Algorithm (in hardware)\n    Device->>Device: Use Kc to encrypt&lt;br/>air interface traffic\n    \n    Note over Network,Device: 🔒 Secure Communication&quot;">sequenceDiagram
+    participant Network
+    participant SIM
+    participant Device
+    
+    Note over Network,Device: Authentication Process
+    
+    Network->>SIM: RAND (128-bit random)
+    
+    Note over SIM: A3 Algorithm
+    SIM->>SIM: A3(RAND, Ki) → SRES
+    
+    Note over SIM: A8 Algorithm
+    SIM->>SIM: A8(RAND, Ki) → Kc
+    
+    SIM->>Network: SRES (32-bit response)
+    
+    Note over Network: Validates SRES match
+    
+    Network->>Device: Authentication Success
+    
+    Note over Device: A5 Algorithm (in hardware)
+    Device->>Device: Use Kc to encrypt&lt;br/>air interface traffic
+    
+    Note over Network,Device: 🔒 Secure Communication
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<p>The security of the GSM network relies on a triplet of algorithms stored on the SIM and in the network’s Authentication Center (AuC). These algorithms ensure that the sensitive Authentication Key (<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>) never leaves the SIM card.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Component</th><th>Function</th><th>Forensic Value</th></tr></thead><tbody><tr><td><strong>MSC</strong> (Mobile Switching Center)</td><td>Routes calls, SMS, signaling</td><td>Generates Call Detail Records (CDRs)</td></tr><tr><td><strong>HLR</strong> (Home Location Register)</td><td>Master subscriber database</td><td>Stores IMSI, service profile, current location</td></tr><tr><td><strong>VLR</strong> (Visitor Location Register)</td><td>Temporary roaming database</td><td>Proves presence in geographic region</td></tr><tr><td><strong>AuC</strong> (Authentication Center)</td><td>Stores secret key (Ki)</td><td>Generates security triplets (RAND, SRES, Kc)</td></tr><tr><td><strong>EIR</strong> (Equipment Identity Register)</td><td>Tracks devices via IMEI</td><td>White (valid), Gray (monitored), Black (stolen)</td></tr></tbody></table></div>
+<h4 id="base-station-subsystem-bss">Base Station Subsystem (BSS)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#base-station-subsystem-bss" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>BTS</strong> (Base Transceiver Station): Physical tower defining the cell</li>
+<li><strong>BSC</strong> (Base Station Controller): Manages radio resources for multiple BTSs</li>
+</ul>
+<p><strong>Forensic Application</strong>: <strong>Cell Site Analysis</strong> - triangulate device location using BTS/sector data</p>
+<hr/>
+<h2 id="3-mobile-device-hardware-architecture">3. Mobile Device Hardware Architecture<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-mobile-device-hardware-architecture" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="31-system-on-chip-soc">3.1 System on Chip (SoC)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#31-system-on-chip-soc" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Integration</strong>: CPU, GPU, Baseband Processor (modem), Secure Element on single silicon die</p>
+<p><strong>Examples</strong>: Qualcomm Snapdragon, Apple A-Series, Samsung Exynos</p>
+<p><strong>Baseband Processor</strong>:</p>
+<ul>
+<li>Manages all radio functions (GSM/LTE/5G)</li>
+<li>Runs separate RTOS distinct from main OS</li>
+<li>Communicates with Application Processor via AT commands</li>
+</ul>
+<p><strong>BootROM Exploits</strong>:</p>
+<ul>
+<li>First code executed on power-up</li>
+<li>Hardware-level vulnerabilities (e.g., <strong>checkm8</strong> on Apple A5-A11) are <strong>unpatchable</strong></li>
+<li>Allow forensic bypass of boot chains for physical image acquisition</li>
+</ul>
+<h3 id="32-flash-memory-challenges">3.2 Flash Memory Challenges<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#32-flash-memory-challenges" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>NAND Flash</strong> (eMMC or UFS):</p>
+<p><strong>Wear Leveling</strong>:</p>
+<ul>
+<li>Distributes writes evenly to prolong lifespan</li>
+<li>Logical address ≠ fixed physical address</li>
+</ul>
+<p><strong>Garbage Collection (GC) &amp; TRIM</strong>:</p>
+<ul>
+<li>File deletion → OS marks as invalid</li>
+<li>Flash controller <strong>actively erases</strong> invalid blocks during idle</li>
+<li>TRIM command accelerates sanitization</li>
+<li><strong>Impact</strong>: Deleted data can be destroyed within <strong>minutes</strong></li>
+</ul>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>IMPORTANT</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Speed is paramount in mobile acquisition - background GC process permanently destroys recoverable data.</p>
+</div>
+</blockquote>
+<h3 id="33-subscriber-identity-module-sim-forensics">3.3 Subscriber Identity Module (SIM) Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#33-subscriber-identity-module-sim-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>SIM Structure</strong> (ISO 7816-4):</p>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph TD\n    A[\&quot;MF (Master File)&lt;br/>3F00&lt;br/>Root Directory\&quot;] --> B[\&quot;DF_GSM&lt;br/>7F20&lt;br/>Network Data\&quot;]\n    A --> C[\&quot;DF_TELECOM&lt;br/>7F10&lt;br/>Service Data\&quot;]\n    \n    B --> D[\&quot;EF_IMSI&lt;br/>6F07&lt;br/>Subscriber Identity\&quot;]\n    B --> E[\&quot;EF_LOCI&lt;br/>6F7E&lt;br/>Location Info&lt;br/>(Last network area)\&quot;]\n    \n    C --> F[\&quot;EF_SMS&lt;br/>6F3C&lt;br/>Text Messages&lt;br/>(Deleted recoverable!)\&quot;]\n    C --> G[\&quot;EF_ADN&lt;br/>6F3A&lt;br/>Contacts/Phonebook\&quot;]\n    C --> H[\&quot;EF_ICCID&lt;br/>2FE2&lt;br/>SIM Serial Number\&quot;]\n    \n    style A fill:#3498db,color:#fff\n    style B fill:#e74c3c,color:#fff\n    style C fill:#2ecc71,color:#fff\n    style D fill:#f39c12\n    style E fill:#9b59b6,color:#fff\n    style F fill:#e67e22,color:#fff\n    style G fill:#1abc9c,color:#fff\n    style H fill:#95a5a6&quot;">graph TD
+    A[&quot;MF (Master File)&lt;br/>3F00&lt;br/>Root Directory&quot;] --> B[&quot;DF_GSM&lt;br/>7F20&lt;br/>Network Data&quot;]
+    A --> C[&quot;DF_TELECOM&lt;br/>7F10&lt;br/>Service Data&quot;]
+    
+    B --> D[&quot;EF_IMSI&lt;br/>6F07&lt;br/>Subscriber Identity&quot;]
+    B --> E[&quot;EF_LOCI&lt;br/>6F7E&lt;br/>Location Info&lt;br/>(Last network area)&quot;]
+    
+    C --> F[&quot;EF_SMS&lt;br/>6F3C&lt;br/>Text Messages&lt;br/>(Deleted recoverable!)&quot;]
+    C --> G[&quot;EF_ADN&lt;br/>6F3A&lt;br/>Contacts/Phonebook&quot;]
+    C --> H[&quot;EF_ICCID&lt;br/>2FE2&lt;br/>SIM Serial Number&quot;]
+    
+    style A fill:#3498db,color:#fff
+    style B fill:#e74c3c,color:#fff
+    style C fill:#2ecc71,color:#fff
+    style D fill:#f39c12
+    style E fill:#9b59b6,color:#fff
+    style F fill:#e67e22,color:#fff
+    style G fill:#1abc9c,color:#fff
+    style H fill:#95a5a6
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>File Type</th><th>Description</th><th>Identifier</th><th>Function</th></tr></thead><tbody><tr><td><strong>MF</strong> (Master File)</td><td>Root directory</td><td>3F00</td><td>Contains all DFs and EFs</td></tr><tr><td><strong>DF</strong> (Dedicated File)</td><td>Sub-directories</td><td>7F20 (GSM), 7F10 (Telecom)</td><td>Group related files</td></tr><tr><td><strong>EF</strong> (Elementary File)</td><td>Actual data</td><td>Various</td><td>Store specific records</td></tr></tbody></table></div>
+<h4 id="key-elementary-files-ef">Key Elementary Files (EF)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#key-elementary-files-ef" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>EF</th><th>ID</th><th>Content</th><th>Forensic Note</th></tr></thead><tbody><tr><td><strong>EF_ICCID</strong></td><td>2FE2</td><td>Unique SIM serial number</td><td>Identify physical card</td></tr><tr><td><strong>EF_IMSI</strong></td><td>6F07</td><td>International Mobile Subscriber Identity</td><td>Critical for user account ID</td></tr><tr><td><strong>EF_SMS</strong></td><td>6F3C</td><td>Text messages</td><td>Deletion only changes status byte - <strong>content recoverable</strong> until overwritten</td></tr><tr><td><strong>EF_ADN</strong></td><td>6F3A</td><td>Abbreviated Dialing Numbers</td><td>Contacts/phonebook</td></tr><tr><td><strong>EF_LOCI</strong></td><td>6F7E</td><td>Location Information (LAI)</td><td>Last network area registration - proves general location even if powered off</td></tr></tbody></table></div>
+<h4 id="gsm-security-algorithms-1">GSM Security Algorithms<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#gsm-security-algorithms-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>
+<p><strong>A3 (Authentication)</strong>:</p>
+<ul>
+<li>Network sends RAND (128-bit random)</li>
+<li>SIM: A3(RAND, Ki) → SRES (32-bit response)</li>
+<li>Network validates SRES match</li>
+</ul>
+</li>
+<li>
+<p><strong>A8 (Key Generation)</strong>:</p>
+<ul>
+<li>A8(RAND, Ki) → Kc (64-bit ciphering key)</li>
+</ul>
+</li>
+<li>
+<p><strong>A5 (Encryption)</strong>:</p>
+<ul>
+<li>Stream cipher in device hardware (not SIM)</li>
+<li>Uses Kc to encrypt air interface traffic</li>
+</ul>
+</li>
+</ol>
+<p><strong>Security</strong>: Ki never leaves SIM; interception doesn’t yield key. SIM cloning requires physical access + side-channel attacks on weak implementations (COMP128v1).</p>
+<hr/>
+<h2 id="4-mobile-operating-systems">4. Mobile Operating Systems<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-mobile-operating-systems" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="41-android-architecture">4.1 Android Architecture<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#41-android-architecture" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Built on</strong>: Modified Linux Kernel</p>
+<h4 id="layer-structure">Layer Structure<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#layer-structure" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li><strong>Linux Kernel</strong>: Process/memory management, hardware drivers, foundational security (UIDs)</li>
+<li><strong>HAL</strong> (Hardware Abstraction Layer): Interface between software and hardware (camera, Bluetooth)</li>
+<li><strong>Android Runtime (ART)</strong>: Executes app bytecode; AOT compilation (converts bytecode → native on install)</li>
+<li><strong>Application Framework</strong>: UI and resource management</li>
+<li><strong>System Apps</strong>: Core apps (Phone, Contacts, SMS)</li>
+</ol>
+<h4 id="file-systems--partitions">File Systems &amp; Partitions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#file-systems--partitions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Partition</th><th>Purpose</th><th>Forensic Note</th></tr></thead><tbody><tr><td><code>/boot</code></td><td>Kernel and ramdisk</td><td>Boot artifacts</td></tr><tr><td><code>/system</code></td><td>OS files (read-only)</td><td>Alterations indicate root compromise</td></tr><tr><td><code>/data</code></td><td><strong>PRIMARY TARGET</strong></td><td>Installed apps, databases, user settings</td></tr><tr><td><code>/cache</code></td><td>Temporary data, OTA logs</td><td>App installation fragments, browser cache</td></tr></tbody></table></div>
+<p><strong>File Systems</strong>:</p>
+<ul>
+<li><strong>EXT4</strong>: Standard Linux journaling FS; journaling aids deleted file metadata recovery</li>
+<li><strong>F2FS</strong> (Flash-Friendly): Log-structured for NAND optimization; complicates carving (sequential writes, not in-place overwrites)</li>
+</ul>
+<h4 id="android-security">Android Security<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#android-security" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>App Sandboxing</strong>: Each app = unique UID; prevents inter-app data access</li>
+<li><strong>Full Disk Encryption (FDE)</strong> or <strong>File-Based Encryption (FBE)</strong>:
+<ul>
+<li>FBE: Different files encrypted with different keys</li>
+<li>Allows some functions before passcode (Direct Boot mode) while securing sensitive data</li>
+</ul>
+</li>
+</ul>
+<h3 id="42-ios-architecture">4.2 iOS Architecture<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#42-ios-architecture" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Built on</strong>: Darwin Kernel (Unix-like)</p>
+<h4 id="layer-structure-1">Layer Structure<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#layer-structure-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li><strong>Core OS</strong>: XNU kernel, low-level drivers</li>
+<li><strong>Core Services</strong>: Networking, Core Foundation, SQLite</li>
+<li><strong>Media Layer</strong>: Audio, video, graphics</li>
+<li><strong>Cocoa Touch</strong>: Touch-based UI framework</li>
+</ol>
+<h4 id="file-systems">File Systems<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#file-systems" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>HFS+</strong>: Legacy hierarchical file system</li>
+<li><strong>APFS</strong> (Apple File System): Introduced iOS 10.3
+<ul>
+<li>Optimized for Flash/SSD</li>
+<li><strong>Copy-on-Write (CoW)</strong>: Edits written to new blocks → inherent data snapshots (forensic benefit)</li>
+<li><strong>Tight encryption integration</strong>: Data recovery without keys nearly impossible</li>
+</ul>
+</li>
+</ul>
+<h4 id="ios-security-model">iOS Security Model<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ios-security-model" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Secure Boot Chain</strong>:</p>
+<ul>
+<li>BootROM → Low Level Bootloader → iBoot → Kernel</li>
+<li>Each step cryptographically signed by Apple</li>
+<li>Signature fail → Recovery Mode (prevents custom forensic bootloaders)</li>
+</ul>
+<p><strong>Secure Enclave Processor (SEP)</strong>:</p>
+<ul>
+<li>Dedicated coprocessor for crypto operations</li>
+<li>Stores device Unique ID (UID) fused in silicon</li>
+<li><strong>UID not accessible</strong> to OS or forensic tools</li>
+<li>Prevents offline brute-force (passcode must be tested on device with hardware delays)</li>
+</ul>
+<p><strong>Data Protection Classes</strong>:</p>
+<ul>
+<li><strong>Complete Protection</strong>: Inaccessible until device unlocked</li>
+<li><strong>Protected Until First User Authentication</strong>: Accessible after first unlock</li>
+</ul>
+<p><strong>Device States</strong>:</p>
+<ul>
+<li><strong>BFU</strong> (Before First Unlock): Encryption keys not loaded</li>
+<li><strong>AFU</strong> (After First Unlock): Keys loaded in RAM - some logical extraction possible</li>
+</ul>
+<hr/>
+<h2 id="5-mobile-forensics-process">5. Mobile Forensics Process<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-mobile-forensics-process" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="51-phase-1-identification-and-preservation">5.1 Phase 1: Identification and Preservation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#51-phase-1-identification-and-preservation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Network Isolation</strong>:</p>
+<ul>
+<li>Mobile devices are radios - can be remotely wiped</li>
+<li>Incoming messages overwrite data</li>
+<li><strong>Solutions</strong>: Faraday bags or Airplane Mode (if won’t lock device)</li>
+</ul>
+<p><strong>Power Management</strong>:</p>
+<ul>
+<li><strong>Device ON</strong>: Keep ON and charged (maintain AFU state with decrypted keys in RAM)</li>
+<li><strong>Device OFF</strong>: Leave OFF to prevent boot authentication/data alteration</li>
+</ul>
+<h3 id="52-phase-2-data-acquisition-methodologies">5.2 Phase 2: Data Acquisition Methodologies<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#52-phase-2-data-acquisition-methodologies" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Method</th><th>Description</th><th>Data Recovered</th><th>Pros</th><th>Cons</th></tr></thead><tbody><tr><td><strong>Manual</strong></td><td>Photography of screen</td><td>Visible data only</td><td>Easy, works on all</td><td>Not forensically sound, no deleted data</td></tr><tr><td><strong>Logical</strong></td><td>OS API (ADB/iTunes)</td><td>Active files (contacts, SMS, photos)</td><td>Fast, widely supported, non-invasive</td><td>Misses deleted data and unallocated space</td></tr><tr><td><strong>File System</strong></td><td>Access directory structure</td><td>DBs, logs, hidden files</td><td>Detailed app data</td><td>Often requires Root/Jailbreak or exploits</td></tr><tr><td><strong>Physical</strong></td><td>Bit-by-bit Flash copy</td><td>Everything (allocated + unallocated)</td><td>File carving for deleted data</td><td>Difficult on encrypted devices, slow, risky</td></tr></tbody></table></div>
+<h4 id="advanced-hardware-acquisition">Advanced Hardware Acquisition<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#advanced-hardware-acquisition" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph TD\n    A[\&quot;🔒 Encrypted/Locked Device\&quot;] --> B{\&quot;Software Methods&lt;br/>Failed?\&quot;}\n    \n    B -->|No| C[\&quot;Logical/File System&lt;br/>Acquisition✅\&quot;]\n    \n    B -->|Yes| D{\&quot;Device&lt;br/>Functional?\&quot;}\n    \n    D -->|Partially| E[\&quot;JTAG&lt;br/>(Joint Test Action Group)\&quot;]\n    D -->|Yes| F[\&quot;ISP&lt;br/>(In-System Programming)\&quot;]\n    D -->|No/Damaged| G[\&quot;Chip-Off&lt;br/>(Physical Removal)\&quot;]\n    \n    E --> E1[\&quot;• Solder to Test Access Ports&lt;br/>• Instruct CPU to dump memory&lt;br/>• Non-destructive&lt;br/>• Slow (hours)\&quot;]\n    \n    F --> F1[\&quot;• Direct flash chip connection&lt;br/>• Bypass processor&lt;br/>• Precision soldering required&lt;br/>• Faster than JTAG\&quot;]\n    \n    G --> G1[\&quot;• Desolder chip (~240°C)&lt;br/>• Read in socket reader&lt;br/>• DESTROYS device&lt;br/>• Last resort\&quot;]\n    \n    E1 --> H{\&quot;Data&lt;br/>Encrypted?\&quot;}\n    F1 --> H\n    G1 --> H\n    \n    H -->|No| I[\&quot;✅ Full Data Recovery\&quot;]\n    H -->|Yes| J[\&quot;❌ Limited Success&lt;br/>(Key in CPU/Secure Enclave)\&quot;]\n    \n    style A fill:#e74c3c,color:#fff\n    style C fill:#2ecc71,color:#fff\n    style E fill:#3498db,color:#fff\n    style F fill:#9b59b6,color:#fff\n    style G fill:#c0392b,color:#fff\n    style I fill:#27ae60,color:#fff\n    style J fill:#95a5a6,color:#fff&quot;">graph TD
+    A[&quot;🔒 Encrypted/Locked Device&quot;] --> B{&quot;Software Methods&lt;br/>Failed?&quot;}
+    
+    B -->|No| C[&quot;Logical/File System&lt;br/>Acquisition✅&quot;]
+    
+    B -->|Yes| D{&quot;Device&lt;br/>Functional?&quot;}
+    
+    D -->|Partially| E[&quot;JTAG&lt;br/>(Joint Test Action Group)&quot;]
+    D -->|Yes| F[&quot;ISP&lt;br/>(In-System Programming)&quot;]
+    D -->|No/Damaged| G[&quot;Chip-Off&lt;br/>(Physical Removal)&quot;]
+    
+    E --> E1[&quot;• Solder to Test Access Ports&lt;br/>• Instruct CPU to dump memory&lt;br/>• Non-destructive&lt;br/>• Slow (hours)&quot;]
+    
+    F --> F1[&quot;• Direct flash chip connection&lt;br/>• Bypass processor&lt;br/>• Precision soldering required&lt;br/>• Faster than JTAG&quot;]
+    
+    G --> G1[&quot;• Desolder chip (~240°C)&lt;br/>• Read in socket reader&lt;br/>• DESTROYS device&lt;br/>• Last resort&quot;]
+    
+    E1 --> H{&quot;Data&lt;br/>Encrypted?&quot;}
+    F1 --> H
+    G1 --> H
+    
+    H -->|No| I[&quot;✅ Full Data Recovery&quot;]
+    H -->|Yes| J[&quot;❌ Limited Success&lt;br/>(Key in CPU/Secure Enclave)&quot;]
+    
+    style A fill:#e74c3c,color:#fff
+    style C fill:#2ecc71,color:#fff
+    style E fill:#3498db,color:#fff
+    style F fill:#9b59b6,color:#fff
+    style G fill:#c0392b,color:#fff
+    style I fill:#27ae60,color:#fff
+    style J fill:#95a5a6,color:#fff
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<p>When software methods fail (e.g., locked device, broken screen), hardware-level techniques are employed.</p>
+<p><strong>JTAG</strong> (Joint Test Action Group):</p>
+<ul>
+<li>Solder wires to Test Access Ports on motherboard</li>
+<li>Instruct processor to dump memory</li>
+<li>Non-destructive but slow; requires partially functional device</li>
+</ul>
+<p><strong>ISP</strong> (In-System Programming):</p>
+<ul>
+<li>Direct connection to flash chip (eMMC/UFS)</li>
+<li>Bypass processor entirely</li>
+<li>Faster than JTAG; requires precision soldering</li>
+</ul>
+<p><strong>Chip-Off</strong>:</p>
+<ul>
+<li>Physically desolder memory chip (~240°C heat gun)</li>
+<li>Read in specialized socket reader</li>
+<li><strong>Destroys device</strong>; only option for severe physical damage</li>
+<li><strong>Limitation</strong>: Ineffective on encrypted devices (key left in CPU/Secure Enclave)</li>
+</ul>
+<h3 id="53-phase-3-examination-and-analysis">5.3 Phase 3: Examination and Analysis<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#53-phase-3-examination-and-analysis" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="file-carving">File Carving<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#file-carving" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Recover files from unallocated space via content signatures:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>File Type</th><th>Header</th><th>Footer</th></tr></thead><tbody><tr><td><strong>JPEG</strong></td><td><code>0xFF 0xD8</code></td><td><code>0xFF 0xD9</code></td></tr><tr><td><strong>PDF</strong></td><td><code>%PDF</code></td><td><code>%%EOF</code></td></tr><tr><td><strong>ZIP/Office</strong></td><td><code>PK</code> (<code>0x50 0x4B</code>)</td><td>Variable</td></tr></tbody></table></div>
+<p><strong>Tools</strong>: Scalpel, Foremost</p>
+<h4 id="sqlite-database-forensics">SQLite Database Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#sqlite-database-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Majority of mobile data</strong> in SQLite (.db, .sqlite):</p>
+<ul>
+<li>SMS, WhatsApp, Browser History, Contacts</li>
+</ul>
+<p><strong>Recovery Methods</strong>:</p>
+<ul>
+<li>Active data: SQL queries</li>
+<li><strong>Deleted records</strong>:
+<ul>
+<li>Freelists within database</li>
+<li><strong>Write-Ahead Log (WAL)</strong> files (.db-wal) before overwrite</li>
+</ul>
+</li>
+</ul>
+<h4 id="key-artifact-locations">Key Artifact Locations<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#key-artifact-locations" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Android</strong>:</p>
+<ul>
+<li>Contacts: <code>/data/data/com.android.providers.contacts/databases/contacts2.db</code></li>
+<li>SMS: <code>/data/data/com.android.providers.telephony/databases/mmssms.db</code></li>
+<li>WhatsApp: <code>/data/data/com.whatsapp/databases/msgstore.db</code> (often encrypted as <code>msgstore.db.cryptXX</code>)</li>
+</ul>
+<p><strong>iOS</strong>:</p>
+<ul>
+<li>SMS/iMessage: <code>/private/var/mobile/Library/SMS/sms.db</code></li>
+<li>Call History: <code>/private/var/wireless/Library/CallHistory/call_history.db</code></li>
+</ul>
+<hr/>
+<h2 id="6-forensic-tools-and-technologies">6. Forensic Tools and Technologies<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-forensic-tools-and-technologies" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="61-commercial-solutions">6.1 Commercial Solutions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#61-commercial-solutions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Tool</th><th>Key Strengths</th><th>Target</th></tr></thead><tbody><tr><td><strong>Cellebrite UFED</strong></td><td>Industry standard; physical extraction; bootloader exploits (EDL mode); Physical Analyzer software</td><td>Law Enforcement</td></tr><tr><td><strong>Oxygen Forensic Detective</strong></td><td>Cloud forensics; 35,000+ device profiles; KeyScout for credentials; drone analysis</td><td>Enterprise</td></tr><tr><td><strong>MSAB XRY</strong></td><td>Secure .xry file format; strict chain of custody compliance</td><td>European Law Enforcement</td></tr></tbody></table></div>
+<h3 id="62-open-source-tools">6.2 Open Source Tools<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#62-open-source-tools" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Autopsy</strong>: Disk forensics platform with Android analysis modules (call logs, SMS, web)</li>
+<li><strong>ADB</strong> (Android Debug Bridge):
+<ul>
+<li><code>adb backup</code>: Create logical backups (.ab)</li>
+<li><code>adb pull</code>: Retrieve specific files (requires USB debugging)</li>
+</ul>
+</li>
+<li><strong>Volatility</strong>: Premier RAM forensics framework</li>
+</ul>
+<h3 id="63-capability-comparison">6.3 Capability Comparison<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#63-capability-comparison" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Feature</th><th>Cellebrite UFED</th><th>Oxygen Forensic Detective</th><th>Paraben iRecovery Stick</th></tr></thead><tbody><tr><td><strong>Extraction</strong></td><td>Physical, File System, Logical</td><td>Physical, File System, Cloud</td><td>Logical (Active + Deleted DB)</td></tr><tr><td><strong>Lock Bypass</strong></td><td>Advanced (EDL, bootloader exploits)</td><td>Advanced (brute-force modules)</td><td>Limited (usually requires passcode)</td></tr><tr><td><strong>Strength</strong></td><td>Broadest device support, physical extraction</td><td>Cloud extraction, app parsing versatility</td><td>Simplicity, iOS specialization</td></tr><tr><td><strong>Cost</strong></td><td>High (Enterprise)</td><td>High (Enterprise)</td><td>Low (Consumer)</td></tr></tbody></table></div>
+<hr/>
+<h2 id="7-future-directions-and-emerging-trends">7. Future Directions and Emerging Trends<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#7-future-directions-and-emerging-trends" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="71-the-encryption-barrier">7.1 The Encryption Barrier<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#71-the-encryption-barrier" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Default encryption (FBE, Data Protection) pushing away from Chip-off/JTAG</li>
+<li><strong>Gray-Box Forensics</strong>: Utilize vendor-specific vulnerabilities (like checkm8) for privileged access without passcode</li>
+</ul>
+<h3 id="72-cloud-and-iot-forensics">7.2 Cloud and IoT Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#72-cloud-and-iot-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Cloud Forensics</strong>:</p>
+<ul>
+<li>Device becomes access token rather than sole evidence repository</li>
+<li>Legal extraction from iCloud, Google Drive, social media</li>
+<li>Use device “tokens” to authenticate to cloud without user password</li>
+</ul>
+<p><strong>IoT &amp; Vehicle Forensics</strong>:</p>
+<ul>
+<li>Vehicles generate massive telemetry (location, connections)</li>
+<li>Infotainment systems forensically acquirable</li>
+<li>Reconstruct accidents, track movements</li>
+</ul>
+<h3 id="73-ai-and-automation">7.3 AI and Automation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#73-ai-and-automation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Challenge</strong>: 1TB smartphone data volume unmanageable for human review</p>
+<p><strong>Solutions</strong>:</p>
+<ul>
+<li>AI/ML integration in forensic tools</li>
+<li>Automatic image categorization (weapons, drugs)</li>
+<li>Flag suspicious chat patterns</li>
+<li>Correlate entities across terabytes</li>
+</ul>
+<hr/>
+<h2 id="key-exam-preparation-points">Key Exam Preparation Points<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#key-exam-preparation-points" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>IMPORTANT</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p><strong>Master These Concepts</strong>:</p>
+<ol>
+<li><strong>SIM File Structure</strong>: MF → DF → EF hierarchy; key EFs (EF_SMS, EF_IMSI, EF_LOCI)</li>
+<li><strong>GSM Security</strong>: A3 (auth), A5 (encryption), A8 (key gen)</li>
+<li><strong>Cellular Generations</strong>: Evolution from 1G analog to 5G hyper-connectivity</li>
+<li><strong>Android vs iOS</strong>:
+<ul>
+<li>Android: Linux kernel, ext4/f2fs, app sandboxing, FDE/FBE</li>
+<li>iOS: Darwin kernel, APFS, Secure Enclave, BFU/AFU states</li>
+</ul>
+</li>
+<li><strong>Acquisition Methods</strong>: Logical vs File System vs Physical - pros/cons</li>
+<li><strong>Hardware Methods</strong>: JTAG (test ports), ISP (flash chip direct), Chip-off (desolder)</li>
+<li><strong>Artifact Locations</strong>: SQLite databases for SMS, contacts, WhatsApp</li>
+<li><strong>File Carving</strong>: Signature-based recovery (JPEG: FF D8 FF)</li>
+<li><strong>Flash Memory</strong>: Wear leveling, Garbage Collection, TRIM command impact</li>
+<li><strong>Future Trends</strong>: Cloud forensics, encryption challenges, AI automation</li>
+</ol>
+</div>
+</blockquote>
+<hr/>
+<h2 id="critical-challenges-overview">Critical Challenges Overview<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#critical-challenges-overview" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Challenge</th><th>Description</th><th>Forensic Response</th></tr></thead><tbody><tr><td><strong>Encryption</strong></td><td>Hardware-backed; default on modern devices</td><td>Live acquisition, cloud backups, exploits</td></tr><tr><td><strong>Fragmentation</strong></td><td>Thousands of Android models</td><td>Diversified toolkit; commercial tools</td></tr><tr><td><strong>Garbage Collection</strong></td><td>Active deletion in flash memory</td><td><strong>Speed critical</strong> - acquire immediately</td></tr><tr><td><strong>Secure Enclave</strong></td><td>Hardware crypto; UID in silicon</td><td>Logical extraction, checkm8 exploit (A5-A11)</td></tr><tr><td><strong>Cloud Migration</strong></td><td>Data off-device</td><td>Cloud forensics, token extraction</td></tr></tbody></table></div>
+<hr/>
+<h2 id="conclusion">Conclusion<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#conclusion" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Mobile forensics requires expertise spanning:</p>
+<ul>
+<li><strong>Investigative skills</strong>: Evidence procedures</li>
+<li><strong>Computer science</strong>: OS architectures, file systems</li>
+<li><strong>Electrical engineering</strong>: SoC, flash memory, hardware extraction</li>
+</ul>
+<p><strong>Core Principles</strong> (unchanging):</p>
+<ul>
+<li>Preservation of evidence</li>
+<li>Rigorous tool validation</li>
+<li>Methodical reconstruction of digital events</li>
+</ul>
+<p><strong>Adaptation</strong> (essential):</p>
+<ul>
+<li>New architectures (5G, IoT)</li>
+<li>File systems (F2FS, APFS)</li>
+<li>Security models (Secure Enclave, TEE)</li>
+</ul>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>TIP</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>The successful forensic investigator of the future adapts to technological change while maintaining scientific rigor.</p>
+</div>
+</blockquote>
+<hr/>
+<p><em>Study Guide compiled from Mobile Forensics Exam Study Guide - Advanced Mobile Forensics: Architectures, Methodologies, and Future Horizons</em></p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-37" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#mobile-forensics---advanced-comprehensive-study-guide" data-for="mobile-forensics---advanced-comprehensive-study-guide">Mobile Forensics - Advanced Comprehensive Study Guide</a></li><li class="depth-1"><a href="#table-of-contents" data-for="table-of-contents">Table of Contents</a></li><li class="depth-1"><a href="#4-mobile-operating-systems-architecture-and-forensic-implications" data-for="4-mobile-operating-systems-architecture-and-forensic-implications">4. Mobile Operating Systems: Architecture and Forensic Implications</a></li><li class="depth-2"><a href="#platform-comparison-overview" data-for="platform-comparison-overview">Platform Comparison Overview</a></li><li class="depth-1"><a href="#1-evolution-and-theoretical-framework" data-for="1-evolution-and-theoretical-framework">1. Evolution and Theoretical Framework</a></li><li class="depth-2"><a href="#11-defining-the-discipline" data-for="11-defining-the-discipline">1.1 Defining the Discipline</a></li><li class="depth-2"><a href="#12-unique-challenges" data-for="12-unique-challenges">1.2 Unique Challenges</a></li><li class="depth-1"><a href="#2-cellular-network-infrastructure" data-for="2-cellular-network-infrastructure">2. Cellular Network Infrastructure</a></li><li class="depth-2"><a href="#21-generational-evolution" data-for="21-generational-evolution">2.1 Generational Evolution</a></li><li class="depth-2"><a href="#22-gsm-network-architecture-and-forensic-artifacts" data-for="22-gsm-network-architecture-and-forensic-artifacts">2.2 GSM Network Architecture and Forensic Artifacts</a></li><li class="depth-1"><a href="#3-mobile-device-hardware-architecture" data-for="3-mobile-device-hardware-architecture">3. Mobile Device Hardware Architecture</a></li><li class="depth-2"><a href="#31-system-on-chip-soc" data-for="31-system-on-chip-soc">3.1 System on Chip (SoC)</a></li><li class="depth-2"><a href="#32-flash-memory-challenges" data-for="32-flash-memory-challenges">3.2 Flash Memory Challenges</a></li><li class="depth-2"><a href="#33-subscriber-identity-module-sim-forensics" data-for="33-subscriber-identity-module-sim-forensics">3.3 Subscriber Identity Module (SIM) Forensics</a></li><li class="depth-1"><a href="#4-mobile-operating-systems" data-for="4-mobile-operating-systems">4. Mobile Operating Systems</a></li><li class="depth-2"><a href="#41-android-architecture" data-for="41-android-architecture">4.1 Android Architecture</a></li><li class="depth-2"><a href="#42-ios-architecture" data-for="42-ios-architecture">4.2 iOS Architecture</a></li><li class="depth-1"><a href="#5-mobile-forensics-process" data-for="5-mobile-forensics-process">5. Mobile Forensics Process</a></li><li class="depth-2"><a href="#51-phase-1-identification-and-preservation" data-for="51-phase-1-identification-and-preservation">5.1 Phase 1: Identification and Preservation</a></li><li class="depth-2"><a href="#52-phase-2-data-acquisition-methodologies" data-for="52-phase-2-data-acquisition-methodologies">5.2 Phase 2: Data Acquisition Methodologies</a></li><li class="depth-2"><a href="#53-phase-3-examination-and-analysis" data-for="53-phase-3-examination-and-analysis">5.3 Phase 3: Examination and Analysis</a></li><li class="depth-1"><a href="#6-forensic-tools-and-technologies" data-for="6-forensic-tools-and-technologies">6. Forensic Tools and Technologies</a></li><li class="depth-2"><a href="#61-commercial-solutions" data-for="61-commercial-solutions">6.1 Commercial Solutions</a></li><li class="depth-2"><a href="#62-open-source-tools" data-for="62-open-source-tools">6.2 Open Source Tools</a></li><li class="depth-2"><a href="#63-capability-comparison" data-for="63-capability-comparison">6.3 Capability Comparison</a></li><li class="depth-1"><a href="#7-future-directions-and-emerging-trends" data-for="7-future-directions-and-emerging-trends">7. Future Directions and Emerging Trends</a></li><li class="depth-2"><a href="#71-the-encryption-barrier" data-for="71-the-encryption-barrier">7.1 The Encryption Barrier</a></li><li class="depth-2"><a href="#72-cloud-and-iot-forensics" data-for="72-cloud-and-iot-forensics">7.2 Cloud and IoT Forensics</a></li><li class="depth-2"><a href="#73-ai-and-automation" data-for="73-ai-and-automation">7.3 AI and Automation</a></li><li class="depth-1"><a href="#key-exam-preparation-points" data-for="key-exam-preparation-points">Key Exam Preparation Points</a></li><li class="depth-1"><a href="#critical-challenges-overview" data-for="critical-challenges-overview">Critical Challenges Overview</a></li><li class="depth-1"><a href="#conclusion" data-for="conclusion">Conclusion</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../../../postscript.js" type="module" data-persist="true"></script></html>
