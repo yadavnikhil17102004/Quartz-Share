@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Cricket>
+  <Team country="Australia">
+    <Player>Steve Smith</Player>
+    <Runs>200</Runs>
+    <Wickets>0</Wickets>
+  </Team>
+  <Team country="India">
+    <Player>Virat Kohli</Player>
+    <Runs>250</Runs>
+    <Wickets>0</Wickets>
+  </Team>
+</Cricket>

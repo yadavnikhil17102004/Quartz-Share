@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>CTI_Comprehensive_Study_Guide</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 4"/><meta property="og:title" content="CTI_Comprehensive_Study_Guide"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="CTI_Comprehensive_Study_Guide"/><meta name="twitter:description" content="Cyber Threat Intelligence - Comprehensive Exam Study Guide NOTE This comprehensive guide covers all essential CTI concepts for CDS-352, from foundational theory through advanced implementation frameworks."/><meta property="og:description" content="Cyber Threat Intelligence - Comprehensive Exam Study Guide NOTE This comprehensive guide covers all essential CTI concepts for CDS-352, from foundational theory through advanced implementation frameworks."/><meta property="og:image:alt" content="Cyber Threat Intelligence - Comprehensive Exam Study Guide NOTE This comprehensive guide covers all essential CTI concepts for CDS-352, from foundational theory through advanced implementation frameworks."/><meta property="twitter:domain" content="yadavnikhil17102004.github.io/Quartz-Share"/><meta property="og:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Cyber-Threat-Intelligence/CTI_Comprehensive_Study_Guide"/><meta property="twitter:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Cyber-Threat-Intelligence/CTI_Comprehensive_Study_Guide"/><link rel="icon" href="../../../../static/icon.png"/><meta name="description" content="Cyber Threat Intelligence - Comprehensive Exam Study Guide NOTE This comprehensive guide covers all essential CTI concepts for CDS-352, from foundational theory through advanced implementation frameworks."/><meta name="generator" content="Quartz"/><link href="../../../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL1VzZXJzL25pa2hpbHlhZGF2L0Rlc2t0b3AvUXVhcnR6LUJ1aWxkZXIvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://yadavnikhil17102004.github.io/Quartz-Share/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Cyber-Threat-Intelligence/CTI_Comprehensive_Study_Guide-og-image.webp"/><meta property="og:image:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Cyber-Threat-Intelligence/CTI_Comprehensive_Study_Guide-og-image.webp"/><meta name="twitter:image" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Cyber-Threat-Intelligence/CTI_Comprehensive_Study_Guide-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Final-Year-Notes/Sem-5/Notes/Cyber-Threat-Intelligence/CTI_Comprehensive_Study_Guide"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../../..">Quartz 4</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-248"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-248" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/">Final Year Notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-5/">Sem 5</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-5/Notes/">Notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-5/Notes/Cyber-Threat-Intelligence/">Cyber Threat Intelligence</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>CTI_Comprehensive_Study_Guide</a></div></nav><h1 class="article-title">CTI_Comprehensive_Study_Guide</h1><p show-comma="true" class="content-meta"><time datetime="2025-11-28T04:59:40.000Z">Nov 28, 2025</time><span>12 min read</span></p></div></div><article class="popover-hint"><h1 id="cyber-threat-intelligence---comprehensive-exam-study-guide">Cyber Threat Intelligence - Comprehensive Exam Study Guide<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cyber-threat-intelligence---comprehensive-exam-study-guide" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>NOTE</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>This comprehensive guide covers all essential CTI concepts for CDS-352, from foundational theory through advanced implementation frameworks.</p>
+</div>
+</blockquote>
+<h2 id="table-of-contents">Table of Contents<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#table-of-contents" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><a href="#1-introduction" class="internal alias">Introduction to Threat Intelligence</a></li>
+<li><a href="#2-attack-scenarios" class="internal alias">Attack Scenarios and Threat Actors</a></li>
+<li><a href="#3-monitoring-analysis" class="internal alias">Monitoring, Logging, and Network Analysis</a></li>
+<li><a href="#4-information-sharing" class="internal alias">Information Sharing Architecture</a></li>
+<li><a href="#5-cti-communities" class="internal alias">CTI Communities</a></li>
+<li><a href="#6-situational-awareness" class="internal alias">Situational Awareness</a></li>
+<li><a href="#7-legal-implications" class="internal alias">Legal Implications</a></li>
+<li><a href="#8-legal-case-studies" class="internal alias">Legal Case Studies</a></li>
+<li><a href="#9-ecossian" class="internal alias">ECOSSIAN Framework</a></li>
+</ol>
+<hr/>
+<h2 id="1-introduction-to-threat-intelligence">1. Introduction to Threat Intelligence<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-introduction-to-threat-intelligence" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="11-the-paradigm-of-cyber-threat-intelligence">1.1 The Paradigm of Cyber Threat Intelligence<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#11-the-paradigm-of-cyber-threat-intelligence" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>CTI Definition</strong>: The rigorous process of aggregating, transforming, analyzing, interpreting, and enriching data to provide necessary context for decision-making processes.</p>
+<p><strong>Primary Objective</strong>: Reduction of uncertainty - moving from “what is happening?” to “who is targeting me, why, and how?“</p>
+<h3 id="12-threat-information-vs-threat-intelligence">1.2 Threat Information vs. Threat Intelligence<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#12-threat-information-vs-threat-intelligence" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Threat Information</th><th>Threat Intelligence</th></tr></thead><tbody><tr><td>Raw artifacts (IP, hash, domain)</td><td>Analyzed and contextualized data</td></tr><tr><td>Lacks context</td><td>Answers “so what?”</td></tr><tr><td>Useful for immediate blocking</td><td>Supports strategic decisions</td></tr><tr><td><strong>Example</strong>: IP scanning firewall</td><td><strong>Example</strong>: IP belongs to nation-state actor targeting energy sector</td></tr></tbody></table></div>
+<h3 id="13-types-of-cyber-threat-information">1.3 Types of Cyber Threat Information<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#13-types-of-cyber-threat-information" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="indicators-of-compromise-iocs">Indicators of Compromise (IoCs)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#indicators-of-compromise-iocs" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Type</th><th>Description</th><th>Operational Use</th><th>Volatility</th></tr></thead><tbody><tr><td><strong>Atomic</strong></td><td>IP addresses, email addresses, file hashes</td><td>Automated blocking at firewalls</td><td>High - easily changed</td></tr><tr><td><strong>Computed</strong></td><td>Hash values, regex patterns</td><td>Identify specific malware</td><td>High - trivial to alter</td></tr><tr><td><strong>Behavioral</strong></td><td>Patterns of activity (API calls, traffic patterns)</td><td>Detect anomalous actions</td><td>Low - harder to change</td></tr></tbody></table></div>
+<h4 id="tactics-techniques-and-procedures-ttps">Tactics, Techniques, and Procedures (TTPs)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#tactics-techniques-and-procedures-ttps" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Tactics</strong>: High-level goals (Initial Access, Lateral Movement, Exfiltration)</li>
+<li><strong>Techniques</strong>: Specific methods (Spearphishing, Credential Dumping)</li>
+<li><strong>Procedures</strong>: Detailed implementation specific to threat group</li>
+</ul>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>IMPORTANT</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>TTPs are high-value intelligence because changing behavior is costly for adversaries compared to changing infrastructure.</p>
+</div>
+</blockquote>
+<h4 id="security-alerts-and-advisories">Security Alerts and Advisories<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#security-alerts-and-advisories" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Sources: US-CERT, ISACs, commercial vendors</p>
+<ul>
+<li>Trigger vulnerability management workflows</li>
+<li>Prompt patching before exploit becomes widespread</li>
+</ul>
+<h4 id="threat-intelligence-reports">Threat Intelligence Reports<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#threat-intelligence-reports" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>Human-readable prose documents</li>
+<li>Describe threat actor profiles, ongoing campaigns</li>
+<li>Provide situational awareness to leadership (CISOs, Board)</li>
+</ul>
+<h4 id="tool-configurations">Tool Configurations<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#tool-configurations" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>Snort signatures for IDS</li>
+<li>YARA rules for malware hunting</li>
+<li>ACLs for firewalls</li>
+<li>Bridge intelligence to operations</li>
+</ul>
+<h3 id="14-cross-organizational-information-sharing">1.4 Cross-Organizational Information Sharing<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#14-cross-organizational-information-sharing" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li><strong>Shared Situational Awareness</strong>: Broader view beyond own network</li>
+<li><strong>Accelerated Response</strong>: Deploy countermeasures before being targeted</li>
+<li><strong>Cost Reduction</strong>: Avoid duplication of analysis effort</li>
+</ul>
+<p><strong>Challenges</strong>:</p>
+<ul>
+<li><strong>Trust and Privacy</strong>: Fear of exposing vulnerabilities, revealing PII</li>
+<li><strong>Standardization</strong>: Need for common formats (STIX) and protocols (TAXII)</li>
+<li><strong>Reputational Risk</strong>: Admission of breach may damage brand</li>
+<li><strong>Legal Barriers</strong>: GDPR vs. sectoral approach differences</li>
+</ul>
+<h3 id="15-role-of-nation-states">1.5 Role of Nation-States<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#15-role-of-nation-states" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Dual Role</strong>:</p>
+<ol>
+<li><strong>Threat Actors</strong>: APTs conducting espionage, sabotage</li>
+<li><strong>Enablers</strong>: Establish NCSCs, CERTs for coordination</li>
+</ol>
+<p><strong>Legal Frameworks</strong>:</p>
+<ul>
+<li><strong>CISA (US)</strong>: Liability protection for voluntary sharing</li>
+<li><strong>NIS Directive (EU)</strong>: Mandatory sharing for critical infrastructure</li>
+</ul>
+<hr/>
+<h2 id="2-attack-scenarios-and-threat-actors">2. Attack Scenarios and Threat Actors<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-attack-scenarios-and-threat-actors" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="21-evolving-concepts">2.1 Evolving Concepts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#21-evolving-concepts" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Category</th><th>Motivation</th><th>Examples</th></tr></thead><tbody><tr><td><strong>Cybercrime</strong></td><td>Financial gain</td><td>Ransomware, fraud</td></tr><tr><td><strong>Cyberwar</strong></td><td>Geopolitical dominance</td><td>Critical infrastructure attacks</td></tr><tr><td><strong>Hacktivism</strong></td><td>Ideological beliefs</td><td>Anonymous campaigns</td></tr></tbody></table></div>
+<p><strong>Hybrid Threats</strong>: Cybercrime-as-a-Service (CaaS) where states purchase from criminals for deniability.</p>
+<h3 id="22-emerging-trends">2.2 Emerging Trends<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#22-emerging-trends" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="cloud-conscious-adversaries">Cloud-Conscious Adversaries<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cloud-conscious-adversaries" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Example</strong>: Scattered Spider</li>
+<li>Exploit cloud-native features, IdPs, cloud policies</li>
+<li>Abuse legitimate APIs for exfiltration</li>
+<li>Target hybrid architecture “seams”</li>
+</ul>
+<h4 id="identity-based-attacks">Identity-Based Attacks<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#identity-based-attacks" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>Shift from malware to credential theft</li>
+<li>Social engineering, phishing, infostealer logs</li>
+<li>“Login, don’t break in” to bypass perimeter defenses</li>
+</ul>
+<h4 id="supply-chain-exploitation">Supply Chain Exploitation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#supply-chain-exploitation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Examples</strong>: SolarWinds, Kaseya</li>
+<li>Compromise trusted vendor to access thousands downstream</li>
+<li>Weaponize software updates</li>
+</ul>
+<h3 id="23-the-cyber-kill-chain">2.3 The Cyber Kill Chain<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#23-the-cyber-kill-chain" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph TD\n    A[\&quot;🔍 1. Reconnaissance&lt;br/>(OSINT, Shodan,&lt;br/>Email Harvesting)\&quot;] --> B[\&quot;🧨 2. Weaponization&lt;br/>(RAT + Deliverable&lt;br/>e.g., Macro in PDF)\&quot;]\n    B --> C[\&quot;📧 3. Delivery&lt;br/>(Spear-phishing,&lt;br/>Malicious Links,&lt;br/>USB Drops)\&quot;]\n    C --> D[\&quot;💥 4. Exploitation&lt;br/>(Trigger Vulnerability&lt;br/>Software/Human)\&quot;]\n    D --> E[\&quot;💾 5. Installation&lt;br/>(Establish Persistence&lt;br/>Registry, Scheduled Tasks)\&quot;]\n    E --> F[\&quot;🔗 6. Command &amp; Control&lt;br/>(C2 Beacon,&lt;br/>Lateral Movement)\&quot;]\n    F --> G[\&quot;🎯 7. Actions on Objectives&lt;br/>(Exfiltration, Encryption,&lt;br/>Destruction)\&quot;]\n    \n    H[\&quot;❌ Break the chain at ANY stage&lt;br/>to prevent attack success\&quot;] -.-> A\n    H -.-> B\n    H -.-> C\n    H -.-> D\n    H -.-> E\n    H -.-> F\n    \n    style A fill:#e1f5ff\n    style B fill:#fff3cd\n    style C fill:#ffeaa7\n    style D fill:#fab1a0\n    style E fill:#ff7675\n    style F fill:#fd79a8\n    style G fill:#e84393,color:#fff\n    style H fill:#00b894,color:#fff&quot;">graph TD
+    A[&quot;🔍 1. Reconnaissance&lt;br/>(OSINT, Shodan,&lt;br/>Email Harvesting)&quot;] --> B[&quot;🧨 2. Weaponization&lt;br/>(RAT + Deliverable&lt;br/>e.g., Macro in PDF)&quot;]
+    B --> C[&quot;📧 3. Delivery&lt;br/>(Spear-phishing,&lt;br/>Malicious Links,&lt;br/>USB Drops)&quot;]
+    C --> D[&quot;💥 4. Exploitation&lt;br/>(Trigger Vulnerability&lt;br/>Software/Human)&quot;]
+    D --> E[&quot;💾 5. Installation&lt;br/>(Establish Persistence&lt;br/>Registry, Scheduled Tasks)&quot;]
+    E --> F[&quot;🔗 6. Command &amp; Control&lt;br/>(C2 Beacon,&lt;br/>Lateral Movement)&quot;]
+    F --> G[&quot;🎯 7. Actions on Objectives&lt;br/>(Exfiltration, Encryption,&lt;br/>Destruction)&quot;]
+    
+    H[&quot;❌ Break the chain at ANY stage&lt;br/>to prevent attack success&quot;] -.-> A
+    H -.-> B
+    H -.-> C
+    H -.-> D
+    H -.-> E
+    H -.-> F
+    
+    style A fill:#e1f5ff
+    style B fill:#fff3cd
+    style C fill:#ffeaa7
+    style D fill:#fab1a0
+    style E fill:#ff7675
+    style F fill:#fd79a8
+    style G fill:#e84393,color:#fff
+    style H fill:#00b894,color:#fff
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<p><strong>7 Sequential Steps</strong> (Lockheed Martin):</p>
+<ol>
+<li><strong>Reconnaissance</strong>: OSINT, Shodan, Google Dorks, email harvesting</li>
+<li><strong>Weaponization</strong>: Couple RAT with deliverable (malicious macro in PDF)</li>
+<li><strong>Delivery</strong>: Spear-phishing, malicious links, watering holes, USB drops</li>
+<li><strong>Exploitation</strong>: Trigger vulnerability (software bug or human error)</li>
+<li><strong>Installation/Initial Intrusion</strong>: Establish persistence (registry keys, scheduled tasks)</li>
+<li><strong>Command and Control (C2)</strong>: Beacon to controller, lateral movement</li>
+<li><strong>Actions on Objectives</strong>: Data exfiltration, encryption (ransom), destruction</li>
+</ol>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>TIP</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Defensive Doctrine: Breaking the chain at any single stage prevents attack success.</p>
+</div>
+</blockquote>
+<h3 id="24-advanced-persistent-threats-apts">2.4 Advanced Persistent Threats (APTs)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#24-advanced-persistent-threats-apts" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Characteristics</strong>:</p>
+<ul>
+<li><strong>Persistence</strong>: Long-term access (months/years)</li>
+<li><strong>Sophistication</strong>: Custom tooling, zero-days</li>
+<li><strong>Resources</strong>: State-sponsored or affiliated</li>
+<li><strong>Low-and-Slow</strong>: Stealthy operations to avoid detection</li>
+<li><strong>Specific Targeting</strong>: Strategic entities (defense, government, energy, finance)</li>
+</ul>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>Lazarus (North Korea)</strong>: GhostCall, GhostHire campaigns against Web3</li>
+<li><strong>Tick (China)</strong>: Long-term espionage with LotL tactics</li>
+</ul>
+<hr/>
+<h2 id="3-monitoring-logging-and-network-analysis">3. Monitoring, Logging, and Network Analysis<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-monitoring-logging-and-network-analysis" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="31-data-sources-for-intelligence-extraction">3.1 Data Sources for Intelligence Extraction<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#31-data-sources-for-intelligence-extraction" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="log-data">Log Data<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#log-data" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Authentication Logs</strong>: Brute-force, credential stuffing, anomalous logins</li>
+<li><strong>Application Logs</strong>: SQL injection attempts, database queries</li>
+<li><strong>Endpoint Logs (EDR)</strong>: Process spawning, file mods, registry changes, memory manipulation</li>
+</ul>
+<h4 id="network-traffic">Network Traffic<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#network-traffic" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Full Packet Capture (PCAP)</strong>:
+<ul>
+<li>Gold standard for forensics</li>
+<li>Captures payload if unencrypted</li>
+<li>Expensive to store</li>
+</ul>
+</li>
+<li><strong>Flow Data (NetFlow)</strong>:
+<ul>
+<li>Summary: Who, What, Where, When, How Much</li>
+<li>No content capture</li>
+<li>Essential for high-volume networks</li>
+<li>Useful for DDoS detection, large exfiltration</li>
+</ul>
+</li>
+</ul>
+<h3 id="32-analysis-techniques">3.2 Analysis Techniques<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#32-analysis-techniques" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>
+<p><strong>Signature-Based Detection</strong></p>
+<ul>
+<li>Compare against known threat patterns</li>
+<li>High precision, low false positives</li>
+<li><strong>Limitation</strong>: Fails against zero-days</li>
+</ul>
+</li>
+<li>
+<p><strong>Anomaly Detection</strong></p>
+<ul>
+<li>Establish baseline of “normal” behavior</li>
+<li>Flag deviations (unusual data volume, new ports)</li>
+<li>Critical for zero-day and insider threats</li>
+</ul>
+</li>
+<li>
+<p><strong>Correlation</strong></p>
+<ul>
+<li>Link disparate events from different sources</li>
+<li><strong>Example</strong>: Failed login → Successful login → New admin account → Large file transfer = Breach</li>
+<li><strong>Tool</strong>: SIEM systems (Splunk, QRadar)</li>
+</ul>
+</li>
+</ol>
+<h3 id="33-from-observables-to-indicators-to-intelligence">3.3 From Observables to Indicators to Intelligence<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#33-from-observables-to-indicators-to-intelligence" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph LR\n    A[\&quot;🔍 Observables&lt;br/>(Raw Facts)&lt;br/>IP: 1.2.3.4&lt;br/>Registry Key Change&lt;br/>File: evil.exe\&quot;] --> B[\&quot;⚠️ Indicators (IoCs)&lt;br/>(Mapped to Malicious Intent)&lt;br/>1.2.3.4 = Known C2&lt;br/>Registry = Persistence&lt;br/>evil.exe = Malware Hash\&quot;]\n    \n    B --> C[\&quot;🧠 Intelligence&lt;br/>(Contextualized)&lt;br/>APT29 C2 Server&lt;br/>Targets: Diplomats&lt;br/>Mitigation: Block + Hunt\&quot;]\n    \n    D[\&quot;Context&lt;br/>Analysis&lt;br/>Enrichment\&quot;] -.-> B\n    E[\&quot;Threat Actor&lt;br/>Attribution&lt;br/>Campaign Mapping\&quot;] -.-> C\n    \n    style A fill:#e1f5ff\n    style B fill:#ffeaa7\n    style C fill:#55efc4\n    style D fill:#dfe6e9\n    style E fill:#74b9ff&quot;">graph LR
+    A[&quot;🔍 Observables&lt;br/>(Raw Facts)&lt;br/>IP: 1.2.3.4&lt;br/>Registry Key Change&lt;br/>File: evil.exe&quot;] --> B[&quot;⚠️ Indicators (IoCs)&lt;br/>(Mapped to Malicious Intent)&lt;br/>1.2.3.4 = Known C2&lt;br/>Registry = Persistence&lt;br/>evil.exe = Malware Hash&quot;]
+    
+    B --> C[&quot;🧠 Intelligence&lt;br/>(Contextualized)&lt;br/>APT29 C2 Server&lt;br/>Targets: Diplomats&lt;br/>Mitigation: Block + Hunt&quot;]
+    
+    D[&quot;Context&lt;br/>Analysis&lt;br/>Enrichment&quot;] -.-> B
+    E[&quot;Threat Actor&lt;br/>Attribution&lt;br/>Campaign Mapping&quot;] -.-> C
+    
+    style A fill:#e1f5ff
+    style B fill:#ffeaa7
+    style C fill:#55efc4
+    style D fill:#dfe6e9
+    style E fill:#74b9ff
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<p><strong>Hierarchy</strong>:</p>
+<ul>
+<li><strong>Observables</strong>: Raw facts (connection to 1.2.3.4, registry key change)</li>
+<li><strong>Indicators</strong>: Observable mapped to malicious intent (1.2.3.4 is known C2)</li>
+<li><strong>Intelligence</strong>: Contextualized understanding (APT29 C2, targets diplomats, mitigation: block IP, hunt for artifacts)</li>
+</ul>
+<hr/>
+<h2 id="4-information-sharing-architecture">4. Information Sharing Architecture<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-information-sharing-architecture" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="41-five-dimensions-of-information-sharing">4.1 Five Dimensions of Information Sharing<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#41-five-dimensions-of-information-sharing" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph TB\n    A[\&quot;Information Sharing Architecture\&quot;] --> B[\&quot;1\\. 🤝 Efficient Cooperation&lt;br/>(Define what/who to share,&lt;br/>Build trust)\&quot;]\n    A --> C[\&quot;2. ⚖️ Legal &amp; Regulatory&lt;br/>(NIS, GDPR, CISA)\&quot;]\n    A --> D[\&quot;3. 🔧 Standardization&lt;br/>(STIX, TAXII, IODEF)\&quot;]\n    A --> E[\&quot;4. 🌍 Regional Implementation&lt;br/>(ENISA, FIRST, NATO,&lt;br/>APCERT)\&quot;]\n    A --> F[\&quot;5. 💻 Technology Integration&lt;br/>(TIPs, SIEM,&lt;br/>Automated Feeds)\&quot;]\n    \n    B --> G[\&quot;Trust = Currency\&quot;]\n    C --> H[\&quot;Balancing Security&lt;br/>vs Privacy\&quot;]\n    D --> I[\&quot;Machine-to-Machine&lt;br/>at Scale\&quot;]\n    E --> J[\&quot;Cross-Border&lt;br/>Coordination\&quot;]\n    F --> K[\&quot;Automated Defense\&quot;]\n    \n    style A fill:#3498db,color:#fff\n    style B fill:#2ecc71,color:#fff\n    style C fill:#e74c3c,color:#fff\n    style D fill:#f39c12\n    style E fill:#9b59b6,color:#fff\n    style F fill:#1abc9c,color:#fff&quot;">graph TB
+    A[&quot;Information Sharing Architecture&quot;] --> B[&quot;1\. 🤝 Efficient Cooperation&lt;br/>(Define what/who to share,&lt;br/>Build trust)&quot;]
+    A --> C[&quot;2. ⚖️ Legal &amp; Regulatory&lt;br/>(NIS, GDPR, CISA)&quot;]
+    A --> D[&quot;3. 🔧 Standardization&lt;br/>(STIX, TAXII, IODEF)&quot;]
+    A --> E[&quot;4. 🌍 Regional Implementation&lt;br/>(ENISA, FIRST, NATO,&lt;br/>APCERT)&quot;]
+    A --> F[&quot;5. 💻 Technology Integration&lt;br/>(TIPs, SIEM,&lt;br/>Automated Feeds)&quot;]
+    
+    B --> G[&quot;Trust = Currency&quot;]
+    C --> H[&quot;Balancing Security&lt;br/>vs Privacy&quot;]
+    D --> I[&quot;Machine-to-Machine&lt;br/>at Scale&quot;]
+    E --> J[&quot;Cross-Border&lt;br/>Coordination&quot;]
+    F --> K[&quot;Automated Defense&quot;]
+    
+    style A fill:#3498db,color:#fff
+    style B fill:#2ecc71,color:#fff
+    style C fill:#e74c3c,color:#fff
+    style D fill:#f39c12
+    style E fill:#9b59b6,color:#fff
+    style F fill:#1abc9c,color:#fff
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<ol>
+<li>
+<p><strong>Efficient Cooperation</strong></p>
+<ul>
+<li>Define what to share (IoCs, vulnerabilities, incidents)</li>
+<li>Define who to share with (sector peers, government, supply chain)</li>
+<li>Trust is the currency</li>
+</ul>
+</li>
+<li>
+<p><strong>Legal and Regulatory Landscape</strong></p>
+<ul>
+<li><strong>NIS Directive (EU)</strong>: Mandatory sharing for critical infrastructure</li>
+<li><strong>GDPR</strong>: Limits on sharing personal data</li>
+<li><strong>CISA (US)</strong>: Liability protection for voluntary sharing</li>
+</ul>
+</li>
+<li>
+<p><strong>Standardization Efforts</strong></p>
+<ul>
+<li><strong>STIX</strong>: Structured Threat Information Expression - language to describe threats</li>
+<li><strong>TAXII</strong>: Trusted Automated eXchange - transport protocol for STIX over HTTPS</li>
+<li><strong>IODEF</strong>: XML format for incident data</li>
+</ul>
+</li>
+<li>
+<p><strong>Regional Implementation</strong></p>
+<ul>
+<li><strong>ENISA</strong> (EU), <strong>FIRST</strong>, <strong>NATO CCD CoE</strong></li>
+<li><strong>APCERT</strong> (Asia-Pacific)</li>
+</ul>
+</li>
+<li>
+<p><strong>Technology Integration</strong></p>
+<ul>
+<li>Threat Intelligence Platforms (TIPs)</li>
+<li>SIEM integration</li>
+<li>Automated feed ingestion</li>
+</ul>
+</li>
+</ol>
+<h3 id="42-technical-standards">4.2 Technical Standards<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#42-technical-standards" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>STIX + TAXII</strong>:</p>
+<ul>
+<li>STIX describes: “This IP (Indicator) → associated with this Malware → uses this Vulnerability → by this Threat Actor (Campaign)”</li>
+<li>TAXII delivers STIX packages from Producer to Consumer</li>
+<li>Enables machine-to-machine sharing at scale</li>
+</ul>
+<hr/>
+<h2 id="5-cti-communities">5. CTI Communities<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-cti-communities" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="51-community-models">5.1 Community Models<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#51-community-models" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Feature</th><th>Hub-and-Spoke</th><th>Peer-to-Peer (P2P)</th></tr></thead><tbody><tr><td><strong>Structure</strong></td><td>Central authority aggregates/redistributes</td><td>Decentralized mesh network</td></tr><tr><td><strong>Examples</strong></td><td>National CERTs, Dutch NDN</td><td>ETIS CERT-SOC Telco</td></tr><tr><td><strong>Pros</strong></td><td>Centralized filtering, easier for less mature members</td><td>No single point of failure, high trust</td></tr><tr><td><strong>Cons</strong></td><td>Single point of failure, central entity sees all data</td><td>Harder to scale, requires mature capabilities</td></tr></tbody></table></div>
+<h3 id="52-misp-malware-information-sharing-platform">5.2 MISP (Malware Information Sharing Platform)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#52-misp-malware-information-sharing-platform" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Functionality</strong>:</p>
+<ul>
+<li>Store, correlate, and share IoCs</li>
+<li>Input “Events” with “Attributes” (IPs, hashes, domains)</li>
+<li>Automatic correlation across organizations</li>
+<li>Integration with IDS (Snort/Suricata) and SIEMs</li>
+</ul>
+<p><strong>Privacy Controls</strong>:</p>
+<ul>
+<li><strong>Traffic Light Protocol (TLP)</strong>:
+<ul>
+<li><strong>TLP:RED</strong>: Eyes-only, do not share</li>
+<li><strong>TLP:AMBER</strong>: Share within organization/community</li>
+<li><strong>TLP:GREEN</strong>: Share with partners</li>
+<li><strong>TLP:WHITE</strong>: Public disclosure</li>
+</ul>
+</li>
+</ul>
+<h3 id="53-case-studies">5.3 Case Studies<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#53-case-studies" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>ETIS (European Telcos)</strong>:</p>
+<ul>
+<li>P2P model for telecom-specific threats</li>
+<li>High trust among peers</li>
+<li>Sector-specific sharing effectiveness</li>
+</ul>
+<p><strong>NDN (Dutch National Detection Network)</strong>:</p>
+<ul>
+<li>Hub-and-Spoke with government (NCSC) as hub</li>
+<li>Shares with critical infrastructure</li>
+<li>Privacy concerns managed through legal safeguards</li>
+</ul>
+<hr/>
+<h2 id="6-situational-awareness-for-strategic-decision-making">6. Situational Awareness for Strategic Decision Making<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-situational-awareness-for-strategic-decision-making" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="61-cyber-situational-awareness-csa">6.1 Cyber Situational Awareness (CSA)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#61-cyber-situational-awareness-csa" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Definition</strong>: Perception of elements in environment, comprehension of meaning, projection of future status.</p>
+<p><strong>CSA Focus</strong>: Know assets, understand threats, current network state, predict attack impact.</p>
+<h3 id="62-situational-awareness-models">6.2 Situational Awareness Models<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#62-situational-awareness-models" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="endsleys-three-level-model">Endsley’s Three-Level Model<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#endsleys-three-level-model" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li><strong>Level 1 (Perception)</strong>: Gathering raw data (logs, alerts, traffic) - “What is happening?”</li>
+<li><strong>Level 2 (Comprehension)</strong>: Understanding significance through correlation - “What does it mean?”</li>
+<li><strong>Level 3 (Projection)</strong>: Predicting future states - “What will happen next?”</li>
+</ol>
+<h4 id="ooda-loop-boyd">OODA Loop (Boyd)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ooda-loop-boyd" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph LR\n    A[\&quot;👁️ OBSERVE&lt;br/>(Collect logs,&lt;br/>traffic, intel)\&quot;] --> B[\&quot;🧠 ORIENT&lt;br/>(Analyze against&lt;br/>threat intel,&lt;br/>context)\&quot;]\n    B --> C[\&quot;✅ DECIDE&lt;br/>(Choose mitigation&lt;br/>strategy)\&quot;] \n    C --> D[\&quot;⚡ ACT&lt;br/>(Implement&lt;br/>decision)\&quot;]\n    D -.->|\&quot;Feedback Loop\&quot;| A\n    \n    E[\&quot;🎯 GOAL: Complete loop&lt;br/>FASTER than adversary\&quot;] -.-> B\n    \n    style A fill:#74b9ff\n    style B fill:#a29bfe,color:#fff\n    style C fill:#55efc4\n    style D fill:#ffeaa7\n    style E fill:#ff7675,color:#fff&quot;">graph LR
+    A[&quot;👁️ OBSERVE&lt;br/>(Collect logs,&lt;br/>traffic, intel)&quot;] --> B[&quot;🧠 ORIENT&lt;br/>(Analyze against&lt;br/>threat intel,&lt;br/>context)&quot;]
+    B --> C[&quot;✅ DECIDE&lt;br/>(Choose mitigation&lt;br/>strategy)&quot;] 
+    C --> D[&quot;⚡ ACT&lt;br/>(Implement&lt;br/>decision)&quot;]
+    D -.->|&quot;Feedback Loop&quot;| A
+    
+    E[&quot;🎯 GOAL: Complete loop&lt;br/>FASTER than adversary&quot;] -.-> B
+    
+    style A fill:#74b9ff
+    style B fill:#a29bfe,color:#fff
+    style C fill:#55efc4
+    style D fill:#ffeaa7
+    style E fill:#ff7675,color:#fff
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<ul>
+<li><strong>Observe</strong>: Collect logs, traffic, external intel</li>
+<li><strong>Orient</strong>: Analyze against threat intelligence and context <em>(most critical)</em></li>
+<li><strong>Decide</strong>: Choose mitigation strategy</li>
+<li><strong>Act</strong>: Implement decision</li>
+</ul>
+<p><strong>Goal</strong>: Complete OODA loop faster than adversary</p>
+<h4 id="jdl-data-fusion-model">JDL Data Fusion Model<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#jdl-data-fusion-model" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>Level 1: Object Assessment</li>
+<li>Level 2: Situation Assessment</li>
+<li>Level 3: Impact Assessment</li>
+</ul>
+<h3 id="63-national-level-situational-awareness">6.3 National Level Situational Awareness<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#63-national-level-situational-awareness" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Aggregate data from all critical sectors (Energy, Finance, Telecom, Transport)</li>
+<li>NCSCs as fusion centers</li>
+<li>Create “Common Operational Picture” (COP)</li>
+<li>Distinguish isolated crime from coordinated nation-state attacks</li>
+</ul>
+<hr/>
+<h2 id="7-legal-implications-of-information-sharing">7. Legal Implications of Information Sharing<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#7-legal-implications-of-information-sharing" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="71-eu-cybersecurity-legal-framework">7.1 EU Cybersecurity Legal Framework<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#71-eu-cybersecurity-legal-framework" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="nis-directive-network-and-information-security">NIS Directive (Network and Information Security)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#nis-directive-network-and-information-security" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Requirements for OES and DSPs</strong>:</p>
+<ol>
+<li>Take appropriate technical/organizational security measures</li>
+<li>Report serious incidents to CSIRTs without undue delay</li>
+</ol>
+<p><strong>Impact</strong>: Mandatory sharing overrides non-disclosure concerns</p>
+<h4 id="gdpr-general-data-protection-regulation">GDPR (General Data Protection Regulation)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#gdpr-general-data-protection-regulation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Conflict</strong>: IP addresses, usernames, emails in phishing headers = personal data</p>
+<p><strong>Solution</strong>: Recital 49 recognizes processing personal data for network security as “legitimate interest” if:</p>
+<ul>
+<li>Strictly necessary</li>
+<li>Proportionate to purpose</li>
+</ul>
+<blockquote class="callout warning" data-callout="warning">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>WARNING</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Sharing must be proportionate - controlled sharing via MISP is defensible; public Pastebin dump violates proportionality.</p>
+</div>
+</blockquote>
+<h3 id="72-legal-barriers">7.2 Legal Barriers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#72-legal-barriers" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Legal Certainty</strong>: Unclear what is permitted</li>
+<li><strong>Cross-Border</strong>: Varying national implementations</li>
+<li><strong>Dynamic vs. Static IPs</strong>: Different sensitivity interpretations</li>
+</ul>
+<hr/>
+<h2 id="8-legal-case-studies">8. Legal Case Studies<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#8-legal-case-studies" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="81-distribution-of-security-relevant-information-with-personal-data">8.1 Distribution of Security-Relevant Information with Personal Data<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#81-distribution-of-security-relevant-information-with-personal-data" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Scenario</strong>: Organization wants to share botnet-infected IP list</p>
+<p><strong>Analysis</strong>:</p>
+<ul>
+<li>IPs are personal data under GDPR</li>
+<li>Options:
+<ol>
+<li>Anonymize (hash IPs - reduces utility)</li>
+<li>Rely on “legitimate interest” (Recital 49)</li>
+</ol>
+</li>
+<li>Controlled MISP sharing: Legal ✓</li>
+<li>Public Pastebin: Violates proportionality ✗</li>
+</ul>
+<h3 id="82-harm-to-reputation-of-third-parties">8.2 Harm to Reputation of Third Parties<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#82-harm-to-reputation-of-third-parties" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Scenario</strong>: Incorrect attribution (claim Company X hosts malware)</p>
+<p><strong>Analysis</strong>:</p>
+<ul>
+<li>False intelligence → defamation lawsuit, commercial damages</li>
+<li><strong>Mitigation</strong>:
+<ul>
+<li>Attach Confidence Levels</li>
+<li>Verify data before dissemination</li>
+<li>Use TLP:AMBER to contain damage vs. public blog</li>
+</ul>
+</li>
+</ul>
+<h3 id="83-information-leakage-of-threat-intelligence">8.3 Information Leakage of Threat Intelligence<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#83-information-leakage-of-threat-intelligence" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Scenario</strong>: TLP:RED zero-day details leaked to press</p>
+<p><strong>Analysis</strong>:</p>
+<ul>
+<li>NDA violations</li>
+<li>If hackers exploit before patch: negligence, aiding cybercrime</li>
+<li><strong>Controls</strong>: Strict access controls, audit logs, attribution</li>
+</ul>
+<h3 id="84-harm-from-disproportionate-mitigation">8.4 Harm from Disproportionate Mitigation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#84-harm-from-disproportionate-mitigation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Scenario</strong>: Automated block of IP range disrupts hospital services</p>
+<p><strong>Analysis</strong>:</p>
+<ul>
+<li>Active defense carries liability</li>
+<li>Disproportionate/negligent targeting → liable for collateral damage</li>
+<li><strong>Mitigation</strong>: Human-in-the-loop for high-impact decisions</li>
+</ul>
+<h3 id="85-service-provider-legal-implications">8.5 Service Provider Legal Implications<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#85-service-provider-legal-implications" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Scenario</strong>: CSP detects malicious traffic from customer instance</p>
+<p><strong>Analysis</strong>:</p>
+<ul>
+<li>SLA/ToS dictate duties</li>
+<li>NIS2: Reporting obligations for CSPs</li>
+<li>Balance: Duty of care vs. customer privacy (DPI may violate wiretapping laws)</li>
+</ul>
+<hr/>
+<h2 id="9-real-world-implementation--ecossian-framework">9. Real-World Implementation – ECOSSIAN Framework<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#9-real-world-implementation--ecossian-framework" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="91-introduction">9.1 Introduction<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#91-introduction" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>ECOSSIAN</strong>: European Control System Security Incident Analysis Network</p>
+<ul>
+<li>EU FP7 research project</li>
+<li>Pan-European system for Critical Infrastructure protection</li>
+<li>Local detection → international response</li>
+</ul>
+<h3 id="92-three-layered-architecture">9.2 Three-Layered Architecture<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#92-three-layered-architecture" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph TD\n    subgraph \&quot;European Level\&quot;\n        E[\&quot; E-SOC&lt;br/>(European Security Operation Center)&lt;br/>Pan-European Entity\&quot;]\n    end\n    \n    subgraph \&quot;National Level\&quot;\n        N1[\&quot;N-SOC Country 1&lt;br/>(National SOC)&lt;br/>Strategic Correlation\&quot;]\n        N2[\&quot;N-SOC Country 2&lt;br/>(National SOC)&lt;br/>Strategic Correlation\&quot;]\n        N3[\&quot;N-SOC Country 3&lt;br/>(National SOC)&lt;br/>Strategic Correlation\&quot;]\n    end\n    \n    subgraph \&quot;Operator Level\&quot;\n        O1[\&quot;O-SOC: Energy&lt;br/>(Power Plant)\&quot;]\n        O2[\&quot;O-SOC: Finance&lt;br/>(Bank)\&quot;]\n        O3[\&quot;O-SOC: Telecom&lt;br/>(ISP)\&quot;]\n        O4[\&quot;O-SOC: Gas&lt;br/>(Pipeline)\&quot;]\n    end\n    \n    O1 -->|\&quot;Sanitized&lt;br/>Incident Reports\&quot;| N1\n    O2 -->|\&quot;Sanitized&lt;br/>Incident Reports\&quot;| N1\n    O3 -->|\&quot;Sanitized&lt;br/>Incident Reports\&quot;| N2\n    O4 -->|\&quot;Sanitized&lt;br/>Incident Reports\&quot;| N2\n    \n    N1 &lt;-->|\&quot;Early Warnings&lt;br/>Mitigation Advice\&quot;| O1\n    N1 &lt;-->|\&quot;Early Warnings&lt;br/>Mitigation Advice\&quot;| O2\n    N2 &lt;-->|\&quot;Early Warnings&lt;br/>Mitigation Advice\&quot;| O3\n    N2 &lt;-->|\&quot;Early Warnings&lt;br/>Mitigation Advice\&quot;| O4\n    \n    N1 -->|\&quot;Cross-Border&lt;br/>Threat Intelligence\&quot;| E\n    N2 -->|\&quot;Cross-Border&lt;br/>Threat Intelligence\&quot;| E\n    N3 -->|\&quot;Cross-Border&lt;br/>Threat Intelligence\&quot;| E\n    \n    E -->|\&quot;Pan-European&lt;br/>Coordination\&quot;| N1\n    E -->|\&quot;Pan-European&lt;br/>Coordination\&quot;| N2\n    E -->|\&quot;Pan-European&lt;br/>Coordination\&quot;| N3\n    \n    style E fill:#e74c3c,color:#fff\n    style N1 fill:#3498db,color:#fff\n    style N2 fill:#3498db,color:#fff\n    style N3 fill:#3498db,color:#fff\n    style O1 fill:#2ecc71,color:#fff\n    style O2 fill:#2ecc71,color:#fff\n    style O3 fill:#2ecc71,color:#fff\n    style O4 fill:#2ecc71,color:#fff&quot;">graph TD
+    subgraph &quot;European Level&quot;
+        E[&quot; E-SOC&lt;br/>(European Security Operation Center)&lt;br/>Pan-European Entity&quot;]
+    end
+    
+    subgraph &quot;National Level&quot;
+        N1[&quot;N-SOC Country 1&lt;br/>(National SOC)&lt;br/>Strategic Correlation&quot;]
+        N2[&quot;N-SOC Country 2&lt;br/>(National SOC)&lt;br/>Strategic Correlation&quot;]
+        N3[&quot;N-SOC Country 3&lt;br/>(National SOC)&lt;br/>Strategic Correlation&quot;]
+    end
+    
+    subgraph &quot;Operator Level&quot;
+        O1[&quot;O-SOC: Energy&lt;br/>(Power Plant)&quot;]
+        O2[&quot;O-SOC: Finance&lt;br/>(Bank)&quot;]
+        O3[&quot;O-SOC: Telecom&lt;br/>(ISP)&quot;]
+        O4[&quot;O-SOC: Gas&lt;br/>(Pipeline)&quot;]
+    end
+    
+    O1 -->|&quot;Sanitized&lt;br/>Incident Reports&quot;| N1
+    O2 -->|&quot;Sanitized&lt;br/>Incident Reports&quot;| N1
+    O3 -->|&quot;Sanitized&lt;br/>Incident Reports&quot;| N2
+    O4 -->|&quot;Sanitized&lt;br/>Incident Reports&quot;| N2
+    
+    N1 &lt;-->|&quot;Early Warnings&lt;br/>Mitigation Advice&quot;| O1
+    N1 &lt;-->|&quot;Early Warnings&lt;br/>Mitigation Advice&quot;| O2
+    N2 &lt;-->|&quot;Early Warnings&lt;br/>Mitigation Advice&quot;| O3
+    N2 &lt;-->|&quot;Early Warnings&lt;br/>Mitigation Advice&quot;| O4
+    
+    N1 -->|&quot;Cross-Border&lt;br/>Threat Intelligence&quot;| E
+    N2 -->|&quot;Cross-Border&lt;br/>Threat Intelligence&quot;| E
+    N3 -->|&quot;Cross-Border&lt;br/>Threat Intelligence&quot;| E
+    
+    E -->|&quot;Pan-European&lt;br/>Coordination&quot;| N1
+    E -->|&quot;Pan-European&lt;br/>Coordination&quot;| N2
+    E -->|&quot;Pan-European&lt;br/>Coordination&quot;| N3
+    
+    style E fill:#e74c3c,color:#fff
+    style N1 fill:#3498db,color:#fff
+    style N2 fill:#3498db,color:#fff
+    style N3 fill:#3498db,color:#fff
+    style O1 fill:#2ecc71,color:#fff
+    style O2 fill:#2ecc71,color:#fff
+    style O3 fill:#2ecc71,color:#fff
+    style O4 fill:#2ecc71,color:#fff
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<p>ECOSSIAN proposed a hierarchical, three-layered architecture to manage the flow of intelligence and incident reports.</p>
+<ol>
+<li>
+<p><strong>O-SOC (Operator Security Operation Center)</strong></p>
+<ul>
+<li>Local SOC at critical facility (power plant, bank)</li>
+<li><strong>Role</strong>: Local detection, initial triage, data sanitization</li>
+<li>Sends incident reports to national level</li>
+</ul>
+</li>
+<li>
+<p><strong>N-SOC (National Security Operation Center)</strong></p>
+<ul>
+<li>Government-run centralized body</li>
+<li><strong>Role</strong>: Strategic correlation across sectors</li>
+<li>Detects cross-sector campaigns</li>
+<li>Issues early warnings and mitigation advice</li>
+</ul>
+</li>
+<li>
+<p><strong>E-SOC (European Security Operation Center)</strong></p>
+<ul>
+<li>Pan-European entity</li>
+<li>Connects N-SOCs across member states</li>
+<li>Handles cross-border threats</li>
+</ul>
+</li>
+</ol>
+<h3 id="93-roles-and-responsibilities">9.3 Roles and Responsibilities<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#93-roles-and-responsibilities" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>CI Operators (O-SOC)</strong>: Local defense, sensor tuning, anonymization</li>
+<li><strong>National Analysts (N-SOC)</strong>: Maintain national SA, issue actionable advisories</li>
+<li><strong>Standardized Processes</strong>: IODEF, STIX for interoperability</li>
+</ul>
+<h3 id="94-application-cases">9.4 Application Cases<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#94-application-cases" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>Early Warning in Finance</strong>: Detect coordinated DDoS across banks, warn others</li>
+<li><strong>Gas Distribution</strong>: Identify SCADA-targeting malware in pipelines</li>
+<li><strong>Pan-European Interdependency</strong>: Track threat cascading from energy to telecom</li>
+</ol>
+<h3 id="95-lessons-learned">9.5 Lessons Learned<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#95-lessons-learned" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>IMPORTANT</p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li><strong>Trust is Fragile</strong>: Build on established relationships</li>
+<li><strong>Standardization is Key</strong>: Uniform formats prevent data overload</li>
+<li><strong>Privacy by Design</strong>: Anonymization at source (O-SOC) ensures GDPR compliance and private sector participation</li>
+</ul>
+</div>
+</blockquote>
+<hr/>
+<h2 id="appendix-practical-tools--labs">Appendix: Practical Tools &amp; Labs<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#appendix-practical-tools--labs" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Tool</th><th>Category</th><th>Function</th><th>Use Case</th></tr></thead><tbody><tr><td><strong>Google Dorks</strong></td><td>OSINT</td><td>Advanced search</td><td>Find exposed PDFs, vulnerable login pages</td></tr><tr><td><strong>ThreatCrowd</strong></td><td>Visualization</td><td>Pivot-based search</td><td>Visualize domain-IP-malware relationships</td></tr><tr><td><strong>Netcraft</strong></td><td>Reconnaissance</td><td>Web server analysis</td><td>Determine hosting, OS, SSL history</td></tr><tr><td><strong>Amass</strong></td><td>Discovery</td><td>DNS enumeration</td><td>Map external attack surface via subdomains</td></tr><tr><td><strong>Shodan</strong></td><td>IoT Search</td><td>Device scanning</td><td>Locate exposed webcams, SCADA, open ports</td></tr><tr><td><strong>Maltego</strong></td><td>Link Analysis</td><td>Data visualization</td><td>Graph people-email-domain-infrastructure</td></tr><tr><td><strong>MISP</strong></td><td>Sharing Platform</td><td>Threat Intelligence</td><td>Store IoCs, correlate events, automate rules</td></tr></tbody></table></div>
+<hr/>
+<h2 id="key-takeaways-for-exam">Key Takeaways for Exam<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#key-takeaways-for-exam" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>IMPORTANT</p></div>
+                  
+                </div>
+<div class="callout-content">
+<ol>
+<li><strong>Distinguish</strong> Threat Information (raw data) from Threat Intelligence (contextualized analysis)</li>
+<li><strong>Understand</strong> the Cyber Kill Chain and how defensive interventions work at each stage</li>
+<li><strong>Master</strong> the five dimensions of information sharing architecture</li>
+<li><strong>Know</strong> STIX/TAXII technical standards and their purpose</li>
+<li><strong>Comprehend</strong> legal frameworks: NIS Directive, GDPR Recital 49, CISA</li>
+<li><strong>Apply</strong> TLP classifications appropriately</li>
+<li><strong>Explain</strong> ECOSSIAN’s three-layered architecture (O-SOC, N-SOC, E-SOC)</li>
+<li><strong>Analyze</strong> legal case studies for proportionality and legitimate interest</li>
+</ol>
+</div>
+</blockquote>
+<hr/>
+<p><em>Study Guide compiled from Cyber Threat Intelligence Exam Preparation - CDS-352</em></p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="explorer desktop-only" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-249"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-249" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-1"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-15" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-2" class="toc-content overflow"><li class="depth-0"><a href="#cyber-threat-intelligence---comprehensive-exam-study-guide" data-for="cyber-threat-intelligence---comprehensive-exam-study-guide">Cyber Threat Intelligence - Comprehensive Exam Study Guide</a></li><li class="depth-1"><a href="#table-of-contents" data-for="table-of-contents">Table of Contents</a></li><li class="depth-1"><a href="#1-introduction-to-threat-intelligence" data-for="1-introduction-to-threat-intelligence">1. Introduction to Threat Intelligence</a></li><li class="depth-2"><a href="#11-the-paradigm-of-cyber-threat-intelligence" data-for="11-the-paradigm-of-cyber-threat-intelligence">1.1 The Paradigm of Cyber Threat Intelligence</a></li><li class="depth-2"><a href="#12-threat-information-vs-threat-intelligence" data-for="12-threat-information-vs-threat-intelligence">1.2 Threat Information vs. Threat Intelligence</a></li><li class="depth-2"><a href="#13-types-of-cyber-threat-information" data-for="13-types-of-cyber-threat-information">1.3 Types of Cyber Threat Information</a></li><li class="depth-2"><a href="#14-cross-organizational-information-sharing" data-for="14-cross-organizational-information-sharing">1.4 Cross-Organizational Information Sharing</a></li><li class="depth-2"><a href="#15-role-of-nation-states" data-for="15-role-of-nation-states">1.5 Role of Nation-States</a></li><li class="depth-1"><a href="#2-attack-scenarios-and-threat-actors" data-for="2-attack-scenarios-and-threat-actors">2. Attack Scenarios and Threat Actors</a></li><li class="depth-2"><a href="#21-evolving-concepts" data-for="21-evolving-concepts">2.1 Evolving Concepts</a></li><li class="depth-2"><a href="#22-emerging-trends" data-for="22-emerging-trends">2.2 Emerging Trends</a></li><li class="depth-2"><a href="#23-the-cyber-kill-chain" data-for="23-the-cyber-kill-chain">2.3 The Cyber Kill Chain</a></li><li class="depth-2"><a href="#24-advanced-persistent-threats-apts" data-for="24-advanced-persistent-threats-apts">2.4 Advanced Persistent Threats (APTs)</a></li><li class="depth-1"><a href="#3-monitoring-logging-and-network-analysis" data-for="3-monitoring-logging-and-network-analysis">3. Monitoring, Logging, and Network Analysis</a></li><li class="depth-2"><a href="#31-data-sources-for-intelligence-extraction" data-for="31-data-sources-for-intelligence-extraction">3.1 Data Sources for Intelligence Extraction</a></li><li class="depth-2"><a href="#32-analysis-techniques" data-for="32-analysis-techniques">3.2 Analysis Techniques</a></li><li class="depth-2"><a href="#33-from-observables-to-indicators-to-intelligence" data-for="33-from-observables-to-indicators-to-intelligence">3.3 From Observables to Indicators to Intelligence</a></li><li class="depth-1"><a href="#4-information-sharing-architecture" data-for="4-information-sharing-architecture">4. Information Sharing Architecture</a></li><li class="depth-2"><a href="#41-five-dimensions-of-information-sharing" data-for="41-five-dimensions-of-information-sharing">4.1 Five Dimensions of Information Sharing</a></li><li class="depth-2"><a href="#42-technical-standards" data-for="42-technical-standards">4.2 Technical Standards</a></li><li class="depth-1"><a href="#5-cti-communities" data-for="5-cti-communities">5. CTI Communities</a></li><li class="depth-2"><a href="#51-community-models" data-for="51-community-models">5.1 Community Models</a></li><li class="depth-2"><a href="#52-misp-malware-information-sharing-platform" data-for="52-misp-malware-information-sharing-platform">5.2 MISP (Malware Information Sharing Platform)</a></li><li class="depth-2"><a href="#53-case-studies" data-for="53-case-studies">5.3 Case Studies</a></li><li class="depth-1"><a href="#6-situational-awareness-for-strategic-decision-making" data-for="6-situational-awareness-for-strategic-decision-making">6. Situational Awareness for Strategic Decision Making</a></li><li class="depth-2"><a href="#61-cyber-situational-awareness-csa" data-for="61-cyber-situational-awareness-csa">6.1 Cyber Situational Awareness (CSA)</a></li><li class="depth-2"><a href="#62-situational-awareness-models" data-for="62-situational-awareness-models">6.2 Situational Awareness Models</a></li><li class="depth-2"><a href="#63-national-level-situational-awareness" data-for="63-national-level-situational-awareness">6.3 National Level Situational Awareness</a></li><li class="depth-1"><a href="#7-legal-implications-of-information-sharing" data-for="7-legal-implications-of-information-sharing">7. Legal Implications of Information Sharing</a></li><li class="depth-2"><a href="#71-eu-cybersecurity-legal-framework" data-for="71-eu-cybersecurity-legal-framework">7.1 EU Cybersecurity Legal Framework</a></li><li class="depth-2"><a href="#72-legal-barriers" data-for="72-legal-barriers">7.2 Legal Barriers</a></li><li class="depth-1"><a href="#8-legal-case-studies" data-for="8-legal-case-studies">8. Legal Case Studies</a></li><li class="depth-2"><a href="#81-distribution-of-security-relevant-information-with-personal-data" data-for="81-distribution-of-security-relevant-information-with-personal-data">8.1 Distribution of Security-Relevant Information with Personal Data</a></li><li class="depth-2"><a href="#82-harm-to-reputation-of-third-parties" data-for="82-harm-to-reputation-of-third-parties">8.2 Harm to Reputation of Third Parties</a></li><li class="depth-2"><a href="#83-information-leakage-of-threat-intelligence" data-for="83-information-leakage-of-threat-intelligence">8.3 Information Leakage of Threat Intelligence</a></li><li class="depth-2"><a href="#84-harm-from-disproportionate-mitigation" data-for="84-harm-from-disproportionate-mitigation">8.4 Harm from Disproportionate Mitigation</a></li><li class="depth-2"><a href="#85-service-provider-legal-implications" data-for="85-service-provider-legal-implications">8.5 Service Provider Legal Implications</a></li><li class="depth-1"><a href="#9-real-world-implementation--ecossian-framework" data-for="9-real-world-implementation--ecossian-framework">9. Real-World Implementation – ECOSSIAN Framework</a></li><li class="depth-2"><a href="#91-introduction" data-for="91-introduction">9.1 Introduction</a></li><li class="depth-2"><a href="#92-three-layered-architecture" data-for="92-three-layered-architecture">9.2 Three-Layered Architecture</a></li><li class="depth-2"><a href="#93-roles-and-responsibilities" data-for="93-roles-and-responsibilities">9.3 Roles and Responsibilities</a></li><li class="depth-2"><a href="#94-application-cases" data-for="94-application-cases">9.4 Application Cases</a></li><li class="depth-2"><a href="#95-lessons-learned" data-for="95-lessons-learned">9.5 Lessons Learned</a></li><li class="depth-1"><a href="#appendix-practical-tools--labs" data-for="appendix-practical-tools--labs">Appendix: Practical Tools &amp; Labs</a></li><li class="depth-1"><a href="#key-takeaways-for-exam" data-for="key-takeaways-for-exam">Key Takeaways for Exam</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../../../postscript.js" type="module" data-persist="true"></script></html>

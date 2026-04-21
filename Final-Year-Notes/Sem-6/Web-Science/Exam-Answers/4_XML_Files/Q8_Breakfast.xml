@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Breakfast>
+  <Item>
+    <Name>Fries</Name>
+    <Price>45</Price>
+    <Desc>Crispy</Desc>
+    <Cal>650</Cal>
+  </Item>
+  <Item>
+    <Name>Bread</Name>
+    <Price>30</Price>
+    <Desc>Fresh</Desc>
+    <Cal>200</Cal>
+  </Item>
+  <Item>
+    <Name>Juice</Name>
+    <Price>50</Price>
+    <Desc>OJ</Desc>
+    <Cal>120</Cal>
+  </Item>
+</Breakfast>

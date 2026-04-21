@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Profile</title>
+<style>
+body{font-family:Arial;margin:0;}
+.container{display:flex;}
+.sidebar{width:150px;padding:15px;background:#f0f0f0;}
+.sidebar a{display:block;margin:10px 0;text-decoration:none;color:#0066cc;}
+.content{flex:1;padding:20px;}
+img{width:80px;}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="sidebar">
+<h3>Menu</h3>
+<a href="#h">Home</a>
+<a href="#a">About</a>
+<a href="#c">Contact</a>
+</div>
+<div class="content">
+<h2>Student Profile</h2>
+<p><b>Roll:</b> 001</p>
+<p><b>Name:</b> John Doe</p>
+<p><b>Contact:</b> 9876543210</p>
+<p><b>Class:</b> TYCDS</p>
+<p><b>Interest:</b> Cyber Security</p>
+<img src="photo.jpg" alt="photo">
+</div>
+</div>
+</body>
+</html>
+            overflow-y: auto;
+        }
+        
+        .profile-section {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .profile-section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        
+        .profile-info h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .profile-info p {
+            margin: 8px 0;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .profile-info strong {
+            color: #333;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar - Column 1 -->
+        <div class="sidebar">
+            <h2>Menu</h2>
+            <a href="#home">🏠 Home</a>
+            <a href="#about">ℹ️ About Us</a>
+            <a href="#contact">📞 Contact Us</a>
+        </div>
+        
+        <!-- Profile Info - Column 2 -->
+        <div class="content">
+            <h1>Student Profile</h1>
+            
+            <div class="profile-section">
+                <!-- Placeholder for student photo -->
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Crect fill='%23ddd' width='150' height='150'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='14' fill='%23999'%3EStudent Photo%3C/text%3E%3C/svg%3E" alt="Student Photo">
+                
+                <div class="profile-info">
+                    <h2>Arjun Sharma</h2>
+                    <p><strong>Roll Number:</strong> 2023CS001</p>
+                    <p><strong>Name:</strong> Arjun Sharma</p>
+                    <p><strong>Contact:</strong> +91-9876543210</p>
+                    <p><strong>Class:</strong> T.Y. B.Sc. (Cyber & Digital Science)</p>
+                    <p><strong>Area of Interest:</strong> Cybersecurity, Web Development, Ethical Hacking</p>
+                    <p><strong>Email:</strong> arjun.sharma@example.com</p>
+                    <p><strong>Address:</strong> Pune, Maharashtra, India</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--
+    ═══════════════════════════════════════════════════════════
+    SETUP & EXECUTION INSTRUCTIONS
+    ═══════════════════════════════════════════════════════════
+    
+    COVERS: Slip 1 Q1, Slip 5 Q2 (Identical questions)
+    
+    ━━━━━━━━━━━ WINDOWS ━━━━━━━━━━━
+    1. SAVE FILE:
+       - Save this file as Q1_Student_Profile.html in a folder
+       - Example: C:\Users\YourName\Desktop\WebScience\Q1_Student_Profile.html
+    
+    2. OPEN IN BROWSER:
+       - Double-click the file → opens in default browser
+       - OR: Right-click → "Open with" → Select browser (Chrome/Firefox)
+    
+    3. TO ALTER CONTENT:
+       - Open with Notepad or VS Code
+       - Edit student details in the <div class="profile-info"> section
+       - Save (Ctrl+S)
+       - Refresh browser (F5) to see changes
+    
+    ━━━━━━━━━━━ UBUNTU/LINUX ━━━━━━━━━━━
+    1. SAVE FILE:
+       $ mkdir -p ~/WebScience && cd ~/WebScience
+       $ nano Q1_Student_Profile.html
+       (Paste content, Ctrl+O → Enter → Ctrl+X to save)
+    
+    2. OPEN IN BROWSER:
+       $ firefox Q1_Student_Profile.html
+       OR
+       $ google-chrome Q1_Student_Profile.html
+    
+    3. EDIT FILE:
+       $ nano Q1_Student_Profile.html
+       (Or use VS Code: $ code Q1_Student_Profile.html)
+    
+    ━━━━━━━━━━━ MACBOOK (BONUS) ━━━━━━━━━━━
+    $ open -a Safari Q1_Student_Profile.html
+    OR
+    $ open Q1_Student_Profile.html (opens default browser)
+    
+    ═══════════════════════════════════════════════════════════
+    EXPECTED OUTPUT:
+    ✅ Left sidebar with 3 hyperlinks (Home, About Us, Contact Us)
+    ✅ Right panel showing student details (name, roll, contact, etc.)
+    ✅ Student photo placeholder on top
+    ✅ Responsive layout (sidebar + content area)
+    
+    VIVA QUESTIONS:
+    Q: Why did you use CSS Grid for layout?
+    A: Grid provides precise 2-column layout (sidebar + content). Flexbox 
+       would also work but Grid is cleaner for this structure.
+    
+    Q: How would you add interactivity to the sidebar links?
+    A: Add JavaScript click handlers to show/hide content dynamically:
+       document.querySelector('a').addEventListener('click', function() { ... });
+    
+    Q: What if we want to load actual student photo from database?
+    A: Replace the src attribute with PHP:
+       <img src="<?php echo $student['photo_url']; ?>" alt="...">
+    
+    ═══════════════════════════════════════════════════════════
+    -->

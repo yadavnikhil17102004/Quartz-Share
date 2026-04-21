@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<CourseReg>
+  <Reg>
+    <RegID>R001</RegID>
+    <StudentName>Alice</StudentName>
+    <CourseName>Web Science</CourseName>
+    <Instructor>Prof.Sharma</Instructor>
+    <DateOfReg>2024-01-15</DateOfReg>
+  </Reg>
+  <Reg>
+    <RegID>R002</RegID>
+    <StudentName>Bob</StudentName>
+    <CourseName>Cyber</CourseName>
+    <Instructor>Prof.Patel</Instructor>
+    <DateOfReg>2024-01-16</DateOfReg>
+  </Reg>
+  <Reg>
+    <RegID>R003</RegID>
+    <StudentName>Carol</StudentName>
+    <CourseName>Malware</CourseName>
+    <Instructor>Prof.Gupta</Instructor>
+    <DateOfReg>2024-01-17</DateOfReg>
+  </Reg>
+  <Reg>
+    <RegID>R004</RegID>
+    <StudentName>David</StudentName>
+    <CourseName>DF</CourseName>
+    <Instructor>Prof.Singh</Instructor>
+    <DateOfReg>2024-01-18</DateOfReg>
+  </Reg>
+  <Reg>
+    <RegID>R005</RegID>
+    <StudentName>Emma</StudentName>
+    <CourseName>FinTech</CourseName>
+    <Instructor>Prof.Kumar</Instructor>
+    <DateOfReg>2024-01-19</DateOfReg>
+  </Reg>
+</CourseReg>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Timetable>
+  <Class>
+    <Day>Mon</Day>
+    <ClassName>TYCDS-A</ClassName>
+    <Instructor>Prof.Sharma</Instructor>
+    <TimeSlot>09:00-10:30</TimeSlot>
+    <Classroom>Lab-1</Classroom>
+  </Class>
+  <Class>
+    <Day>Tue</Day>
+    <ClassName>TYCDS-A</ClassName>
+    <Instructor>Prof.Patel</Instructor>
+    <TimeSlot>10:30-12:00</TimeSlot>
+    <Classroom>Lab-2</Classroom>
+  </Class>
+  <Class>
+    <Day>Wed</Day>
+    <ClassName>TYCDS-A</ClassName>
+    <Instructor>Prof.Gupta</Instructor>
+    <TimeSlot>14:00-15:30</TimeSlot>
+    <Classroom>Lab-1</Classroom>
+  </Class>
+</Timetable>

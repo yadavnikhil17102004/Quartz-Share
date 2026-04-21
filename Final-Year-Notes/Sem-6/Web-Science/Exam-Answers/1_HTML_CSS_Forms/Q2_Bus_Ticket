@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bus Ticket</title>
+<style>
+input,select{width:100%;padding:5px;margin:5px 0;}
+</style>
+</head>
+<body>
+<h2>Bus Ticket Reservation</h2>
+<form>
+<input placeholder="Name" required>
+<input placeholder="Address" required>
+<input type="tel" placeholder="Contact" required>
+<select required>
+<option>Source</option>
+<option>City A</option>
+<option>City B</option>
+</select>
+<select required>
+<option>Destination</option>
+<option>City X</option>
+<option>City Y</option>
+</select>
+<input type="date" placeholder="Booking Date" required>
+<input type="date" placeholder="Journey Date" required>
+<input type="number" placeholder="Passengers" required>
+<button type="submit">Book</button>
+</form>
+</body>
+</html>

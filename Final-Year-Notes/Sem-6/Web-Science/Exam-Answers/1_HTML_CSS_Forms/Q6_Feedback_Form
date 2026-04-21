@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feedback</title>
+<style>
+input,textarea{display:block;width:100%;padding:5px;margin:5px 0;}
+</style>
+</head>
+<body>
+<h2>Feedback Form</h2>
+<form onsubmit="return show(event)">
+<input id="n" placeholder="Name" required>
+<input id="e" type="email" placeholder="Email" required>
+<textarea id="m" placeholder="Message" rows="3" required></textarea>
+<input id="r" type="number" min="1" max="5" placeholder="Rating" required>
+<button>Submit</button>
+</form>
+<div id="res" style="display:none;margin-top:20px;">
+<p>Name: <span id="sn"></span></p>
+<p>Email: <span id="se"></span></p>
+<p>Feedback: <span id="sm"></span></p>
+<p>Rating: <span id="sr"></span></p>
+</div>
+<script>
+function show(e){
+e.preventDefault();
+document.getElementById('sn').innerText=document.getElementById('n').value;
+document.getElementById('se').innerText=document.getElementById('e').value;
+document.getElementById('sm').innerText=document.getElementById('m').value;
+document.getElementById('sr').innerText='⭐'.repeat(document.getElementById('r').value);
+document.getElementById('res').style.display='block';
+return false;
+}
+</script>
+</body>
+</html>

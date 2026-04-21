@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>ISPA_Comprehensive_Study_Guide</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 4"/><meta property="og:title" content="ISPA_Comprehensive_Study_Guide"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="ISPA_Comprehensive_Study_Guide"/><meta name="twitter:description" content="Information Security Policy and Audit - Comprehensive Study Guide NOTE Complete reference covering IS governance, audit frameworks, security controls, and threat intelligence for comprehensive exam preparation."/><meta property="og:description" content="Information Security Policy and Audit - Comprehensive Study Guide NOTE Complete reference covering IS governance, audit frameworks, security controls, and threat intelligence for comprehensive exam preparation."/><meta property="og:image:alt" content="Information Security Policy and Audit - Comprehensive Study Guide NOTE Complete reference covering IS governance, audit frameworks, security controls, and threat intelligence for comprehensive exam preparation."/><meta property="twitter:domain" content="yadavnikhil17102004.github.io/Quartz-Share"/><meta property="og:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Information-Security-Policy-and-Audit/ISPA_Comprehensive_Study_Guide"/><meta property="twitter:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Information-Security-Policy-and-Audit/ISPA_Comprehensive_Study_Guide"/><link rel="icon" href="../../../../static/icon.png"/><meta name="description" content="Information Security Policy and Audit - Comprehensive Study Guide NOTE Complete reference covering IS governance, audit frameworks, security controls, and threat intelligence for comprehensive exam preparation."/><meta name="generator" content="Quartz"/><link href="../../../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL1VzZXJzL25pa2hpbHlhZGF2L0Rlc2t0b3AvUXVhcnR6LUJ1aWxkZXIvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://yadavnikhil17102004.github.io/Quartz-Share/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Information-Security-Policy-and-Audit/ISPA_Comprehensive_Study_Guide-og-image.webp"/><meta property="og:image:url" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Information-Security-Policy-and-Audit/ISPA_Comprehensive_Study_Guide-og-image.webp"/><meta name="twitter:image" content="https://yadavnikhil17102004.github.io/Quartz-Share/Final-Year-Notes/Sem-5/Notes/Information-Security-Policy-and-Audit/ISPA_Comprehensive_Study_Guide-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Final-Year-Notes/Sem-5/Notes/Information-Security-Policy-and-Audit/ISPA_Comprehensive_Study_Guide"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../../..">Quartz 4</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-544"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-544" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/">Final Year Notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-5/">Sem 5</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-5/Notes/">Notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../Final-Year-Notes/Sem-5/Notes/Information-Security-Policy-and-Audit/">Information Security Policy and Audit</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>ISPA_Comprehensive_Study_Guide</a></div></nav><h1 class="article-title">ISPA_Comprehensive_Study_Guide</h1><p show-comma="true" class="content-meta"><time datetime="2025-11-25T17:10:08.000Z">Nov 25, 2025</time><span>13 min read</span></p></div></div><article class="popover-hint"><h1 id="information-security-policy-and-audit---comprehensive-study-guide">Information Security Policy and Audit - Comprehensive Study Guide<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#information-security-policy-and-audit---comprehensive-study-guide" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>NOTE</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Complete reference covering IS governance, audit frameworks, security controls, and threat intelligence for comprehensive exam preparation.</p>
+</div>
+</blockquote>
+<h2 id="table-of-contents">Table of Contents<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#table-of-contents" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><a href="#1-introduction" class="internal alias">Introduction to IS Governance and Auditing</a></li>
+<li><a href="#2-auditing-standards" class="internal alias">IS Auditing Standards and Lifecycle</a></li>
+<li><a href="#3-security-controls" class="internal alias">Organization Security and Controls</a></li>
+<li><a href="#4-operational-controls" class="internal alias">Operational Controls and Disaster Recovery</a></li>
+<li><a href="#5-network-security" class="internal alias">Network Security and Threat Intelligence</a></li>
+<li><a href="#6-it-security-domains" class="internal alias">Domains of IT Security</a></li>
+<li><a href="#7-cryptography-pki" class="internal alias">Cryptography and PKI</a></li>
+<li><a href="#8-incident-response" class="internal alias">Incident Response and Forensics</a></li>
+</ol>
+<hr/>
+<h2 id="1-introduction-to-is-governance-and-auditing">1. Introduction to IS Governance and Auditing<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-introduction-to-is-governance-and-auditing" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="11-the-strategic-imperative">1.1 The Strategic Imperative<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#11-the-strategic-imperative" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>CIA Triad</strong> - Foundation of all security controls and audit objectives:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Pillar</th><th>Definition</th><th>Breach Example</th></tr></thead><tbody><tr><td><strong>Confidentiality</strong></td><td>Information accessible only to authorized parties</td><td>Nx supply chain attack: 6,700 private repositories exposed</td></tr><tr><td><strong>Integrity</strong></td><td>Accuracy and completeness of data</td><td>Ledger manipulation in financial systems</td></tr><tr><td><strong>Availability</strong></td><td>Information available to authorized users when needed</td><td>NoName057(16) DDoS attacks on Italian infrastructure</td></tr></tbody></table></div>
+<h3 id="12-information-systems-audit-definition">1.2 Information Systems Audit Definition<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#12-information-systems-audit-definition" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>IS Audit</strong>: Process of collecting and evaluating evidence to determine whether a computer system:</p>
+<ul>
+<li>Safeguards assets</li>
+<li>Maintains data integrity</li>
+<li>Allows organizational goals to be achieved effectively</li>
+<li>Uses resources efficiently</li>
+</ul>
+<p><strong>Role</strong>: “Third line of defense” providing independent assurance to senior management and regulators.</p>
+<h3 id="13-evolving-threat-landscape">1.3 Evolving Threat Landscape<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#13-evolving-threat-landscape" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="sophisticated-threat-actors">Sophisticated Threat Actors<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#sophisticated-threat-actors" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Lazarus Group</strong> (North Korea):</p>
+<ul>
+<li><strong>Campaigns</strong>: GhostCall, GhostHire</li>
+<li><strong>Target</strong>: Web3 sector</li>
+<li><strong>Method</strong>: Social engineering via fake job offers with malware-laden PDFs</li>
+<li><strong>Audit Implication</strong>: Must audit HR procedures and employee security awareness</li>
+</ul>
+<p><strong>Salt Typhoon</strong> (China):</p>
+<ul>
+<li><strong>Target</strong>: U.S. telecommunications infrastructure</li>
+<li><strong>Impact</strong>: Millions of users’ data stolen</li>
+<li><strong>Audit Focus</strong>: Network segmentation, access controls in Critical Information Infrastructure</li>
+</ul>
+<p><strong>Living off the Land (LotL)</strong> Tactics:</p>
+<ul>
+<li>Use legitimate tools (PowerShell, WMI) for attacks</li>
+<li>No malicious files to detect</li>
+<li><strong>Example</strong>: FinalDraft malware using Outlook drafts for C2</li>
+<li><strong>Audit Requirement</strong>: Configuration monitoring of legitimate tools, baseline behavior analysis</li>
+</ul>
+<h3 id="14-techglobal-case-study">1.4 TechGlobal Case Study<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#14-techglobal-case-study" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Profile</strong>: Multinational financial services organization
+<strong>Regulations</strong>: GDPR, SOX, PCI DSS
+<strong>Infrastructure</strong>: Hybrid (cloud + data centers)</p>
+<p><strong>Audit Objectives</strong>:</p>
+<ol>
+<li>Assess IT control effectiveness for customer data protection</li>
+<li>Ensure accuracy of financial data processing</li>
+<li>Evaluate regulatory compliance</li>
+<li>Identify IT governance and risk management improvements</li>
+</ol>
+<hr/>
+<h2 id="2-is-auditing-standards-and-lifecycle">2. IS Auditing Standards and Lifecycle<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-is-auditing-standards-and-lifecycle" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="21-key-auditing-standards">2.1 Key Auditing Standards<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#21-key-auditing-standards" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Standard/Framework</th><th>Focus</th><th>Relevance</th></tr></thead><tbody><tr><td><strong>ISACA IS Audit Standards</strong></td><td>General audit process</td><td>Mandatory requirements for charter, independence, fieldwork, reporting</td></tr><tr><td><strong>COBIT</strong></td><td>IT Governance</td><td>Common language between IT and business; domains: Plan, Build, Run, Monitor</td></tr><tr><td><strong>ISO/IEC 27001</strong></td><td>ISMS</td><td>114 controls in Annex A for security management</td></tr><tr><td><strong>NIST SP 800-53</strong></td><td>Federal/Critical Infrastructure</td><td>Comprehensive security and privacy control catalog</td></tr><tr><td><strong>PCI DSS</strong></td><td>Payment Card Security</td><td>Prescriptive controls: encryption, firewalls</td></tr></tbody></table></div>
+<h4 id="isaca-framework-standards">ISACA Framework Standards<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#isaca-framework-standards" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>S1 (Audit Charter)</strong>: Defines purpose, responsibility, authority, accountability</li>
+<li><strong>S3 (Professional Ethics)</strong>: Auditor independence - cannot design and audit same control</li>
+<li><strong>S4 (Audit Planning)</strong>: Risk-based approach; prioritize high-risk areas</li>
+<li><strong>S7 (Reporting)</strong>: Objective, clear, constructive</li>
+<li><strong>S10 (Follow-up)</strong>: Verify remedial action taken</li>
+</ul>
+<h3 id="22-is-audit-lifecycle">2.2 IS Audit Lifecycle<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#22-is-audit-lifecycle" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph LR\n    A[\&quot;📋 Phase 1:&lt;br/>Planning &amp; Scoping&lt;br/>(Risk Assessment,&lt;br/>Define Scope)\&quot;] --> B[\&quot;🔍 Phase 2:&lt;br/>Fieldwork&lt;br/>(Evidence Gathering,&lt;br/>Control Testing)\&quot;]\n    \n    B --> C[\&quot;📝 Phase 3:&lt;br/>Reporting&lt;br/>(Findings,&lt;br/>Recommendations)\&quot;]\n    \n    C --> D[\&quot;✔️ Phase 4:&lt;br/>Follow-up&lt;br/>(Verify Remediation)\&quot;]\n    \n    D -.->|\&quot;Continuous&lt;br/>Improvement\&quot;| A\n    \n    E[\&quot;ISACA Standards:&lt;br/>S1 (Charter)&lt;br/>S3 (Ethics)&lt;br/>S4 (Planning)&lt;br/>S7 (Reporting)&lt;br/>S10 (Follow-up)\&quot;] -.-> A\n    E -.-> B\n    E -.-> C\n    E -.-> D\n    \n    style A fill:#e1f5ff\n    style B fill:#d4edda\n    style C fill:#fff3cd\n    style D fill:#d1ecf1\n    style E fill:#f8d7da&quot;">graph LR
+    A[&quot;📋 Phase 1:&lt;br/>Planning &amp; Scoping&lt;br/>(Risk Assessment,&lt;br/>Define Scope)&quot;] --> B[&quot;🔍 Phase 2:&lt;br/>Fieldwork&lt;br/>(Evidence Gathering,&lt;br/>Control Testing)&quot;]
+    
+    B --> C[&quot;📝 Phase 3:&lt;br/>Reporting&lt;br/>(Findings,&lt;br/>Recommendations)&quot;]
+    
+    C --> D[&quot;✔️ Phase 4:&lt;br/>Follow-up&lt;br/>(Verify Remediation)&quot;]
+    
+    D -.->|&quot;Continuous&lt;br/>Improvement&quot;| A
+    
+    E[&quot;ISACA Standards:&lt;br/>S1 (Charter)&lt;br/>S3 (Ethics)&lt;br/>S4 (Planning)&lt;br/>S7 (Reporting)&lt;br/>S10 (Follow-up)&quot;] -.-> A
+    E -.-> B
+    E -.-> C
+    E -.-> D
+    
+    style A fill:#e1f5ff
+    style B fill:#d4edda
+    style C fill:#fff3cd
+    style D fill:#d1ecf1
+    style E fill:#f8d7da
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<h4 id="phase-1-planning-and-scoping">Phase 1: Planning and Scoping<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#phase-1-planning-and-scoping" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li><strong>Understanding the Business</strong>: Comprehend mission (e.g., financial services = data integrity paramount)</li>
+<li><strong>Risk Assessment</strong>: Rank “Audit Universe” by risk factors</li>
+<li><strong>Defining Scope</strong>: Boundaries critical (e.g., critical systems, processes, data assets)</li>
+<li><strong>Resource Allocation</strong>: Timeline and skills (e.g., cryptography expert if needed)</li>
+</ol>
+<h4 id="phase-2-fieldwork-and-execution">Phase 2: Fieldwork and Execution<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#phase-2-fieldwork-and-execution" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Evidence Requirements</strong> (ISACA S3): Sufficient, relevant, reliable</p>
+<p><strong>Techniques</strong>:</p>
+<ul>
+<li><strong>Inquiry</strong>: Interview personnel (must be corroborated)</li>
+<li><strong>Observation</strong>: Watch process execution (verify approval workflows)</li>
+<li><strong>Inspection</strong>: Review documents, configurations (firewall rules, password policies)</li>
+<li><strong>Re-performance</strong>: Independently execute control (restore backup to test validity)</li>
+<li><strong>Vulnerability Scanning/Penetration Testing</strong>: Simulate attacks</li>
+</ul>
+<p><strong>Computer Assisted Audit Tools (CAATs)</strong>:</p>
+<ul>
+<li><strong>Generalized Audit Software (GAS)</strong>: Filter data, detect duplicates, identify gaps</li>
+<li><strong>Test Data</strong>: Feed valid/invalid transactions to verify application logic</li>
+</ul>
+<h4 id="phase-3-reporting">Phase 3: Reporting<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#phase-3-reporting" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Key Finding</strong>: TechGlobal weakness - “weak access controls, shared accounts, inadequate password policies”</p>
+<p><strong>Report Must Include</strong>:</p>
+<ul>
+<li><strong>Findings</strong>: Factual deviation from criteria</li>
+<li><strong>Risk</strong>: Potential consequence of finding</li>
+<li><strong>Root Cause Analysis</strong>: Beyond symptom (lack of tools vs. lack of staff?)</li>
+<li><strong>Recommendations</strong>: Actionable advice (implement MFA, enhance encryption)</li>
+</ul>
+<h4 id="phase-4-follow-up-isaca-s10">Phase 4: Follow-up (ISACA S10)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#phase-4-follow-up-isaca-s10" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>Verify management remedial action</li>
+<li>If risk accepted rather than fixed, require formal Board approval documentation</li>
+</ul>
+<hr/>
+<h2 id="3-organization-security-and-controls">3. Organization Security and Controls<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-organization-security-and-controls" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="31-physical-security-controls">3.1 Physical Security Controls<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#31-physical-security-controls" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="defense-in-depth-layers">Defense in Depth Layers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#defense-in-depth-layers" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph TD\n    A[\&quot;Asset/Data Center\&quot;] \n    \n    B[\&quot;🚧 Layer 1: Deterrence&lt;br/>CPTED, Lighting, Signage\&quot;] --> A\n    C[\&quot;🔴 Layer 2: Detection&lt;br/>Sensors, CCTV, Alarms\&quot;] --> B\n    D[\&quot;🚪 Layer 3: Access Control&lt;br/>Mantraps, Biometrics, Badges\&quot;] --> C\n    E[\&quot;🏗️ Perimeter: Fences &amp; Guards\&quot;] --> D\n    \n    F[\&quot;❄️ Environmental:&lt;br/>Fire Suppression (Gas)&lt;br/>HVAC (Temp/Humidity)&lt;br/>Power (UPS/Generators)\&quot;]\n    \n    F -.->|\&quot;Protects Against&lt;br/>Non-Human Threats\&quot;| A\n    \n    G[\&quot;⚠️ If attacker bypasses one layer,&lt;br/>next layer provides defense\&quot;] -.-> E\n    \n    style A fill:#e74c3c,color:#fff\n    style B fill:#ffeaa7\n    style C fill:#fab1a0\n    style D fill:#ff7675,color:#fff\n    style E fill:#fd79a8,color:#fff\n    style F fill:#74b9ff\n    style G fill:#00b894,color:#fff&quot;">graph TD
+    A[&quot;Asset/Data Center&quot;] 
+    
+    B[&quot;🚧 Layer 1: Deterrence&lt;br/>CPTED, Lighting, Signage&quot;] --> A
+    C[&quot;🔴 Layer 2: Detection&lt;br/>Sensors, CCTV, Alarms&quot;] --> B
+    D[&quot;🚪 Layer 3: Access Control&lt;br/>Mantraps, Biometrics, Badges&quot;] --> C
+    E[&quot;🏗️ Perimeter: Fences &amp; Guards&quot;] --> D
+    
+    F[&quot;❄️ Environmental:&lt;br/>Fire Suppression (Gas)&lt;br/>HVAC (Temp/Humidity)&lt;br/>Power (UPS/Generators)&quot;]
+    
+    F -.->|&quot;Protects Against&lt;br/>Non-Human Threats&quot;| A
+    
+    G[&quot;⚠️ If attacker bypasses one layer,&lt;br/>next layer provides defense&quot;] -.-> E
+    
+    style A fill:#e74c3c,color:#fff
+    style B fill:#ffeaa7
+    style C fill:#fab1a0
+    style D fill:#ff7675,color:#fff
+    style E fill:#fd79a8,color:#fff
+    style F fill:#74b9ff
+    style G fill:#00b894,color:#fff
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<p><strong>Layer 1: Deterrence</strong></p>
+<ul>
+<li><strong>CPTED</strong> (Crime Prevention Through Environmental Design):
+<ul>
+<li>Natural Surveillance: Open lines of sight</li>
+<li>Territorial Reinforcement: Fences, signage (public vs. private)</li>
+</ul>
+</li>
+<li><strong>Lighting</strong>: Psychological deterrent</li>
+<li><strong>Signage</strong>: Legal/psychological warning</li>
+</ul>
+<p><strong>Layer 2: Detection</strong></p>
+<ul>
+<li><strong>Sensors</strong>: Motion (infrared, microwave), glass break, door contacts</li>
+<li><strong>CCTV</strong>: Real-time monitoring + forensic evidence; analytics for loitering</li>
+<li><strong>Alarm Systems</strong>: Must trigger 24/7 monitored response</li>
+</ul>
+<p><strong>Layer 3: Access Control</strong></p>
+<ul>
+<li><strong>Mantraps</strong>: Two interlocking doors prevent tailgating/piggybacking</li>
+<li><strong>Biometrics</strong>: Fingerprint, iris, retina (high identity assurance)</li>
+<li><strong>Smart Cards/Badges</strong>: Electronic access with audit trail</li>
+</ul>
+<p><strong>Environmental Controls</strong>:</p>
+<ul>
+<li><strong>Fire Suppression</strong>: Gas-based (FM-200) not water (damages electronics)</li>
+<li><strong>HVAC</strong>: Optimal temperature/humidity</li>
+<li><strong>Power</strong>: UPS and generators for availability</li>
+</ul>
+<h3 id="32-logical-security-controls">3.2 Logical Security Controls<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#32-logical-security-controls" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="access-control-models">Access Control Models<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#access-control-models" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Model</th><th>Description</th><th>Use Case</th></tr></thead><tbody><tr><td><strong>DAC</strong> (Discretionary)</td><td>Data owner decides access</td><td>Personal OS (Windows file permissions)</td></tr><tr><td><strong>MAC</strong> (Mandatory)</td><td>OS enforces based on security labels</td><td>Military/government (Top Secret, Confidential)</td></tr><tr><td><strong>RBAC</strong> (Role-Based)</td><td>Access assigned to roles</td><td><strong>Enterprise standard</strong> (TechGlobal); simplifies administration</td></tr></tbody></table></div>
+<h4 id="identity-and-access-management-iam">Identity and Access Management (IAM)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#identity-and-access-management-iam" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Authentication Factors</strong>:</p>
+<ol>
+<li><strong>Something you know</strong>: Password, PIN</li>
+<li><strong>Something you have</strong>: Smart card, RSA token, smartphone</li>
+<li><strong>Something you are</strong>: Biometrics (fingerprint, Face ID)</li>
+</ol>
+<p><strong>Multi-Factor Authentication (MFA)</strong>: Combine ≥2 factors</p>
+<ul>
+<li><strong>TechGlobal Recommendation</strong>: Implement MFA to address weak access controls</li>
+</ul>
+<p><strong>Active Directory (AD)</strong>:</p>
+<ul>
+<li>Central directory service for Windows</li>
+<li><strong>Group Policy Objects (GPO)</strong>: Enforce fleet-wide settings (password expiry, USB disable)</li>
+<li><strong>Least Privilege</strong>: Minimum access necessary</li>
+</ul>
+<blockquote class="callout warning" data-callout="warning">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>WARNING</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Salt Typhoon breach demonstrates excessive privileges facilitating lateral movement.</p>
+</div>
+</blockquote>
+<h4 id="operating-system-hardening">Operating System Hardening<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#operating-system-hardening" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Practice</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><strong>Patch Management</strong></td><td>Apply security updates</td><td>GoAnywhere MFT (CVE-2025-10035) exploited by Storm-1175</td></tr><tr><td><strong>Service Minimization</strong></td><td>Disable unused services/ports</td><td>Web server shouldn’t have Printer Sharing</td></tr><tr><td><strong>File Permissions</strong></td><td>Restrict access to critical files</td><td>Linux chmod ensuring system files not user-writable</td></tr></tbody></table></div>
+<hr/>
+<h2 id="4-operational-controls-and-disaster-recovery">4. Operational Controls and Disaster Recovery<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-operational-controls-and-disaster-recovery" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="41-segregation-of-duties-sod">4.1 Segregation of Duties (SoD)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#41-segregation-of-duties-sod" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Purpose</strong>: Prevent fraud and error - no single individual controls all phases of material transaction</p>
+<p><strong>Audit Test</strong>: Check if developers have production admin access (could insert malicious code)</p>
+<p><strong>Mitigation</strong>: If staffing insufficient for full SoD, implement compensating controls (enhanced monitoring, logging)</p>
+<h3 id="42-logging-and-monitoring">4.2 Logging and Monitoring<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#42-logging-and-monitoring" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>SIEM</strong> (Security Information and Event Management): Aggregate logs from firewalls, servers, databases</p>
+<ul>
+<li><strong>Example</strong>: 100 failed logins in 1 minute → brute-force attack detection</li>
+</ul>
+<p><strong>Audit Requirements</strong>:</p>
+<ol>
+<li><strong>What is logged</strong>: Logins, privilege changes, file access</li>
+<li><strong>Log protection</strong>: Separate secured server (prevent attacker deletion)</li>
+<li><strong>Log review</strong>: Logs useless if unreviewed
+<ul>
+<li><strong>TechGlobal Finding</strong>: “Insufficient monitoring and logging”</li>
+</ul>
+</li>
+</ol>
+<h3 id="43-disaster-recovery-and-business-continuity">4.3 Disaster Recovery and Business Continuity<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#43-disaster-recovery-and-business-continuity" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Definitions</strong>:</p>
+<ul>
+<li><strong>Business Continuity (BC)</strong>: Keep business running during disruption</li>
+<li><strong>Disaster Recovery (DR)</strong>: Restore IT systems</li>
+</ul>
+<p><strong>Metrics</strong>:</p>
+<ul>
+<li><strong>RPO</strong> (Recovery Point Objective): How much data loss is acceptable? (e.g., 1 hour)</li>
+<li><strong>RTO</strong> (Recovery Time Objective): How quickly must systems be back? (e.g., 4 hours)</li>
+</ul>
+<h4 id="dr-site-strategies">DR Site Strategies<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#dr-site-strategies" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph LR\n    subgraph \&quot;Recovery Speed &amp; Cost Trade-offs\&quot;\n        A[\&quot;Hot Site&lt;br/>⭐⭐⭐&lt;br/>RTO: Minutes&lt;br/>Cost: $$$$&lt;br/>Fully mirrored,&lt;br/>real-time replication\&quot;]\n        \n        B[\&quot;Warm Site&lt;br/>⭐⭐&lt;br/>RTO: Hours/Days&lt;br/>Cost: $$$&lt;br/>Hardware ready,&lt;br/>restore from backup\&quot;]\n        \n        C[\&quot;Cold Site&lt;br/>⭐&lt;br/>RTO: Weeks&lt;br/>Cost: $$&lt;br/>Shell facility,&lt;br/>no hardware\&quot;]\n        \n        D[\&quot;Cloud DR/DRaaS&lt;br/>⭐⭐⭐&lt;br/>RTO: Minutes/Hours&lt;br/>Cost: Scalable&lt;br/>Cloud workload&lt;br/>replication\&quot;]\n    end\n    \n    E[\&quot;🔥 Disaster Strikes\&quot;] --> F{\&quot;Recovery&lt;br/>Strategy?\&quot;}\n    \n    F -->|\&quot;Critical Systems\&quot;| A\n    F -->|\&quot;Important Systems\&quot;| B\n    F -->|\&quot;Non-Critical Systems\&quot;| C\n    F -->|\&quot;Modern Approach\&quot;| D\n    \n    A --> G[\&quot;✅ Fastest Recovery\&quot;]\n    D --> G\n    B --> H[\&quot;⏳ Moderate Recovery\&quot;]\n    C --> I[\&quot;⏰ Slow Recovery\&quot;]\n    \n    style A fill:#e74c3c,color:#fff\n    style B fill:#f39c12\n    style C fill:#3498db,color:#fff\n    style D fill:#2ecc71,color:#fff\n    style E fill:#c0392b,color:#fff\n    style G fill:#27ae60,color:#fff\n    style H fill:#f1c40f\n    style I fill:#95a5a6&quot;">graph LR
+    subgraph &quot;Recovery Speed &amp; Cost Trade-offs&quot;
+        A[&quot;Hot Site&lt;br/>⭐⭐⭐&lt;br/>RTO: Minutes&lt;br/>Cost: $$$$&lt;br/>Fully mirrored,&lt;br/>real-time replication&quot;]
+        
+        B[&quot;Warm Site&lt;br/>⭐⭐&lt;br/>RTO: Hours/Days&lt;br/>Cost: $$$&lt;br/>Hardware ready,&lt;br/>restore from backup&quot;]
+        
+        C[&quot;Cold Site&lt;br/>⭐&lt;br/>RTO: Weeks&lt;br/>Cost: $$&lt;br/>Shell facility,&lt;br/>no hardware&quot;]
+        
+        D[&quot;Cloud DR/DRaaS&lt;br/>⭐⭐⭐&lt;br/>RTO: Minutes/Hours&lt;br/>Cost: Scalable&lt;br/>Cloud workload&lt;br/>replication&quot;]
+    end
+    
+    E[&quot;🔥 Disaster Strikes&quot;] --> F{&quot;Recovery&lt;br/>Strategy?&quot;}
+    
+    F -->|&quot;Critical Systems&quot;| A
+    F -->|&quot;Important Systems&quot;| B
+    F -->|&quot;Non-Critical Systems&quot;| C
+    F -->|&quot;Modern Approach&quot;| D
+    
+    A --> G[&quot;✅ Fastest Recovery&quot;]
+    D --> G
+    B --> H[&quot;⏳ Moderate Recovery&quot;]
+    C --> I[&quot;⏰ Slow Recovery&quot;]
+    
+    style A fill:#e74c3c,color:#fff
+    style B fill:#f39c12
+    style C fill:#3498db,color:#fff
+    style D fill:#2ecc71,color:#fff
+    style E fill:#c0392b,color:#fff
+    style G fill:#27ae60,color:#fff
+    style H fill:#f1c40f
+    style I fill:#95a5a6
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Strategy</th><th>Description</th><th>RTO/RPO</th><th>Cost</th></tr></thead><tbody><tr><td><strong>Hot Site</strong></td><td>Fully mirrored with real-time replication</td><td>Minutes</td><td>High</td></tr><tr><td><strong>Warm Site</strong></td><td>Hardware/connectivity, restore from backups</td><td>Hours/Days</td><td>Medium</td></tr><tr><td><strong>Cold Site</strong></td><td>Shell facility, no hardware</td><td>Weeks</td><td>Low</td></tr><tr><td><strong>DRaaS / Cloud DR</strong></td><td>Cloud workload replication</td><td>Minutes/Hours</td><td>Scalable</td></tr></tbody></table></div>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>IMPORTANT</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>TechGlobal: “Robust incident response plan regularly updated and tested” - Untested plan is merely hypothesis.</p>
+</div>
+</blockquote>
+<hr/>
+<h2 id="5-network-security-and-threat-intelligence">5. Network Security and Threat Intelligence<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-network-security-and-threat-intelligence" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="51-network-defense-mechanisms">5.1 Network Defense Mechanisms<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#51-network-defense-mechanisms" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Firewalls</strong>:</p>
+<ul>
+<li><strong>Packet Filtering</strong>: Inspect headers (Source/Dest IP, Port) - fast, low security</li>
+<li><strong>Stateful Inspection</strong>: Track connection state (allow inbound only if response to outbound)</li>
+<li><strong>Next-Gen (NGFW)</strong>: Layer 7 payload inspection; identify applications, block specific threats</li>
+</ul>
+<p><strong>IDS/IPS</strong>:</p>
+<ul>
+<li><strong>IDS</strong> (Intrusion Detection): Passive; alerts SOC on attack signatures</li>
+<li><strong>IPS</strong> (Intrusion Prevention): Active; sits in-line, blocks malicious traffic</li>
+</ul>
+<p><strong>Network Segmentation</strong>:</p>
+<ul>
+<li>Divide into zones (Guest, Corporate, PCI/Finance, SCADA)</li>
+<li>Prevents lateral movement</li>
+<li><strong>Salt Typhoon lesson</strong>: Strict segmentation critical in critical infrastructure</li>
+</ul>
+<h3 id="52-malware-threat-landscape">5.2 Malware Threat Landscape<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#52-malware-threat-landscape" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Malware Type</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><strong>Ransomware</strong></td><td>Encrypts data, demands payment</td><td>Qilin using Linux encryptors in WSL to evade detection</td></tr><tr><td><strong>Infostealers</strong></td><td>Steal credentials</td><td>Lampion, Meduza targeting banking via phishing</td></tr><tr><td><strong>Supply Chain</strong></td><td>Inject into trusted software</td><td>Nx attack: malicious npm packages exposing 6,700 GitHub repos</td></tr></tbody></table></div>
+<h4 id="case-study-finaldraft-and-outlook-abuse">Case Study: FinalDraft and Outlook Abuse<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#case-study-finaldraft-and-outlook-abuse" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Campaign</strong>: FinalDraft malware
+<strong>Method</strong>: Abuses Microsoft Outlook drafts for C2</p>
+<ul>
+<li>Creates draft emails with hidden commands</li>
+<li>Attacker reads/responds via synced Exchange server</li>
+</ul>
+<p><strong>Audit Implications</strong>:</p>
+<ul>
+<li>Monitor internal email traffic for anomalies</li>
+<li>Disable Outlook macros</li>
+<li>Implement behavioral endpoint monitoring (detect PathLoader injection)</li>
+</ul>
+<h3 id="53-cyber-threat-intelligence-cti">5.3 Cyber Threat Intelligence (CTI)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#53-cyber-threat-intelligence-cti" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>CTI Level</th><th>Focus</th><th>Example</th></tr></thead><tbody><tr><td><strong>Strategic</strong></td><td>High-level trends</td><td>”North Korean groups targeting Web3”</td></tr><tr><td><strong>Operational</strong></td><td>TTPs of specific groups</td><td>Lazarus using fake LinkedIn job offers</td></tr><tr><td><strong>Tactical</strong></td><td>IOCs</td><td>Malicious IPs, file hashes</td></tr></tbody></table></div>
+<h4 id="case-study-lazarus-group-ghostcallghosthire">Case Study: Lazarus Group (GhostCall/GhostHire)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#case-study-lazarus-group-ghostcallghosthire" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Target</strong>: Web3 sector developers
+<strong>Method</strong>: Recruiters with fake job offers → malware-laden PDFs or coding tests</p>
+<p><strong>Audit Implications</strong>:</p>
+<ul>
+<li>Audit HR security: Employee training to verify recruiters</li>
+<li>Technical interviews on isolated sandboxes</li>
+</ul>
+<hr/>
+<h2 id="6-domains-of-it-security">6. Domains of IT Security<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-domains-of-it-security" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="61-application-security-and-sdlc">6.1 Application Security and SDLC<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#61-application-security-and-sdlc" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Shift Left</strong>: Integrate security early in Software Development Life Cycle</p>
+<p><strong>Key Practices</strong>:</p>
+<ul>
+<li><strong>Input Validation</strong>: Prevent SQL Injection, XSS by sanitizing user input</li>
+<li><strong>Code Review</strong>: SAST (Static Application Security Testing) + manual peer review</li>
+<li><strong>API Security</strong>:
+<ul>
+<li><strong>Tata Motors breach</strong>: Exposed API keys → 70TB data access</li>
+<li><strong>Audit</strong>: API authentication and key management</li>
+</ul>
+</li>
+</ul>
+<h3 id="62-cloud-security">6.2 Cloud Security<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#62-cloud-security" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="shared-responsibility-model">Shared Responsibility Model<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#shared-responsibility-model" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Service Model</th><th>Customer Secures</th><th>Provider Secures</th></tr></thead><tbody><tr><td><strong>IaaS</strong> (AWS EC2)</td><td>OS, Data</td><td>Hardware</td></tr><tr><td><strong>SaaS</strong> (Salesforce)</td><td>User Access, Data Config</td><td>App, Hardware</td></tr></tbody></table></div>
+<p><strong>Cloud Audit Focus</strong>:</p>
+<ul>
+<li><strong>IAM roles</strong>: No wildcard (*) permissions</li>
+<li><strong>S3 bucket permissions</strong>: Prevent public exposure</li>
+<li><strong>CloudTrail logs</strong>: Audit access and actions</li>
+<li><strong>Shadow IT Risk</strong>: SSA whistleblower - copying data to unmonitored AWS</li>
+</ul>
+<h3 id="63-data-privacy-and-gdpr-compliance">6.3 Data Privacy and GDPR Compliance<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#63-data-privacy-and-gdpr-compliance" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>GDPR Gap Analysis</strong> - Common Deficiencies:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Requirement</th><th>US Firm Status</th><th>Challenge</th></tr></thead><tbody><tr><td><strong>DPO</strong> (Data Protection Officer)</td><td>Often lacking</td><td>GDPR mandates for certain orgs</td></tr><tr><td><strong>Breach Notification</strong></td><td>Slow processes</td><td>GDPR: 72-hour requirement</td></tr><tr><td><strong>Right to be Forgotten</strong></td><td>Technically difficult</td><td>Permanent deletion from complex DBs + backups</td></tr></tbody></table></div>
+<hr/>
+<h2 id="7-cryptography-and-pki">7. Cryptography and PKI<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#7-cryptography-and-pki" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="71-cryptographic-concepts">7.1 Cryptographic Concepts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#71-cryptographic-concepts" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Type</th><th>Key Structure</th><th>Use Case</th><th>Example</th></tr></thead><tbody><tr><td><strong>Symmetric</strong></td><td>One key for encrypt/decrypt</td><td>Bulk data (fast)</td><td>AES for full disk encryption</td></tr><tr><td><strong>Asymmetric</strong></td><td>Public + Private key pair</td><td>Key exchange, signatures</td><td>RSA, ECC</td></tr><tr><td><strong>Hashing</strong></td><td>One-way function</td><td>Integrity verification</td><td>SHA-256</td></tr></tbody></table></div>
+<p><strong>Hash Properties</strong>:</p>
+<ul>
+<li>One-way (cannot reverse)</li>
+<li><strong>Avalanche Effect</strong>: 1-bit change → completely different hash</li>
+</ul>
+<h3 id="72-digital-signatures-and-pki">7.2 Digital Signatures and PKI<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#72-digital-signatures-and-pki" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Digital Signature</strong> Provides:</p>
+<ol>
+<li><strong>Authentication</strong>: Proof of origin</li>
+<li><strong>Integrity</strong>: Proof of no tampering</li>
+<li><strong>Non-Repudiation</strong>: Sender cannot deny sending</li>
+</ol>
+<p><strong>Process</strong>: Encrypt message hash with sender’s <strong>Private Key</strong></p>
+<p><strong>PKI</strong> (Public Key Infrastructure):</p>
+<ul>
+<li>System of Digital Certificates and Certificate Authorities (CAs)</li>
+<li>Binds public keys to identities</li>
+<li><strong>HTTPS</strong>: PKI ensures connection to real bank, not impostor</li>
+</ul>
+<h4 id="teefail-attack">TEE.Fail Attack<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#teefail-attack" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Target</strong>: Intel SGX, AMD SEV (Trusted Execution Environments)
+<strong>Method</strong>: Side-channel attack via electromagnetic emissions
+<strong>Result</strong>: Recovered cryptographic keys</p>
+<blockquote class="callout warning" data-callout="warning">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>CAUTION</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Even hardware-level encryption not infallible - physical security of server hardware remains critical.</p>
+</div>
+</blockquote>
+<hr/>
+<h2 id="8-incident-response-and-forensics">8. Incident Response and Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#8-incident-response-and-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="81-incident-response-steps">8.1 Incident Response Steps<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#81-incident-response-steps" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph TD\n    A[\&quot;🛡️ 1. Preparation&lt;br/>Plan, Train, Tool Up&lt;br/>IR team, playbooks,&lt;br/>forensic tools\&quot;] --> B[\&quot;🔍 2. Identification&lt;br/>Detect Breach&lt;br/>SIEM alerts, anomaly&lt;br/>detection, user reports\&quot;]\n    \n    B --> C[\&quot;🚫 3. Containment&lt;br/>Stop the Bleeding&lt;br/>Isolate infected systems,&lt;br/>block malicious IPs\&quot;]\n    \n    C --> D[\&quot;🗑️ 4. Eradication&lt;br/>Remove Threat&lt;br/>Re-image servers,&lt;br/>reset credentials,&lt;br/>patch vulnerabilities\&quot;]\n    \n    D --> E[\&quot;🔄 5. Recovery&lt;br/>Restore Operations&lt;br/>Restore from backups,&lt;br/>verify functionality,&lt;br/>monitor closely\&quot;]\n    \n    E --> F[\&quot;📚 6. Lessons Learned&lt;br/>Post-Incident Review&lt;br/>Update IR plan,&lt;br/>document timeline,&lt;br/>improve defenses\&quot;]\n    \n    F -.->|\&quot;Continuous&lt;br/>Improvement\&quot;| A\n    \n    G[\&quot;⏱️ Time is Critical:&lt;br/>Faster OODA Loop&lt;br/>than attacker\&quot;] -.-> B\n    G -.-> C\n    \n    style A fill:#74b9ff\n    style B fill:#ffeaa7\n    style C fill:#fab1a0\n    style D fill:#ff7675,color:#fff\n    style E fill:#55efc4\n    style F fill:#a29bfe,color:#fff\n    style G fill:#e74c3c,color:#fff&quot;">graph TD
+    A[&quot;🛡️ 1. Preparation&lt;br/>Plan, Train, Tool Up&lt;br/>IR team, playbooks,&lt;br/>forensic tools&quot;] --> B[&quot;🔍 2. Identification&lt;br/>Detect Breach&lt;br/>SIEM alerts, anomaly&lt;br/>detection, user reports&quot;]
+    
+    B --> C[&quot;🚫 3. Containment&lt;br/>Stop the Bleeding&lt;br/>Isolate infected systems,&lt;br/>block malicious IPs&quot;]
+    
+    C --> D[&quot;🗑️ 4. Eradication&lt;br/>Remove Threat&lt;br/>Re-image servers,&lt;br/>reset credentials,&lt;br/>patch vulnerabilities&quot;]
+    
+    D --> E[&quot;🔄 5. Recovery&lt;br/>Restore Operations&lt;br/>Restore from backups,&lt;br/>verify functionality,&lt;br/>monitor closely&quot;]
+    
+    E --> F[&quot;📚 6. Lessons Learned&lt;br/>Post-Incident Review&lt;br/>Update IR plan,&lt;br/>document timeline,&lt;br/>improve defenses&quot;]
+    
+    F -.->|&quot;Continuous&lt;br/>Improvement&quot;| A
+    
+    G[&quot;⏱️ Time is Critical:&lt;br/>Faster OODA Loop&lt;br/>than attacker&quot;] -.-> B
+    G -.-> C
+    
+    style A fill:#74b9ff
+    style B fill:#ffeaa7
+    style C fill:#fab1a0
+    style D fill:#ff7675,color:#fff
+    style E fill:#55efc4
+    style F fill:#a29bfe,color:#fff
+    style G fill:#e74c3c,color:#fff
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<p>When controls fail, the organization must respond.</p>
+<ol>
+<li><strong>Preparation</strong>: Plan, train, tool up</li>
+<li><strong>Identification</strong>: Detect breach</li>
+<li><strong>Containment</strong>: Stop the bleeding (isolate infected VLAN)</li>
+<li><strong>Eradication</strong>: Remove threat (re-image servers, reset passwords)</li>
+<li><strong>Recovery</strong>: Restore data, verify functionality</li>
+<li><strong>Lessons Learned</strong>: Update process</li>
+</ol>
+<h3 id="82-digital-forensics">8.2 Digital Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#82-digital-forensics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="order-of-volatility-pyramid">Order of Volatility Pyramid<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#order-of-volatility-pyramid" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph TD\n    A[\&quot;⚡ MOST VOLATILE (Lost in nanoseconds)\&quot;] --> B[\&quot;CPU Cache / Registers\&quot;]\n    B --> C[\&quot;Network State&lt;br/>(Active connections)\&quot;]\n    C --> D[\&quot;💾 RAM (System Memory)&lt;br/>Running processes, encryption keys\&quot;]\n    D --> E[\&quot;Temporary Files / Swap\&quot;]\n    E --> F[\&quot;💿 Hard Disk / SSD&lt;br/>(Persistent storage)\&quot;]\n    F --> G[\&quot;☁️ Remote Logs / Backups\&quot;]\n    G --> H[\&quot;🔒 LEAST VOLATILE (Archival)\&quot;]\n    \n    I[\&quot;Collect Evidence in This Order ⬇️\&quot;] -.-> B\n    \n    style A fill:#ff6b6b,color:#fff\n    style B fill:#ffa36b\n    style C fill:#ffd93d\n    style D fill:#6bcf7f\n    style E fill:#4d96ff,color:#fff\n    style F fill:#9b59b6,color:#fff\n    style G fill:#95a5a6\n    style H fill:#2c3e50,color:#fff\n    style I fill:#e74c3c,color:#fff&quot;">graph TD
+    A[&quot;⚡ MOST VOLATILE (Lost in nanoseconds)&quot;] --> B[&quot;CPU Cache / Registers&quot;]
+    B --> C[&quot;Network State&lt;br/>(Active connections)&quot;]
+    C --> D[&quot;💾 RAM (System Memory)&lt;br/>Running processes, encryption keys&quot;]
+    D --> E[&quot;Temporary Files / Swap&quot;]
+    E --> F[&quot;💿 Hard Disk / SSD&lt;br/>(Persistent storage)&quot;]
+    F --> G[&quot;☁️ Remote Logs / Backups&quot;]
+    G --> H[&quot;🔒 LEAST VOLATILE (Archival)&quot;]
+    
+    I[&quot;Collect Evidence in This Order ⬇️&quot;] -.-> B
+    
+    style A fill:#ff6b6b,color:#fff
+    style B fill:#ffa36b
+    style C fill:#ffd93d
+    style D fill:#6bcf7f
+    style E fill:#4d96ff,color:#fff
+    style F fill:#9b59b6,color:#fff
+    style G fill:#95a5a6
+    style H fill:#2c3e50,color:#fff
+    style I fill:#e74c3c,color:#fff
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<p>Forensics is the scientific preservation and analysis of evidence.
+<strong>Chain of Custody</strong>: Legal document tracking every person handling evidence</p>
+<ul>
+<li>Broken chain → evidence inadmissible in court</li>
+</ul>
+<p><strong>Order of Volatility</strong> (Most to Least):</p>
+<ol>
+<li>CPU Cache / Registers</li>
+<li><strong>RAM</strong> (System Memory) - running processes, decryption keys</li>
+<li>Network State (Active connections)</li>
+<li>Hard Disk / SSD</li>
+<li>Remote Logs / Archival Media</li>
+</ol>
+<p><strong>“Going Dark” Challenge</strong>:</p>
+<ul>
+<li>Default encryption (BitLocker, iOS encryption)</li>
+<li>Powered-off device → data may be unrecoverable without password</li>
+<li><strong>Response</strong>:
+<ul>
+<li>Live Acquisition (capture RAM while running)</li>
+<li>Cloud Forensics</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="key-auditing-concepts-summary">Key Auditing Concepts Summary<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#key-auditing-concepts-summary" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="isaca-standards-quick-reference">ISACA Standards Quick Reference<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#isaca-standards-quick-reference" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Standard</th><th>Focus</th><th>Key Requirement</th></tr></thead><tbody><tr><td><strong>S1</strong></td><td>Audit Charter</td><td>Define mandate for system access</td></tr><tr><td><strong>S3</strong></td><td>Ethics &amp; Independence</td><td>Cannot design and audit same control</td></tr><tr><td><strong>S4</strong></td><td>Planning</td><td>Risk-based prioritization</td></tr><tr><td><strong>S7</strong></td><td>Reporting</td><td>Objective, clear findings</td></tr><tr><td><strong>S10</strong></td><td>Follow-up</td><td>Verify remedial action</td></tr></tbody></table></div>
+<h3 id="control-categories">Control Categories<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#control-categories" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Category</th><th>Examples</th><th>Audit Focus</th></tr></thead><tbody><tr><td><strong>Physical</strong></td><td>Mantraps, CCTV, biometrics</td><td>Access control, environmental</td></tr><tr><td><strong>Logical</strong></td><td>IAM, MFA, encryption</td><td>Authentication, authorization</td></tr><tr><td><strong>Operational</strong></td><td>SoD, logging, DR</td><td>Process compliance, monitoring</td></tr></tbody></table></div>
+<hr/>
+<h2 id="exam-preparation-checklist">Exam Preparation Checklist<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#exam-preparation-checklist" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>IMPORTANT</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p><strong>Master These Areas</strong>:</p>
+<ol>
+<li><strong>CIA Triad</strong>: Confidentiality, Integrity, Availability definitions and breach examples</li>
+<li><strong>Audit Lifecycle</strong>: Planning → Fieldwork → Reporting → Follow-up</li>
+<li><strong>ISACA Standards</strong>: S1, S3, S4, S7, S10 purposes</li>
+<li><strong>Access Control Models</strong>: DAC vs MAC vs RBAC</li>
+<li><strong>Authentication Factors</strong>: Know, Have, Are + MFA importance</li>
+<li><strong>Physical Security Layers</strong>: Deterrence → Detection → Access Control</li>
+<li><strong>DR Strategies</strong>: Hot/Warm/Cold sites with RTO/RPO</li>
+<li><strong>Network Defense</strong>: Firewall types, IDS vs IPS, segmentation</li>
+<li><strong>Cryptography</strong>: Symmetric vs Asymmetric vs Hashing</li>
+<li><strong>Digital Signatures</strong>: Authentication + Integrity + Non-Repudiation</li>
+<li><strong>Incident Response</strong>: 6-step process</li>
+<li><strong>Order of Volatility</strong>: RAM → Disk → Logs</li>
+<li><strong>GDPR</strong>: DPO, 72-hour breach notification, Right to be Forgotten</li>
+<li><strong>Cloud Security</strong>: Shared Responsibility Model (IaaS vs SaaS)</li>
+<li><strong>Current Threats</strong>: Lazarus, Salt Typhoon, FinalDraft, LotL tactics</li>
+</ol>
+</div>
+</blockquote>
+<hr/>
+<h2 id="critical-case-studies">Critical Case Studies<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#critical-case-studies" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="techglobal-findings">TechGlobal Findings<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#techglobal-findings" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Finding</th><th>Root Cause</th><th>Recommendation</th></tr></thead><tbody><tr><td>Weak access controls</td><td>Shared accounts, poor passwords</td><td>Implement MFA</td></tr><tr><td>Insufficient monitoring</td><td>Logs not reviewed</td><td>Enhance SIEM, active monitoring</td></tr><tr><td>Encryption gaps</td><td>Legacy systems unencrypted</td><td>Upgrade encryption protocols</td></tr></tbody></table></div>
+<h3 id="real-world-breaches">Real-World Breaches<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#real-world-breaches" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Attack</th><th>Actor</th><th>Vector</th><th>Lesson</th></tr></thead><tbody><tr><td><strong>Salt Typhoon</strong></td><td>China</td><td>Telecom infrastructure</td><td>Network segmentation critical</td></tr><tr><td><strong>Lazarus (GhostHire)</strong></td><td>North Korea</td><td>Social engineering</td><td>Audit HR procedures</td></tr><tr><td><strong>Nx Supply Chain</strong></td><td>Criminals</td><td>Malicious npm packages</td><td>Supply chain validation</td></tr><tr><td><strong>Tata Motors</strong></td><td>Unknown</td><td>Exposed API keys</td><td>API key management audit</td></tr></tbody></table></div>
+<hr/>
+<h2 id="framework-integration">Framework Integration<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#framework-integration" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph TD\n    A[IS Audit] --> B[Standards: ISACA, COBIT, ISO 27001]\n    B --> C[Audit Lifecycle]\n    C --> D[Planning: Risk Assessment]\n    C --> E[Fieldwork: Control Testing]\n    C --> F[Reporting: Findings &amp; Recommendations]\n    C --> G[Follow-up: Verify Remediation]\n    \n    E --> H[Physical Controls: CPTED, Mantraps, CCTV]\n    E --> I[Logical Controls: IAM, MFA, Encryption]\n    E --> J[Operational Controls: SoD, Logging, DR]\n    \n    J --> K[Network Security: Firewalls, IDS/IPS, Segmentation]\n    J --> L[Incident Response: Prepare → Respond → Learn]\n    \n    I --> M[Cryptography: Symmetric, Asymmetric, Hashing]\n    M --> N[PKI: Digital Signatures, Certificates]&quot;">graph TD
+    A[IS Audit] --> B[Standards: ISACA, COBIT, ISO 27001]
+    B --> C[Audit Lifecycle]
+    C --> D[Planning: Risk Assessment]
+    C --> E[Fieldwork: Control Testing]
+    C --> F[Reporting: Findings &amp; Recommendations]
+    C --> G[Follow-up: Verify Remediation]
+    
+    E --> H[Physical Controls: CPTED, Mantraps, CCTV]
+    E --> I[Logical Controls: IAM, MFA, Encryption]
+    E --> J[Operational Controls: SoD, Logging, DR]
+    
+    J --> K[Network Security: Firewalls, IDS/IPS, Segmentation]
+    J --> L[Incident Response: Prepare → Respond → Learn]
+    
+    I --> M[Cryptography: Symmetric, Asymmetric, Hashing]
+    M --> N[PKI: Digital Signatures, Certificates]
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<hr/>
+<h2 id="conclusion">Conclusion<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#conclusion" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>The IS Audit Journey</strong>:</p>
+<ol>
+<li><strong>Governance</strong>: Adopt frameworks (COBIT, ISO 27001)</li>
+<li><strong>Defense in Depth</strong>: Layer Physical, Logical, Operational controls</li>
+<li><strong>Continuous Audit</strong>: Move from annual to real-time monitoring</li>
+<li><strong>Resilience</strong>: Accept breaches will occur; invest in IR and DR</li>
+</ol>
+<p><strong>Ultimate Goal</strong>: Not just compliance, but assurance the organization can withstand hostile digital environment and deliver stakeholder value.</p>
+<hr/>
+<p><em>Study Guide compiled from Information Security Exam Preparation - Comprehensive Analysis of IS Policy and Audit Frameworks</em></p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="explorer desktop-only" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-545"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-545" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-1"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-25" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-2" class="toc-content overflow"><li class="depth-0"><a href="#information-security-policy-and-audit---comprehensive-study-guide" data-for="information-security-policy-and-audit---comprehensive-study-guide">Information Security Policy and Audit - Comprehensive Study Guide</a></li><li class="depth-1"><a href="#table-of-contents" data-for="table-of-contents">Table of Contents</a></li><li class="depth-1"><a href="#1-introduction-to-is-governance-and-auditing" data-for="1-introduction-to-is-governance-and-auditing">1. Introduction to IS Governance and Auditing</a></li><li class="depth-2"><a href="#11-the-strategic-imperative" data-for="11-the-strategic-imperative">1.1 The Strategic Imperative</a></li><li class="depth-2"><a href="#12-information-systems-audit-definition" data-for="12-information-systems-audit-definition">1.2 Information Systems Audit Definition</a></li><li class="depth-2"><a href="#13-evolving-threat-landscape" data-for="13-evolving-threat-landscape">1.3 Evolving Threat Landscape</a></li><li class="depth-2"><a href="#14-techglobal-case-study" data-for="14-techglobal-case-study">1.4 TechGlobal Case Study</a></li><li class="depth-1"><a href="#2-is-auditing-standards-and-lifecycle" data-for="2-is-auditing-standards-and-lifecycle">2. IS Auditing Standards and Lifecycle</a></li><li class="depth-2"><a href="#21-key-auditing-standards" data-for="21-key-auditing-standards">2.1 Key Auditing Standards</a></li><li class="depth-2"><a href="#22-is-audit-lifecycle" data-for="22-is-audit-lifecycle">2.2 IS Audit Lifecycle</a></li><li class="depth-1"><a href="#3-organization-security-and-controls" data-for="3-organization-security-and-controls">3. Organization Security and Controls</a></li><li class="depth-2"><a href="#31-physical-security-controls" data-for="31-physical-security-controls">3.1 Physical Security Controls</a></li><li class="depth-2"><a href="#32-logical-security-controls" data-for="32-logical-security-controls">3.2 Logical Security Controls</a></li><li class="depth-1"><a href="#4-operational-controls-and-disaster-recovery" data-for="4-operational-controls-and-disaster-recovery">4. Operational Controls and Disaster Recovery</a></li><li class="depth-2"><a href="#41-segregation-of-duties-sod" data-for="41-segregation-of-duties-sod">4.1 Segregation of Duties (SoD)</a></li><li class="depth-2"><a href="#42-logging-and-monitoring" data-for="42-logging-and-monitoring">4.2 Logging and Monitoring</a></li><li class="depth-2"><a href="#43-disaster-recovery-and-business-continuity" data-for="43-disaster-recovery-and-business-continuity">4.3 Disaster Recovery and Business Continuity</a></li><li class="depth-1"><a href="#5-network-security-and-threat-intelligence" data-for="5-network-security-and-threat-intelligence">5. Network Security and Threat Intelligence</a></li><li class="depth-2"><a href="#51-network-defense-mechanisms" data-for="51-network-defense-mechanisms">5.1 Network Defense Mechanisms</a></li><li class="depth-2"><a href="#52-malware-threat-landscape" data-for="52-malware-threat-landscape">5.2 Malware Threat Landscape</a></li><li class="depth-2"><a href="#53-cyber-threat-intelligence-cti" data-for="53-cyber-threat-intelligence-cti">5.3 Cyber Threat Intelligence (CTI)</a></li><li class="depth-1"><a href="#6-domains-of-it-security" data-for="6-domains-of-it-security">6. Domains of IT Security</a></li><li class="depth-2"><a href="#61-application-security-and-sdlc" data-for="61-application-security-and-sdlc">6.1 Application Security and SDLC</a></li><li class="depth-2"><a href="#62-cloud-security" data-for="62-cloud-security">6.2 Cloud Security</a></li><li class="depth-2"><a href="#63-data-privacy-and-gdpr-compliance" data-for="63-data-privacy-and-gdpr-compliance">6.3 Data Privacy and GDPR Compliance</a></li><li class="depth-1"><a href="#7-cryptography-and-pki" data-for="7-cryptography-and-pki">7. Cryptography and PKI</a></li><li class="depth-2"><a href="#71-cryptographic-concepts" data-for="71-cryptographic-concepts">7.1 Cryptographic Concepts</a></li><li class="depth-2"><a href="#72-digital-signatures-and-pki" data-for="72-digital-signatures-and-pki">7.2 Digital Signatures and PKI</a></li><li class="depth-1"><a href="#8-incident-response-and-forensics" data-for="8-incident-response-and-forensics">8. Incident Response and Forensics</a></li><li class="depth-2"><a href="#81-incident-response-steps" data-for="81-incident-response-steps">8.1 Incident Response Steps</a></li><li class="depth-2"><a href="#82-digital-forensics" data-for="82-digital-forensics">8.2 Digital Forensics</a></li><li class="depth-1"><a href="#key-auditing-concepts-summary" data-for="key-auditing-concepts-summary">Key Auditing Concepts Summary</a></li><li class="depth-2"><a href="#isaca-standards-quick-reference" data-for="isaca-standards-quick-reference">ISACA Standards Quick Reference</a></li><li class="depth-2"><a href="#control-categories" data-for="control-categories">Control Categories</a></li><li class="depth-1"><a href="#exam-preparation-checklist" data-for="exam-preparation-checklist">Exam Preparation Checklist</a></li><li class="depth-1"><a href="#critical-case-studies" data-for="critical-case-studies">Critical Case Studies</a></li><li class="depth-2"><a href="#techglobal-findings" data-for="techglobal-findings">TechGlobal Findings</a></li><li class="depth-2"><a href="#real-world-breaches" data-for="real-world-breaches">Real-World Breaches</a></li><li class="depth-1"><a href="#framework-integration" data-for="framework-integration">Framework Integration</a></li><li class="depth-1"><a href="#conclusion" data-for="conclusion">Conclusion</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../../../postscript.js" type="module" data-persist="true"></script></html>

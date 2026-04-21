@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Subjects>
+  <Subject>
+    <id>1</id>
+    <name>Web Science</name>
+    <class>TYCDS</class>
+    <semester>6</semester>
+  </Subject>
+  <Subject>
+    <id>2</id>
+    <name>Cyber Security</name>
+    <class>TYCDS</class>
+    <semester>6</semester>
+  </Subject>
+  <Subject>
+    <id>3</id>
+    <name>Malware Analysis</name>
+    <class>TYCDS</class>
+    <semester>6</semester>
+  </Subject>
+</Subjects>

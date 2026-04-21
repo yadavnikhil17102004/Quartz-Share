@@ -1,0 +1,30 @@
+﻿Created By Exterro® FTK® Imager 4.7.3.81 
+
+Case Information: 
+Acquired using: ADI4.7.3.81
+Case Number: 0007
+Evidence Number: 1234
+Unique Description: Highly sofesticated species know as feline with charactics of apex preditors consuming homosepianssepian's hearts with their super attractive charms
+Examiner: sukanya kulkarni
+Notes: no notes
+
+--------------------------------------------------------------
+
+Information for D:\Practical 01\output\Pussypics.ad1:
+[Computed Hashes]
+ MD5 checksum:    bdad1aa749b8cd38870a3e94623d22f1
+ SHA1 checksum:   6a93cf609c0952f98de746b3b309f024feca824a
+
+Image information:
+ Acquisition started:   Fri Jul  4 09:02:57 2025
+ Acquisition finished:  Fri Jul  4 09:02:57 2025
+ Segment list:
+  D:\Practical 01\output\Pussypics.ad1
+ COMPUTED HASH :  bdad1aa749b8cd38870a3e94623d22f1
+ COMPUTED HASH :  6a93cf609c0952f98de746b3b309f024feca824a
+
+Image Verification Results:
+ Verification started:  Fri Jul  4 09:02:57 2025
+ Verification finished: Fri Jul  4 09:02:57 2025
+ MD5 checksum:    bdad1aa749b8cd38870a3e94623d22f1 : verified
+ SHA1 checksum:   6a93cf609c0952f98de746b3b309f024feca824a : verified

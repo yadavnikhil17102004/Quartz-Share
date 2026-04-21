@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Cars>
+  <Car>
+    <id>1</id>
+    <company>Toyota</company>
+    <model>Fortuner</model>
+    <engine>2.8L</engine>
+    <mileage>12</mileage>
+  </Car>
+  <Car>
+    <id>2</id>
+    <company>Honda</company>
+    <model>Accord</model>
+    <engine>1.5L</engine>
+    <mileage>18</mileage>
+  </Car>
+</Cars>

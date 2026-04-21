@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee Profile</title>
+<style>
+.container{display:flex;}
+.sidebar{width:150px;padding:15px;}
+.sidebar a{display:block;margin:10px 0;color:#0066cc;cursor:pointer;}
+.content{flex:1;padding:20px;}
+img{width:80px;}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="sidebar">
+<h3>Menu</h3>
+<a>Home</a>
+<a>About</a>
+<a onclick="showHR()">Contact HR</a>
+</div>
+<div class="content">
+<h2>Employee Profile</h2>
+<p><b>ID:</b> E001</p>
+<p><b>Name:</b> Jane</p>
+<p><b>Designation:</b> Manager</p>
+<p><b>Department:</b> IT</p>
+<p><b>Email:</b> jane@co.com</p>
+<img src="photo.jpg" alt="photo">
+<div id="hr" style="display:none;margin-top:20px;border:1px solid #ccc;padding:15px;">
+<h3>HR Department</h3>
+<p>Email: hr@co.com</p>
+<p>Phone: 1234567890</p>
+</div>
+</div>
+</div>
+<script>function showHR(){document.getElementById('hr').style.display='block';}</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Colored Lines</title></head>
+<body>
+<h1>Colored Lines</h1>
+<hr style="border:2px solid red;">Red
+<hr style="border:2px solid blue;">Blue
+<hr style="border:2px solid green;">Green
+<hr style="border:2px solid yellow;">Yellow
+<hr style="border:2px solid orange;">Orange
+<hr style="border:2px solid purple;">Purple
+<hr style="border:2px solid pink;">Pink
+</body>
+</html>

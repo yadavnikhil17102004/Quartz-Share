@@ -1,0 +1,60 @@
+Slip 7 Q.1
+
+Create the following relations : Emp(eno,name,dno,salary) Project(pno,pname,control-dno,budget) Each employee can work on one or more projects, and a project can have many employees working in it. The number of hours worked on each project by an employee also needs to be stored. [15M]
+1. list the names of Project names whose budget is greater than 10000.
+2. list the names of projects, controlled by department No 101.
+3. list the details of the projects with second maximum budget
+4. list the details of the projects with maximum budget. 5. list the names of employees, working on E&TC department.
+
+
+Table Creation
+
+CREATE TABLE Emp (
+	eno INT PRIMARY KEY,
+	name VARCHAR(50),
+	dno INT,
+	salary DECIMAL(10,2)
+);
+
+CREATE TABLE Project (
+	pno INT PRIMARY KEY,
+	pname VARCHAR(50),
+	control_dno INT,
+	budget DECIMAL(10,2)
+);
+
+CREATE TABLE Works_On (
+	eno INT,
+	pno INT,
+	hours_worked INT,
+	PRIMARY KEY (eno, pno),
+	FOREIGN KEY (eno) REFERENCES Emp(eno),
+	FOREIGN KEY (pno) REFERENCES Project(pno)
+);
+
+
+1. list the names of Project names whose budget is greater than 10000.
+SELECT pname FROM Project WHERE budget > 10000;
+
+
+
+2. list the names of projects, controlled by department No 101.
+SELECT pname FROM Project WHERE control_dno = 101;
+
+
+
+3. list the details of the projects with second maximum budget
+SELECT * FROM Project WHERE budget = (SELECT MAX(budget) FROM Project WHERE budget < (SELECT MAX(budget) FROM Project));
+
+
+
+
+4. list the details of the projects with maximum budget. 
+SELECT * FROM Project WHERE budget = (SELECT MAX(budget) FROM Project);
+
+
+5. list the names of employees, working on E&TC department.
+SELECT name FROM Emp WHERE dno = (SELECT dno FROM Department WHERE dept_name = 'E&TC');
+
+
+

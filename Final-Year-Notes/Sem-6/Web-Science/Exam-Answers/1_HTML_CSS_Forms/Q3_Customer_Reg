@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Customer Registration</title>
+<style>
+input,textarea,select{display:block;width:100%;padding:5px;margin:5px 0;}
+</style>
+</head>
+<body>
+<h2>Customer Registration</h2>
+<form>
+<input placeholder="Name" required>
+<input type="tel" placeholder="Contact" required>
+<label>Gender:</label>
+<input type="radio" name="g"> Male <input type="radio" name="g"> Female
+<select multiple style="height:80px;">
+<option>Books</option>
+<option>Electronics</option>
+<option>Clothing</option>
+</select>
+<input type="checkbox"> Weekdays <input type="checkbox"> Weekends
+<textarea placeholder="Suggestions" rows="3"></textarea>
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+</form>
+</body>
+</html>
